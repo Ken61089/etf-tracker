@@ -136,8 +136,8 @@ function renderEtf(e){
     <div class="sub">資料日期 ${e.data_date}　持股 ${e.holdings_count} 檔　${cmp}</div>
     ${baseline}
     <div class="grid">
-      <div class="box"><h3>🟢➕ 新增標的 <span class="pill">${d.added.length}</span></h3>${rowsAddRm(d.added,'add')}</div>
-      <div class="box"><h3>⚪➖ 剔除持股 <span class="pill">${d.removed.length}</span></h3>${rowsAddRm(d.removed,'rm')}</div>
+      <div class="box"><h3>🔴➕ 新增標的 <span class="pill">${d.added.length}</span></h3>${rowsAddRm(d.added,'add')}</div>
+      <div class="box"><h3>🟢➖ 剔除持股 <span class="pill">${d.removed.length}</span></h3>${rowsAddRm(d.removed,'rm')}</div>
       <div class="box"><h3>🔴 今日買入前五</h3>${rowsBuySell(d.buys,'buy')}</div>
       <div class="box"><h3>🟢 今日賣出前五</h3>${rowsBuySell(d.sells,'sell')}</div>
     </div>
