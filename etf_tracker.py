@@ -219,11 +219,29 @@ def build_consensus(results, threshold=2):
         out.sort(key=lambda x: (x["count"], x["flag_count"]), reverse=True)
         return out
 
+    # 分歧：同一檔同一天有人買、有人賣
+    diverge = []
+    for ticker in set(buy_map) & set(sell_map):
+        buyers = sorted(buy_map[ticker], key=lambda e: abs(e["delta"]), reverse=True)
+        sellers = sorted(sell_map[ticker], key=lambda e: abs(e["delta"]), reverse=True)
+        diverge.append({
+            "ticker": ticker,
+            "name": names[ticker],
+            "buyers": buyers,
+            "sellers": sellers,
+            "buy_count": len(buyers),
+            "sell_count": len(sellers),
+        })
+    # 兩邊都越多、越勢均力敵的排前面
+    diverge.sort(key=lambda x: (x["buy_count"] + x["sell_count"],
+                                min(x["buy_count"], x["sell_count"])), reverse=True)
+
     return {
         "has_data": has_data,
         "threshold": threshold,
         "buy": collect(buy_map, "is_new"),
         "sell": collect(sell_map, "is_removed"),
+        "diverge": diverge,
     }
 
 

@@ -167,6 +167,18 @@ function consTable(list, kind){
     </tr>`).join('') + `</tbody></table>`;
 }
 
+function divTable(list){
+  if(!list.length) return `<div class="empty">— 今日沒有同一檔同時被買進與賣出 —</div>`;
+  return `<table><thead><tr>
+      <th>個股</th><th>🔴 買進方</th><th>🟢 賣出方</th>
+    </tr></thead><tbody>` +
+    list.map(x=>`<tr>
+      <td>${x.name}<span class="pill"> ${x.ticker}</span><br><span class="pill">${x.buy_count}買 / ${x.sell_count}賣</span></td>
+      <td class="wrap">${x.buyers.map(e=>`<span class="chip buy">${shortName(e.fund_name)} ${delta(e.delta)}${e.is_new?' 🆕':''}</span>`).join('')}</td>
+      <td class="wrap">${x.sellers.map(e=>`<span class="chip sell">${shortName(e.fund_name)} ${delta(e.delta)}${e.is_removed?' ✖':''}</span>`).join('')}</td>
+    </tr>`).join('') + `</tbody></table>`;
+}
+
 function renderConsensus(c){
   if(!c.has_data){
     return `<div class="card"><h2>🤝 跨 ETF 共同動作</h2>
@@ -182,6 +194,7 @@ function renderConsensus(c){
       <div class="box"><h3>🔴 多檔同步買進 / 新增 <span class="pill">${c.buy.length}</span></h3>${consTable(c.buy,'buy')}</div>
       <div class="box"><h3>🟢 多檔同步賣出 / 剔除 <span class="pill">${c.sell.length}</span></h3>${consTable(c.sell,'sell')}</div>
     </div>
+    <div class="box" style="margin-top:14px"><h3>⚖️ 分歧：同一檔有人買、有人賣 <span class="pill">${(c.diverge||[]).length}</span></h3>${divTable(c.diverge||[])}</div>
   </div>`;
 }
 

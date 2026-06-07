@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-06-08 01:19",
+  "generated_at": "2026-06-08 01:24",
   "consensus": {
     "has_data": false,
     "threshold": 2,
     "buy": [],
-    "sell": []
+    "sell": [],
+    "diverge": []
   },
   "etfs": [
     {
