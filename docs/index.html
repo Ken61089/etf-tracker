@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>主動型 ETF 每日持股追蹤</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#181b22; --line:#262b36; --txt:#e6e9ef; --sub:#9aa4b2;
+    --buy:#ef4444; --buy-bg:#3a1d1f; --sell:#22c55e; --sell-bg:#16301f;
+    --accent:#5b8cff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,"PingFang TC","Microsoft JhengHei",Helvetica,Arial,sans-serif;
+    line-height:1.5;padding:24px 16px 64px}
+  .wrap{max-width:1100px;margin:0 auto}
+  header{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:8px}
+  h1{font-size:22px;margin:0}
+  .meta{color:var(--sub);font-size:13px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+  .tab{padding:8px 14px;border:1px solid var(--line);border-radius:999px;
+    background:var(--card);color:var(--sub);cursor:pointer;font-size:14px}
+  .tab.active{color:#fff;border-color:var(--accent);background:#1d2740}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 18px 6px;margin-bottom:22px}
+  .card h2{font-size:18px;margin:0 0 2px}
+  .card .sub{color:var(--sub);font-size:13px;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .box{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#13161c}
+  .box h3{font-size:14px;margin:0 0 10px;display:flex;align-items:center;gap:6px}
+  .pill{font-size:11px;color:var(--sub);font-weight:400}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{color:var(--sub);font-weight:500;font-size:12px}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .buy{color:var(--buy)} .sell{color:var(--sell)}
+  .tag{display:inline-block;font-size:10px;padding:1px 6px;border-radius:5px;margin-left:6px}
+  .tag.new{background:var(--buy-bg);color:var(--buy)}
+  .tag.rm{background:var(--sell-bg);color:var(--sell)}
+  .empty{color:var(--sub);font-size:13px;padding:8px 2px}
+  .baseline{background:#2a2410;border:1px solid #5a4d18;color:#e8d27a;
+    padding:10px 14px;border-radius:10px;font-size:13px;margin-bottom:14px}
+  details{margin:6px 0 14px}
+  summary{cursor:pointer;color:var(--accent);font-size:13px;padding:6px 0}
+  .full td:first-child{white-space:normal}
+  .page{display:none} .page.active{display:block}
+  footer{color:var(--sub);font-size:12px;text-align:center;margin-top:30px}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📊 主動型 ETF 每日持股追蹤</h1>
+    <span class="meta" id="genAt"></span>
+  </header>
+  <div class="tabs" id="tabs"></div>
+  <div id="pages"></div>
+  <footer>
+    資料來源：MoneyDJ 理財網 ｜ 紅=買入/新增，綠=賣出/剔除（依台股慣例）<br>
+    比對基準為「資料日期」變化，非日曆日。
+  </footer>
+</div>
+
+<script id="payload" type="application/json">{"generated_at": "2026-06-08 00:37", "etfs": [{"etfid": "00981A", "fund_name": "主動統一台股增長", "data_date": "2026-06-05", "prev_date": null, "holdings_count": 50, "is_baseline": true, "diff": {"added": [], "removed": [], "buys": [], "sells": []}, "holdings": [{"ticker": "2330", "name": "台積電", "pct": 10.11, "shares": 11960000}, {"ticker": "2383", "name": "台光電", "pct": 7.83, "shares": 4486000}, {"ticker": "2454", "name": "聯發科", "pct": 6.55, "shares": 4263000}, {"ticker": "2345", "name": "智邦", "pct": 5.63, "shares": 6334000}, {"ticker": "2308", "name": "台達電", "pct": 5.4, "shares": 6572000}, {"ticker": "6669", "name": "緯穎", "pct": 5.04, "shares": 2492000}, {"ticker": "2327", "name": "國巨*", "pct": 5.03, "shares": 18313000}, {"ticker": "3017", "name": "奇鋐", "pct": 4.82, "shares": 5191000}, {"ticker": "6223", "name": "旺矽", "pct": 4.47, "shares": 2169000}, {"ticker": "3037", "name": "欣興", "pct": 4.16, "shares": 12466000}, {"ticker": "3665", "name": "貿聯-KY", "pct": 3.7, "shares": 4703848}, {"ticker": "3711", "name": "日月光投控", "pct": 3.7, "shares": 17948000}, {"ticker": "2368", "name": "金像電", "pct": 3.65, "shares": 7769000}, {"ticker": "2303", "name": "聯電", "pct": 3.37, "shares": 71690000}, {"ticker": "8046", "name": "南電", "pct": 3.27, "shares": 10828000}, {"ticker": "3653", "name": "健策", "pct": 2.93, "shares": 2267000}, {"ticker": "5274", "name": "信驊", "pct": 2.64, "shares": 422000}, {"ticker": "6274", "name": "台燿", "pct": 2.53, "shares": 4400000}, {"ticker": "6515", "name": "穎崴", "pct": 1.33, "shares": 442000}, {"ticker": "6805", "name": "富世達", "pct": 1.23, "shares": 1761000}, {"ticker": "6510", "name": "精測", "pct": 1.1, "shares": 930000}, {"ticker": "8210", "name": "勤誠", "pct": 1.06, "shares": 2167000}, {"ticker": "2382", "name": "廣達", "pct": 0.76, "shares": 5441000}, {"ticker": "2317", "name": "鴻海", "pct": 0.74, "shares": 7307000}, {"ticker": "3533", "name": "嘉澤", "pct": 0.72, "shares": 852000}, {"ticker": "6147", "name": "頎邦", "pct": 0.56, "shares": 5775000}, {"ticker": "6187", "name": "萬潤", "pct": 0.53, "shares": 1334000}, {"ticker": "2404", "name": "漢唐", "pct": 0.52, "shares": 1200000}, {"ticker": "5439", "name": "高技", "pct": 0.46, "shares": 3528000}, {"ticker": "4966", "name": "譜瑞-KY", "pct": 0.43, "shares": 1642000}, {"ticker": "8996", "name": "高力", "pct": 0.42, "shares": 1034000}, {"ticker": "8150", "name": "南茂", "pct": 0.4, "shares": 11635000}, {"ticker": "2449", "name": "京元電子", "pct": 0.4, "shares": 3645000}, {"ticker": "6278", "name": "台表科", "pct": 0.28, "shares": 3734000}, {"ticker": "3443", "name": "創意", "pct": 0.26, "shares": 167000}, {"ticker": "1590", "name": "亞德客-KY", "pct": 0.25, "shares": 530000}, {"ticker": "8358", "name": "金居", "pct": 0.21, "shares": 980000}, {"ticker": "3376", "name": "新日興", "pct": 0.15, "shares": 1741000}, {"ticker": "6191", "name": "精成科", "pct": 0.14, "shares": 3988000}, {"ticker": "6271", "name": "同欣電", "pct": 0.06, "shares": 686000}, {"ticker": "2002", "name": "中鋼", "pct": 0.04, "shares": 5163000}, {"ticker": "2313", "name": "華通", "pct": 0.03, "shares": 329000}, {"ticker": "1319", "name": "東陽", "pct": 0.02, "shares": 511000}, {"ticker": "1815", "name": "富喬", "pct": 0.0, "shares": 107000}, {"ticker": "2439", "name": "美律", "pct": 0.0, "shares": 18000}, {"ticker": "5347", "name": "世界", "pct": 0.0, "shares": 1000}, {"ticker": "3661", "name": "世芯-KY", "pct": 0.0, "shares": 1000}, {"ticker": "3264", "name": "欣銓", "pct": 0.0, "shares": 1000}, {"ticker": "2481", "name": "強茂", "pct": 0.0, "shares": 5000}, {"ticker": "3008", "name": "大立光", "pct": 0.0, "shares": 1000}]}, {"etfid": "00403A", "fund_name": "主動統一升級50", "data_date": "2026-06-05", "prev_date": null, "holdings_count": 50, "is_baseline": true, "diff": {"added": [], "removed": [], "buys": [], "sells": []}, "holdings": [{"ticker": "2330", "name": "台積電", "pct": 18.4, "shares": 14200000}, {"ticker": "2303", "name": "聯電", "pct": 4.9, "shares": 68000000}, {"ticker": "3017", "name": "奇鋐", "pct": 4.63, "shares": 3250000}, {"ticker": "3037", "name": "欣興", "pct": 4.58, "shares": 8960000}, {"ticker": "3711", "name": "日月光投控", "pct": 3.83, "shares": 12101000}, {"ticker": "2327", "name": "國巨*", "pct": 3.69, "shares": 8760000}, {"ticker": "2383", "name": "台光電", "pct": 3.61, "shares": 1350000}, {"ticker": "2368", "name": "金像電", "pct": 3.39, "shares": 4700000}, {"ticker": "2344", "name": "華邦電", "pct": 3.19, "shares": 36000000}, {"ticker": "2308", "name": "台達電", "pct": 2.83, "shares": 2250000}, {"ticker": "2345", "name": "智邦", "pct": 2.81, "shares": 2060000}, {"ticker": "2454", "name": "聯發科", "pct": 2.47, "shares": 1050000}, {"ticker": "6223", "name": "旺矽", "pct": 2.46, "shares": 780000}, {"ticker": "6669", "name": "緯穎", "pct": 2.45, "shares": 790000}, {"ticker": "3653", "name": "健策", "pct": 1.65, "shares": 830000}, {"ticker": "3533", "name": "嘉澤", "pct": 1.61, "shares": 1240000}, {"ticker": "4958", "name": "臻鼎-KY", "pct": 1.52, "shares": 5492000}, {"ticker": "2337", "name": "旺宏", "pct": 1.34, "shares": 16350000}, {"ticker": "3665", "name": "貿聯-KY", "pct": 1.31, "shares": 1090000}, {"ticker": "2360", "name": "致茂", "pct": 1.18, "shares": 840000}, {"ticker": "6274", "name": "台燿", "pct": 1.15, "shares": 1300000}, {"ticker": "7769", "name": "鴻勁", "pct": 1.11, "shares": 279000}, {"ticker": "3081", "name": "聯亞", "pct": 1.05, "shares": 720000}, {"ticker": "3443", "name": "創意", "pct": 1.04, "shares": 430000}, {"ticker": "6442", "name": "光聖", "pct": 0.93, "shares": 830000}, {"ticker": "5347", "name": "世界", "pct": 0.88, "shares": 9911000}, {"ticker": "6147", "name": "頎邦", "pct": 0.83, "shares": 5600000}, {"ticker": "6515", "name": "穎崴", "pct": 0.76, "shares": 165000}, {"ticker": "3529", "name": "力旺", "pct": 0.73, "shares": 390000}, {"ticker": "8996", "name": "高力", "pct": 0.72, "shares": 1169000}, {"ticker": "6488", "name": "環球晶", "pct": 0.67, "shares": 1497000}, {"ticker": "6805", "name": "富世達", "pct": 0.61, "shares": 570000}, {"ticker": "8358", "name": "金居", "pct": 0.56, "shares": 1710000}, {"ticker": "3189", "name": "景碩", "pct": 0.54, "shares": 1380000}, {"ticker": "8210", "name": "勤誠", "pct": 0.51, "shares": 680000}, {"ticker": "8046", "name": "南電", "pct": 0.5, "shares": 1080000}, {"ticker": "2317", "name": "鴻海", "pct": 0.5, "shares": 3200000}, {"ticker": "8299", "name": "群聯", "pct": 0.47, "shares": 350000}, {"ticker": "3583", "name": "辛耘", "pct": 0.43, "shares": 900000}, {"ticker": "5274", "name": "信驊", "pct": 0.43, "shares": 45000}, {"ticker": "4979", "name": "華星光", "pct": 0.39, "shares": 1200000}, {"ticker": "4966", "name": "譜瑞-KY", "pct": 0.36, "shares": 900000}, {"ticker": "3044", "name": "健鼎", "pct": 0.27, "shares": 1000000}, {"ticker": "1303", "name": "南亞", "pct": 0.25, "shares": 4300000}, {"ticker": "3105", "name": "穩懋", "pct": 0.25, "shares": 957000}, {"ticker": "6196", "name": "帆宣", "pct": 0.24, "shares": 870000}, {"ticker": "2049", "name": "上銀", "pct": 0.19, "shares": 1010000}, {"ticker": "2455", "name": "全新", "pct": 0.1, "shares": 450000}, {"ticker": "2481", "name": "強茂", "pct": 0.1, "shares": 1100000}, {"ticker": "1560", "name": "中砂", "pct": 0.03, "shares": 78000}]}, {"etfid": "00982A", "fund_name": "主動統一全球創新", "data_date": "2026-06-05", "prev_date": null, "holdings_count": 55, "is_baseline": true, "diff": {"added": [], "removed": [], "buys": [], "sells": []}, "holdings": [{"ticker": "2330", "name": "台積電", "pct": 8.81, "shares": 1967000}, {"ticker": "5536", "name": "聖暉*", "pct": 8.04, "shares": 3754000}, {"ticker": "2454", "name": "聯發科", "pct": 7.06, "shares": 867000}, {"ticker": "6139", "name": "亞翔", "pct": 4.5, "shares": 2940000}, {"ticker": "2360", "name": "致茂", "pct": 4.0, "shares": 823000}, {"ticker": "3105", "name": "穩懋", "pct": 3.8, "shares": 4143000}, {"ticker": "2345", "name": "智邦", "pct": 3.79, "shares": 804000}, {"ticker": "3491", "name": "昇達科", "pct": 3.55, "shares": 967000}, {"ticker": "6223", "name": "旺矽", "pct": 3.35, "shares": 307000}, {"ticker": "6669", "name": "緯穎", "pct": 3.17, "shares": 296000}, {"ticker": "2383", "name": "台光電", "pct": 3.05, "shares": 330000}, {"ticker": "6147", "name": "頎邦", "pct": 3.03, "shares": 5916000}, {"ticker": "4958", "name": "臻鼎-KY", "pct": 3.01, "shares": 3147000}, {"ticker": "2303", "name": "聯電", "pct": 2.24, "shares": 9007000}, {"ticker": "6285", "name": "啟碁", "pct": 2.23, "shares": 4029000}, {"ticker": "3017", "name": "奇鋐", "pct": 2.0, "shares": 407000}, {"ticker": "6257", "name": "矽格", "pct": 1.98, "shares": 4687000}, {"ticker": "3264", "name": "欣銓", "pct": 1.95, "shares": 4508000}, {"ticker": "2059", "name": "川湖", "pct": 1.95, "shares": 183000}, {"ticker": "2472", "name": "立隆電", "pct": 1.92, "shares": 2790000}, {"ticker": "3583", "name": "辛耘", "pct": 1.84, "shares": 1121000}, {"ticker": "6488", "name": "環球晶", "pct": 1.76, "shares": 1146000}, {"ticker": "2467", "name": "志聖", "pct": 1.61, "shares": 1461000}, {"ticker": "2377", "name": "微星", "pct": 1.52, "shares": 5688000}, {"ticker": "1785", "name": "光洋科", "pct": 1.43, "shares": 5527000}, {"ticker": "3008", "name": "大立光", "pct": 1.4, "shares": 201000}, {"ticker": "6274", "name": "台燿", "pct": 1.34, "shares": 440000}, {"ticker": "7769", "name": "鴻勁", "pct": 1.28, "shares": 93000}, {"ticker": "8016", "name": "矽創", "pct": 1.27, "shares": 2211000}, {"ticker": "3036", "name": "文曄", "pct": 1.23, "shares": 2311000}, {"ticker": "2327", "name": "國巨*", "pct": 1.2, "shares": 823000}, {"ticker": "3702", "name": "大聯大", "pct": 1.18, "shares": 5420000}, {"ticker": "3711", "name": "日月光投控", "pct": 1.1, "shares": 1008000}, {"ticker": "2316", "name": "楠梓電", "pct": 1.07, "shares": 3374000}, {"ticker": "6531", "name": "愛普*", "pct": 1.06, "shares": 554000}, {"ticker": "2368", "name": "金像電", "pct": 0.98, "shares": 392000}, {"ticker": "6278", "name": "台表科", "pct": 0.86, "shares": 2201000}, {"ticker": "8996", "name": "高力", "pct": 0.8, "shares": 376000}, {"ticker": "2376", "name": "技嘉", "pct": 0.74, "shares": 1064000}, {"ticker": "2351", "name": "順德", "pct": 0.51, "shares": 1350000}, {"ticker": "6805", "name": "富世達", "pct": 0.45, "shares": 121000}, {"ticker": "2451", "name": "創見", "pct": 0.32, "shares": 519000}, {"ticker": "5274", "name": "信驊", "pct": 0.3, "shares": 9000}, {"ticker": "2885", "name": "元大金", "pct": 0.26, "shares": 2114420}, {"ticker": "3376", "name": "新日興", "pct": 0.16, "shares": 359000}, {"ticker": "6177", "name": "達麗", "pct": 0.02, "shares": 194350}, {"ticker": "3443", "name": "創意", "pct": 0.01, "shares": 1000}, {"ticker": "2886", "name": "兆豐金", "pct": 0.0, "shares": 1000}, {"ticker": "4441", "name": "振大環球", "pct": 0.0, "shares": 4000}, {"ticker": "3706", "name": "神達", "pct": 0.0, "shares": 1400}, {"ticker": "3665", "name": "貿聯-KY", "pct": 0.0, "shares": 136}, {"ticker": "2881", "name": "富邦金", "pct": 0.0, "shares": 250}, {"ticker": "1519", "name": "華城", "pct": 0.0, "shares": 600}, {"ticker": "8046", "name": "南電", "pct": 0.0, "shares": 1000}, {"ticker": "8358", "name": "金居", "pct": 0.0, "shares": 1000}]}]}</script>
+<script>
+const DATA = JSON.parse(document.getElementById('payload').textContent);
+const fmt = n => (n==null?'':Number(n).toLocaleString());
+const delta = n => (n>0?'+':'') + Number(n).toLocaleString();
+
+document.getElementById('genAt').textContent = '更新時間：' + DATA.generated_at;
+
+function rowsBuySell(list, kind){
+  if(!list.length) return '<div class="empty">— 無 —</div>';
+  const cls = kind==='buy'?'buy':'sell';
+  return `<table><thead><tr>
+      <th>個股</th><th class="num">變化股數</th><th class="num">→ 持有</th><th class="num">比例%</th>
+    </tr></thead><tbody>` +
+    list.map(c=>`<tr>
+      <td>${c.name}<span class="pill"> ${c.ticker}</span>${c.is_new?'<span class="tag new">新增</span>':''}${c.is_removed?'<span class="tag rm">剔除</span>':''}</td>
+      <td class="num ${cls}">${delta(c.delta)}</td>
+      <td class="num">${fmt(c.new_shares)}</td>
+      <td class="num">${c.pct.toFixed(2)}</td>
+    </tr>`).join('') + `</tbody></table>`;
+}
+
+function rowsAddRm(list, kind){
+  if(!list.length) return '<div class="empty">— 無 —</div>';
+  if(kind==='add'){
+    return `<table><thead><tr><th>個股</th><th class="num">持有股數</th><th class="num">比例%</th></tr></thead><tbody>`+
+      list.map(x=>`<tr><td>${x.name}<span class="pill"> ${x.ticker}</span></td>
+        <td class="num buy">${fmt(x.shares)}</td><td class="num">${x.pct.toFixed(2)}</td></tr>`).join('')+`</tbody></table>`;
+  }
+  return `<table><thead><tr><th>個股</th><th class="num">原持股</th></tr></thead><tbody>`+
+    list.map(x=>`<tr><td>${x.name}<span class="pill"> ${x.ticker}</span></td>
+      <td class="num sell">${fmt(x.old_shares)}</td></tr>`).join('')+`</tbody></table>`;
+}
+
+function fullTable(holdings){
+  return `<table class="full"><thead><tr><th>個股</th><th class="num">比例%</th><th class="num">持有股數</th></tr></thead><tbody>`+
+    holdings.map(h=>`<tr><td>${h.name}<span class="pill"> ${h.ticker}</span></td>
+      <td class="num">${h.pct.toFixed(2)}</td><td class="num">${fmt(h.shares)}</td></tr>`).join('')+
+    `</tbody></table>`;
+}
+
+function renderEtf(e){
+  const d = e.diff;
+  const baseline = e.is_baseline
+    ? `<div class="baseline">⚠️ 這是第一次建立基準（目前只有一份資料日期 ${e.data_date}）。等下一次資料日期更新後，就會自動顯示新增 / 剔除 / 買賣前五。</div>`
+    : '';
+  const cmp = e.is_baseline ? '' : `（對比 ${e.prev_date} → ${e.data_date}）`;
+  return `<div class="card">
+    <h2>${e.fund_name} <span class="pill">${e.etfid}</span></h2>
+    <div class="sub">資料日期 ${e.data_date}　持股 ${e.holdings_count} 檔　${cmp}</div>
+    ${baseline}
+    <div class="grid">
+      <div class="box"><h3>🟢➕ 新增標的 <span class="pill">${d.added.length}</span></h3>${rowsAddRm(d.added,'add')}</div>
+      <div class="box"><h3>⚪➖ 剔除持股 <span class="pill">${d.removed.length}</span></h3>${rowsAddRm(d.removed,'rm')}</div>
+      <div class="box"><h3>🔴 今日買入前五</h3>${rowsBuySell(d.buys,'buy')}</div>
+      <div class="box"><h3>🟢 今日賣出前五</h3>${rowsBuySell(d.sells,'sell')}</div>
+    </div>
+    <details><summary>展開完整持股（${e.holdings_count} 檔）</summary>${fullTable(e.holdings)}</details>
+  </div>`;
+}
+
+const tabs = document.getElementById('tabs');
+const pages = document.getElementById('pages');
+DATA.etfs.forEach((e,i)=>{
+  const t=document.createElement('div');
+  t.className='tab'+(i===0?' active':''); t.textContent=e.fund_name;
+  t.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active'); document.getElementById('pg'+i).classList.add('active');
+  };
+  tabs.appendChild(t);
+  const p=document.createElement('div');
+  p.className='page'+(i===0?' active':''); p.id='pg'+i;
+  p.innerHTML=renderEtf(e);
+  pages.appendChild(p);
+});
+if(!DATA.etfs.length){ pages.innerHTML='<div class="empty">沒有資料，請先執行 python3 etf_tracker.py</div>'; }
+</script>
+</body>
+</html>
