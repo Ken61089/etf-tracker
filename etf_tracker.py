@@ -26,11 +26,15 @@ from datetime import datetime, timezone, timedelta
 
 # ---- 設定 -------------------------------------------------------------
 
-# 要追蹤的 ETF（代號 -> 預設顯示名稱，實際名稱會從網頁自動更新）
+# 要追蹤的 ETF（代號 -> 名稱；名稱僅供參考，實際以網頁 title 自動解析為準）
 ETFS = {
     "00981A": "主動統一台股增長",
     "00403A": "主動統一升級50",
-    "00982A": "主動統一全球創新",
+    "00982A": "主動群益台灣強棒",
+    "00991A": "主動復華未來50",
+    "00985A": "主動野村台灣50",
+    "00980A": "主動野村臺灣優選",
+    "00992A": "主動群益科技創新",
 }
 
 BASE_URL = "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid={etfid}.TW"
@@ -71,10 +75,6 @@ ROW_RE = re.compile(
     re.S,
 )
 
-# 解析網頁上的基金中文名，例如 主動統一台股增長(00981A.TW)-全部持股
-NAME_RE = re.compile(r"<h[12][^>]*>\s*([^<(]+?)\s*\([0-9A-Za-z]+\.TW\)")
-
-
 def parse(html_text, etfid):
     """從網頁原始碼解析出資料日期與持股清單。"""
     m = DATE_RE.search(html_text)
@@ -82,8 +82,10 @@ def parse(html_text, etfid):
         raise RuntimeError(f"{etfid}: 找不到資料日期")
     data_date = m.group(1).replace("/", "-")
 
-    name_m = NAME_RE.search(html_text)
-    fund_name = name_m.group(1).strip() if name_m else ETFS.get(etfid, etfid)
+    # 基金中文名取自網頁 <title>，例如「主動復華未來50-00991A.TW-ETF持股狀況...」
+    name_m = re.search(r"<title>\s*(.*?)-" + re.escape(etfid) + r"\.TW", html_text, re.S)
+    fund_name = (name_m.group(1).strip() if name_m
+                 else (ETFS.get(etfid) or etfid))
 
     holdings = {}
     for ticker, raw_name, pct, shares in ROW_RE.findall(html_text):
