@@ -59,6 +59,11 @@ PAGE = r"""<!DOCTYPE html>
   .tag{display:inline-block;font-size:10px;padding:1px 6px;border-radius:5px;margin-left:6px}
   .tag.new{background:var(--buy-bg);color:var(--buy)}
   .tag.rm{background:var(--sell-bg);color:var(--sell)}
+  .chip{display:inline-block;font-size:11px;padding:2px 7px;border-radius:6px;
+    margin:2px 3px 2px 0;border:1px solid var(--line);white-space:nowrap}
+  .chip.buy{background:var(--buy-bg);color:#ffb4b4;border-color:#5a2a2c}
+  .chip.sell{background:var(--sell-bg);color:#a7e8bf;border-color:#1f5236}
+  td.wrap{white-space:normal}
   .empty{color:var(--sub);font-size:13px;padding:8px 2px}
   .baseline{background:#2a2410;border:1px solid #5a4d18;color:#e8d27a;
     padding:10px 14px;border-radius:10px;font-size:13px;margin-bottom:14px}
@@ -145,22 +150,62 @@ function renderEtf(e){
   </div>`;
 }
 
+// ===== 跨 ETF 共同動作 =====
+const shortName = n => n.replace(/^主動/,'');
+
+function consTable(list, kind){
+  const th = DATA.consensus.threshold;
+  if(!list.length) return `<div class="empty">— 今日沒有 ${th} 家以上同步${kind==='buy'?'買進/新增':'賣出/剔除'} —</div>`;
+  const cls = kind==='buy'?'buy':'sell';
+  return `<table><thead><tr>
+      <th>個股</th><th class="num">家數</th><th>哪幾檔 ETF（變化股數）</th>
+    </tr></thead><tbody>` +
+    list.map(x=>`<tr>
+      <td>${x.name}<span class="pill"> ${x.ticker}</span></td>
+      <td class="num ${cls}" style="font-weight:600">${x.count} 家${x.flag_count?`<br><span class="pill">${kind==='buy'?'🆕 新進':'✖ 剔除'} ${x.flag_count}</span>`:''}</td>
+      <td class="wrap">${x.etfs.map(e=>`<span class="chip ${cls}">${shortName(e.fund_name)} ${delta(e.delta)}${e.is_new?' 🆕':''}${e.is_removed?' ✖':''}</span>`).join('')}</td>
+    </tr>`).join('') + `</tbody></table>`;
+}
+
+function renderConsensus(c){
+  if(!c.has_data){
+    return `<div class="card"><h2>🤝 跨 ETF 共同動作</h2>
+      <div class="baseline">⚠️ 目前各檔多為首次建立基準，還沒有可比對的變化。等資料日期更新、且有至少一檔產生變化後，這裡會列出「多檔 ETF 在同一天對同一檔股票做出相同動作」的個股。</div></div>`;
+  }
+  const none = (!c.buy.length && !c.sell.length)
+    ? `<div class="baseline">今日沒有 ${c.threshold} 家以上 ETF 對同一檔股票做出相同方向的動作。</div>` : '';
+  return `<div class="card">
+    <h2>🤝 跨 ETF 共同動作 <span class="pill">${c.threshold} 家以上同動作</span></h2>
+    <div class="sub">同一天有多檔 ETF 對同一檔股票做出相同方向（買進 / 賣出）的動作，視為投信共識訊號。家數越多訊號越強。</div>
+    ${none}
+    <div class="grid">
+      <div class="box"><h3>🔴 多檔同步買進 / 新增 <span class="pill">${c.buy.length}</span></h3>${consTable(c.buy,'buy')}</div>
+      <div class="box"><h3>🟢 多檔同步賣出 / 剔除 <span class="pill">${c.sell.length}</span></h3>${consTable(c.sell,'sell')}</div>
+    </div>
+  </div>`;
+}
+
+// ===== 分頁建立 =====
 const tabs = document.getElementById('tabs');
 const pages = document.getElementById('pages');
-DATA.etfs.forEach((e,i)=>{
+
+function addTab(label, contentHtml, active){
+  const idx = document.querySelectorAll('.tab').length;
   const t=document.createElement('div');
-  t.className='tab'+(i===0?' active':''); t.textContent=e.fund_name;
+  t.className='tab'+(active?' active':''); t.innerHTML=label;
+  const p=document.createElement('div');
+  p.className='page'+(active?' active':''); p.id='pg'+idx;
+  p.innerHTML=contentHtml;
   t.onclick=()=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
     document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
-    t.classList.add('active'); document.getElementById('pg'+i).classList.add('active');
+    t.classList.add('active'); p.classList.add('active');
   };
-  tabs.appendChild(t);
-  const p=document.createElement('div');
-  p.className='page'+(i===0?' active':''); p.id='pg'+i;
-  p.innerHTML=renderEtf(e);
-  pages.appendChild(p);
-});
+  tabs.appendChild(t); pages.appendChild(p);
+}
+
+if(DATA.consensus) addTab('🤝 共同動作', renderConsensus(DATA.consensus), true);
+DATA.etfs.forEach((e,i)=> addTab(e.fund_name, renderEtf(e), !DATA.consensus && i===0));
 if(!DATA.etfs.length){ pages.innerHTML='<div class="empty">沒有資料，請先執行 python3 etf_tracker.py</div>'; }
 </script>
 </body>

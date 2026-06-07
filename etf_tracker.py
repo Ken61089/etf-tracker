@@ -22,6 +22,7 @@ import sys
 import json
 import html
 import subprocess
+from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
 # ---- 設定 -------------------------------------------------------------
@@ -176,7 +177,54 @@ def diff_snapshots(prev, curr, top_n=5):
 
     added.sort(key=lambda x: x["shares"], reverse=True)
     removed.sort(key=lambda x: x["old_shares"], reverse=True)
-    return {"added": added, "removed": removed, "buys": buys, "sells": sells}
+    # changes = 全部有變動的個股（不只前五），供跨 ETF 共同動作分析使用
+    return {"added": added, "removed": removed, "buys": buys, "sells": sells,
+            "changes": changes}
+
+
+def build_consensus(results, threshold=2):
+    """跨 ETF 共同動作：找出同一天有 >=threshold 檔 ETF 做相同方向動作的個股。"""
+    buy_map = defaultdict(list)   # ticker -> [{etfid, fund_name, delta, is_new}]
+    sell_map = defaultdict(list)
+    names = {}
+    has_data = False
+
+    for r in results:
+        if r["is_baseline"]:
+            continue
+        has_data = True
+        for c in r["diff"]["changes"]:
+            names[c["ticker"]] = c["name"]
+            entry = {
+                "etfid": r["etfid"],
+                "fund_name": r["fund_name"],
+                "delta": c["delta"],
+                "is_new": c.get("is_new", False),
+                "is_removed": c.get("is_removed", False),
+            }
+            (buy_map if c["delta"] > 0 else sell_map)[c["ticker"]].append(entry)
+
+    def collect(m, flag_key):
+        out = []
+        for ticker, lst in m.items():
+            if len(lst) >= threshold:
+                out.append({
+                    "ticker": ticker,
+                    "name": names[ticker],
+                    "count": len(lst),
+                    "flag_count": sum(1 for e in lst if e[flag_key]),
+                    "etfs": sorted(lst, key=lambda e: abs(e["delta"]), reverse=True),
+                })
+        # 先按「同動作家數」多排序，再按「新進/剔除家數」排序
+        out.sort(key=lambda x: (x["count"], x["flag_count"]), reverse=True)
+        return out
+
+    return {
+        "has_data": has_data,
+        "threshold": threshold,
+        "buy": collect(buy_map, "is_new"),
+        "sell": collect(sell_map, "is_removed"),
+    }
 
 
 # ---- 主流程 -----------------------------------------------------------
@@ -193,7 +241,7 @@ def update_one(etfid, fetch=True):
     prev = load_snapshot(etfid, dates[-2]) if len(dates) >= 2 else None
     # 首次建立基準時沒有可比對的前一份，diff 留空（避免把全部持股誤標為「新增」）
     diff = (diff_snapshots(prev, curr) if prev else
-            {"added": [], "removed": [], "buys": [], "sells": []})
+            {"added": [], "removed": [], "buys": [], "sells": [], "changes": []})
     result = {
         "etfid": etfid,
         "fund_name": curr["fund_name"],
@@ -223,7 +271,11 @@ def main():
             print(f"  ⚠️  {etfid} 失敗：{e}", file=sys.stderr)
 
     generated_at = datetime.now(TPE).strftime("%Y-%m-%d %H:%M")
-    payload = {"generated_at": generated_at, "etfs": results}
+    consensus = build_consensus(results)
+    # 共同動作算完後，把每檔完整 changes 從 payload 移除，保持檔案精簡
+    for r in results:
+        r["diff"].pop("changes", None)
+    payload = {"generated_at": generated_at, "consensus": consensus, "etfs": results}
 
     # 存一份 JSON 方便除錯 / 之後做 API
     with open(os.path.join(SITE_DIR, "data.json"), "w", encoding="utf-8") as f:

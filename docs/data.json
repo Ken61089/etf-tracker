@@ -1,5 +1,11 @@
 {
-  "generated_at": "2026-06-08 01:10",
+  "generated_at": "2026-06-08 01:19",
+  "consensus": {
+    "has_data": false,
+    "threshold": 2,
+    "buy": [],
+    "sell": []
+  },
   "etfs": [
     {
       "etfid": "00981A",
