@@ -13,7 +13,7 @@ on:
     - cron: '0 15 * * *'   # 台灣 23:00
     - cron: '0 16 * * *'   # 台灣 00:00（隔日）
     - cron: '0 17 * * *'   # 台灣 01:00（隔日）
-  workflow_dispatch:        # 允許在 GitHub 網頁手動按按鈕觸發
+  workflow_dispatch:        # 需要更快時可在 Actions 頁手動按 Run workflow
 
 permissions:
   contents: write           # 需要把更新後的資料寫回 repo
