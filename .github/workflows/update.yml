@@ -2,14 +2,17 @@ name: 每日更新 ETF 持股
 
 on:
   schedule:
-    # GitHub 用 UTC 時間；台灣 18:00 = UTC 10:00
-    - cron: '0 10 * * *'
+    # GitHub 排程是 UTC，且免費版常有數十分鐘~數小時延遲、偶爾漏跑。
+    # 設多個時間點增加「每天至少成功更新一次」的機會（任務具冪等性，重複跑無害）。
+    - cron: '0 10 * * *'   # 台灣 18:00
+    - cron: '0 13 * * *'   # 台灣 21:00
+    - cron: '0 16 * * *'   # 台灣 00:00（隔日）
   workflow_dispatch:        # 允許在 GitHub 網頁手動按按鈕觸發
 
 permissions:
   contents: write           # 需要把更新後的資料寫回 repo
 
-concurrency:                # 避免重疊執行
+concurrency:                # 避免多個執行同時跑造成衝突
   group: etf-update
   cancel-in-progress: false
 
@@ -28,14 +31,26 @@ jobs:
       - name: 抓取最新持股並產生儀表板
         run: python3 etf_tracker.py
 
-      - name: 將更新結果寫回 repo
+      - name: 將更新結果寫回 repo（持股有變化才提交，push 失敗自動重試）
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data docs
-          if git diff --staged --quiet; then
-            echo "沒有變化，跳過 commit"
-          else
-            git commit -m "每日更新 ETF 持股 ($(TZ=Asia/Taipei date +'%Y-%m-%d %H:%M'))"
-            git push
+          # 只有當持股快照 data/ 真的有變化才提交；避免每次跑只改時間戳就產生 commit
+          if git diff --staged --quiet -- data; then
+            echo "持股資料無變化（MoneyDJ 資料日期未更新），跳過。"
+            exit 0
           fi
+          git commit -m "每日更新 ETF 持股 ($(TZ=Asia/Taipei date +'%Y-%m-%d %H:%M'))"
+          # push 可能因其他執行剛好寫入而被拒；rebase 後重試最多 5 次
+          for i in 1 2 3 4 5; do
+            if git push origin main; then
+              echo "已推送 ✅"
+              exit 0
+            fi
+            echo "push 被拒，與遠端同步後重試（第 $i 次）..."
+            git pull --rebase -X theirs origin main || true
+            sleep 5
+          done
+          echo "重試多次後仍推送失敗 ❌"
+          exit 1
