@@ -136,10 +136,13 @@ function renderEtf(e){
     ? `<div class="baseline">⚠️ 這是第一次建立基準（目前只有一份資料日期 ${e.data_date}）。等下一次資料日期更新後，就會自動顯示新增 / 剔除 / 買賣前五。</div>`
     : '';
   const cmp = e.is_baseline ? '' : `（對比 ${e.prev_date} → ${e.data_date}）`;
+  const stale = (e.is_current === false)
+    ? `<div class="baseline">⏳ 此檔來源（MoneyDJ）資料日期為 ${e.data_date}，尚未更新到最新交易日。系統每小時會再試，更新到當日後此處會自動刷新。</div>`
+    : '';
   return `<div class="card">
     <h2>${e.fund_name} <span class="pill">${e.etfid}</span></h2>
     <div class="sub">資料日期 ${e.data_date}　持股 ${e.holdings_count} 檔　${cmp}</div>
-    ${baseline}
+    ${stale}${baseline}
     <div class="grid">
       <div class="box"><h3>🔴➕ 新增標的 <span class="pill">${d.added.length}</span></h3>${rowsAddRm(d.added,'add')}</div>
       <div class="box"><h3>🟢➖ 剔除持股 <span class="pill">${d.removed.length}</span></h3>${rowsAddRm(d.removed,'rm')}</div>

@@ -245,11 +245,24 @@ def build_consensus(results, threshold=2):
 
 # ---- 主流程 -----------------------------------------------------------
 
+def today_tpe():
+    return datetime.now(TPE).strftime("%Y-%m-%d")
+
+
 def update_one(etfid, fetch=True):
-    """抓取（或讀取最新快照）並算出比對結果。"""
+    """抓取（或讀取最新快照）並算出比對結果。
+
+    完整存檔策略：每次抓到就存（依資料日期歸檔，同日期覆寫）。這樣只要來源出現
+    過的資料日期一律保留下來，不會因為「落後」而漏存，方便日後人工比對。
+    來源是否落後於今天只做提示，不影響存檔。
+    """
     if fetch:
         snap = parse(fetch_html(etfid), etfid)
+        existed = snap["data_date"] in list_snapshot_dates(etfid)
         save_snapshot(snap)
+        tag = "（已存在，更新內容）" if existed else "（新資料日期）"
+        lag = "" if snap["data_date"] >= today_tpe() else "  ⏳ 落後於今天"
+        print(f"  ✅ {etfid} 存檔 {snap['data_date']} {tag}{lag}", flush=True)
     dates = list_snapshot_dates(etfid)
     if not dates:
         raise RuntimeError(f"{etfid}: 沒有任何快照可用")
@@ -265,6 +278,7 @@ def update_one(etfid, fetch=True):
         "prev_date": prev["data_date"] if prev else None,
         "holdings_count": len(curr["holdings"]),
         "is_baseline": prev is None,
+        "is_current": curr["data_date"] >= today_tpe(),
         "diff": diff,
         "holdings": [
             {"ticker": t, **info}
@@ -275,7 +289,38 @@ def update_one(etfid, fetch=True):
     return result
 
 
+def export_archive():
+    """把所有已存快照輸出成每檔一份 CSV（長格式），方便下載 / Excel 人工比對。
+    輸出到 docs/archive/<代號>.csv，可從網站直接下載。"""
+    import csv
+    out_dir = os.path.join(SITE_DIR, "archive")
+    os.makedirs(out_dir, exist_ok=True)
+    index = []
+    for etfid in ETFS:
+        dates = list_snapshot_dates(etfid)
+        if not dates:
+            continue
+        rows = []
+        for d in dates:
+            snap = load_snapshot(etfid, d)
+            for t, info in sorted(snap["holdings"].items(),
+                                  key=lambda kv: kv[1]["pct"], reverse=True):
+                rows.append([d, t, info["name"], info["pct"], info["shares"]])
+        path = os.path.join(out_dir, f"{etfid}.csv")
+        with open(path, "w", encoding="utf-8-sig", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["資料日期", "代號", "名稱", "投資比例(%)", "持有股數"])
+            w.writerows(rows)
+        index.append((etfid, len(dates), dates[0], dates[-1]))
+    print("   📦 已輸出 CSV 封存：")
+    for etfid, n, first, last in index:
+        print(f"      archive/{etfid}.csv（{n} 個資料日期 {first}~{last}）")
+
+
 def main():
+    if "--export" in sys.argv:
+        export_archive()
+        return
     fetch = "--build" not in sys.argv
     os.makedirs(SITE_DIR, exist_ok=True)
     results = []
@@ -302,6 +347,9 @@ def main():
     html_out = render(payload)
     with open(os.path.join(SITE_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(html_out)
+
+    # 每次都輸出完整 CSV 封存（可從網站下載、供人工比對）
+    export_archive()
 
     print(f"\n✅ 完成！產生於 {generated_at}")
     print(f"   儀表板：{os.path.join(SITE_DIR, 'index.html')}")
