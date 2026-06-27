@@ -56,7 +56,7 @@ def fetch_html(etfid):
                   "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
             url,
         ],
-        capture_output=True, text=True,
+        capture_output=True, text=True, encoding="utf-8",
     )
     if result.returncode != 0 or not result.stdout:
         raise RuntimeError(f"抓取 {etfid} 失敗 (curl exit {result.returncode})")

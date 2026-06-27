@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26 21:13",
+  "generated_at": "2026-06-28 01:16",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -132,7 +132,7 @@
       "prev_date": "2026-06-25",
       "holdings_count": 38,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [],
         "removed": [
@@ -430,7 +430,7 @@
       "prev_date": "2026-06-25",
       "holdings_count": 46,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [],
         "removed": [],
@@ -770,7 +770,7 @@
       "prev_date": "2026-06-25",
       "holdings_count": 55,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [],
         "removed": [],
@@ -1137,7 +1137,7 @@
       "prev_date": "2026-06-25",
       "holdings_count": 29,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [],
         "removed": [
@@ -1547,7 +1547,7 @@
       "prev_date": "2026-06-25",
       "holdings_count": 38,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [
           {
