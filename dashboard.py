@@ -71,6 +71,11 @@ PAGE = r"""<!DOCTYPE html>
   summary{cursor:pointer;color:var(--accent);font-size:13px;padding:6px 0}
   .full td:first-child{white-space:normal}
   .page{display:none} .page.active{display:block}
+  .unit-sw{display:inline-flex;margin-left:10px;border:1px solid var(--line);
+    border-radius:8px;overflow:hidden;vertical-align:middle}
+  .unit-sw button{background:transparent;color:var(--sub);border:0;cursor:pointer;
+    font-size:12px;padding:4px 12px;font-family:inherit}
+  .unit-sw button.on{background:var(--accent);color:#0b0d10;font-weight:600}
   footer{color:var(--sub);font-size:12px;text-align:center;margin-top:30px}
   a{color:var(--accent)}
 </style>
@@ -80,6 +85,9 @@ PAGE = r"""<!DOCTYPE html>
   <header>
     <h1>📊 主動型 ETF 每日持股追蹤</h1>
     <span class="meta" id="genAt"></span>
+    <span class="unit-sw" id="unitSw">
+      <button data-u="shares">股</button><button data-u="lots">張</button>
+    </span>
   </header>
   <div class="tabs" id="tabs"></div>
   <div id="pages"></div>
@@ -92,8 +100,17 @@ PAGE = r"""<!DOCTYPE html>
 <script id="payload" type="application/json">/*__DATA__*/</script>
 <script>
 const DATA = JSON.parse(document.getElementById('payload').textContent);
-const fmt = n => (n==null?'':Number(n).toLocaleString());
-const delta = n => (n>0?'+':'') + Number(n).toLocaleString();
+// 單位切換:股(原始資料) / 張(=股/1000,零股會有小數)。選擇記在 localStorage。
+let UNIT = (localStorage.getItem('etfUnit') === 'lots') ? 'lots' : 'shares';
+const unitName = () => (UNIT === 'lots' ? '張' : '股');
+function numStr(n){
+  if(n==null) return '';
+  const v = Number(n);
+  if(UNIT === 'lots') return (v/1000).toLocaleString(undefined,{maximumFractionDigits:2});
+  return v.toLocaleString();
+}
+const fmt = n => (n==null?'':numStr(n));
+const delta = n => (n>0?'+':'') + numStr(n);
 
 document.getElementById('genAt').textContent = '更新時間：' + DATA.generated_at;
 
@@ -101,7 +118,7 @@ function rowsBuySell(list, kind){
   if(!list.length) return '<div class="empty">— 無 —</div>';
   const cls = kind==='buy'?'buy':'sell';
   return `<table><thead><tr>
-      <th>個股</th><th class="num">變化股數</th><th class="num">→ 持有</th><th class="num">比例%</th>
+      <th>個股</th><th class="num">變化${unitName()}數</th><th class="num">→ 持有</th><th class="num">比例%</th>
     </tr></thead><tbody>` +
     list.map(c=>`<tr>
       <td>${c.name}<span class="pill"> ${c.ticker}</span>${c.is_new?'<span class="tag new">新增</span>':''}${c.is_removed?'<span class="tag rm">剔除</span>':''}</td>
@@ -114,7 +131,7 @@ function rowsBuySell(list, kind){
 function rowsAddRm(list, kind){
   if(!list.length) return '<div class="empty">— 無 —</div>';
   if(kind==='add'){
-    return `<table><thead><tr><th>個股</th><th class="num">持有股數</th><th class="num">比例%</th></tr></thead><tbody>`+
+    return `<table><thead><tr><th>個股</th><th class="num">持有${unitName()}數</th><th class="num">比例%</th></tr></thead><tbody>`+
       list.map(x=>`<tr><td>${x.name}<span class="pill"> ${x.ticker}</span></td>
         <td class="num buy">${fmt(x.shares)}</td><td class="num">${x.pct.toFixed(2)}</td></tr>`).join('')+`</tbody></table>`;
   }
@@ -124,7 +141,7 @@ function rowsAddRm(list, kind){
 }
 
 function fullTable(holdings){
-  return `<table class="full"><thead><tr><th>個股</th><th class="num">比例%</th><th class="num">持有股數</th></tr></thead><tbody>`+
+  return `<table class="full"><thead><tr><th>個股</th><th class="num">比例%</th><th class="num">持有${unitName()}數</th></tr></thead><tbody>`+
     holdings.map(h=>`<tr><td>${h.name}<span class="pill"> ${h.ticker}</span></td>
       <td class="num">${h.pct.toFixed(2)}</td><td class="num">${fmt(h.shares)}</td></tr>`).join('')+
     `</tbody></table>`;
@@ -161,7 +178,7 @@ function consTable(list, kind){
   if(!list.length) return `<div class="empty">— 今日沒有 ${th} 家以上同步${kind==='buy'?'買進/新增':'賣出/剔除'} —</div>`;
   const cls = kind==='buy'?'buy':'sell';
   return `<table><thead><tr>
-      <th>個股</th><th class="num">家數</th><th>哪幾檔 ETF（變化股數）</th>
+      <th>個股</th><th class="num">家數</th><th>哪幾檔 ETF（變化${unitName()}數）</th>
     </tr></thead><tbody>` +
     list.map(x=>`<tr>
       <td>${x.name}<span class="pill"> ${x.ticker}</span></td>
@@ -205,6 +222,8 @@ function renderConsensus(c){
 const tabs = document.getElementById('tabs');
 const pages = document.getElementById('pages');
 
+let ACTIVE = 0;  // 目前分頁,切換單位重繪後要留在原地
+
 function addTab(label, contentHtml, active){
   const idx = document.querySelectorAll('.tab').length;
   const t=document.createElement('div');
@@ -216,13 +235,45 @@ function addTab(label, contentHtml, active){
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
     document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
     t.classList.add('active'); p.classList.add('active');
+    ACTIVE = idx;
   };
   tabs.appendChild(t); pages.appendChild(p);
 }
 
-if(DATA.consensus) addTab('🤝 共同動作', renderConsensus(DATA.consensus), true);
-DATA.etfs.forEach((e,i)=> addTab(e.fund_name, renderEtf(e), !DATA.consensus && i===0));
-if(!DATA.etfs.length){ pages.innerHTML='<div class="empty">沒有資料，請先執行 python3 etf_tracker.py</div>'; }
+// 內容在建立當下就套用目前單位,故切換單位 = 整個重建
+function buildAll(){
+  tabs.innerHTML=''; pages.innerHTML='';
+  if(!DATA.etfs.length && !DATA.consensus){
+    pages.innerHTML='<div class="empty">沒有資料，請先執行 python3 etf_tracker.py</div>';
+    return;
+  }
+  if(DATA.consensus) addTab('🤝 共同動作', renderConsensus(DATA.consensus), false);
+  DATA.etfs.forEach(e=> addTab(e.fund_name, renderEtf(e), false));
+  const all = document.querySelectorAll('.tab');
+  if(all.length){
+    if(ACTIVE >= all.length) ACTIVE = 0;
+    all[ACTIVE].click();
+  }
+}
+
+// 單位切換鈕
+const unitSw = document.getElementById('unitSw');
+function paintUnitSw(){
+  unitSw.querySelectorAll('button').forEach(b=>
+    b.classList.toggle('on', b.dataset.u === UNIT));
+}
+unitSw.querySelectorAll('button').forEach(b=>{
+  b.onclick = ()=>{
+    if(UNIT === b.dataset.u) return;
+    UNIT = b.dataset.u;
+    localStorage.setItem('etfUnit', UNIT);
+    paintUnitSw();
+    buildAll();
+  };
+});
+
+paintUnitSw();
+buildAll();
 </script>
 </body>
 </html>"""
