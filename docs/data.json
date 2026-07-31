@@ -1,22 +1,44 @@
 {
-  "generated_at": "2026-07-31 19:51",
+  "generated_at": "2026-07-31 20:57",
   "consensus": {
     "has_data": true,
     "threshold": 2,
     "buy": [
       {
-        "ticker": "2360",
-        "name": "致茂",
+        "ticker": "2308",
+        "name": "台達電",
         "count": 3,
-        "flag_count": 2,
+        "flag_count": 1,
         "etfs": [
           {
-            "etfid": "00991A",
-            "fund_name": "主動復華未來50",
-            "delta": 660000,
+            "etfid": "00992A",
+            "fund_name": "主動群益科技創新",
+            "delta": 300000,
             "is_new": true,
             "is_removed": false
           },
+          {
+            "etfid": "00981A",
+            "fund_name": "主動統一台股增長",
+            "delta": 290000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
+            "delta": 200000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ]
+      },
+      {
+        "ticker": "2360",
+        "name": "致茂",
+        "count": 3,
+        "flag_count": 1,
+        "etfs": [
           {
             "etfid": "00981A",
             "fund_name": "主動統一台股增長",
@@ -30,13 +52,20 @@
             "delta": 57000,
             "is_new": false,
             "is_removed": false
+          },
+          {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
+            "delta": 40000,
+            "is_new": false,
+            "is_removed": false
           }
         ]
       },
       {
         "ticker": "6669",
         "name": "緯穎",
-        "count": 2,
+        "count": 3,
         "flag_count": 0,
         "etfs": [
           {
@@ -47,9 +76,67 @@
             "is_removed": false
           },
           {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
+            "delta": 70000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
             "etfid": "00982A",
             "fund_name": "主動群益台灣強棒",
             "delta": 3000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ]
+      },
+      {
+        "ticker": "3665",
+        "name": "貿聯-KY",
+        "count": 3,
+        "flag_count": 0,
+        "etfs": [
+          {
+            "etfid": "00981A",
+            "fund_name": "主動統一台股增長",
+            "delta": 232000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
+            "delta": 50000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
+            "etfid": "00992A",
+            "fund_name": "主動群益科技創新",
+            "delta": 36000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ]
+      },
+      {
+        "ticker": "3653",
+        "name": "健策",
+        "count": 2,
+        "flag_count": 1,
+        "etfs": [
+          {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
+            "delta": 100000,
+            "is_new": true,
+            "is_removed": false
+          },
+          {
+            "etfid": "00981A",
+            "fund_name": "主動統一台股增長",
+            "delta": 78000,
             "is_new": false,
             "is_removed": false
           }
@@ -71,42 +158,70 @@
           {
             "etfid": "00991A",
             "fund_name": "主動復華未來50",
-            "delta": 40000,
+            "delta": 100000,
             "is_new": false,
             "is_removed": false
           }
         ]
-      }
-    ],
-    "sell": [
+      },
       {
-        "ticker": "6515",
-        "name": "穎崴",
+        "ticker": "2330",
+        "name": "台積電",
         "count": 2,
-        "flag_count": 1,
+        "flag_count": 0,
         "etfs": [
           {
             "etfid": "00991A",
             "fund_name": "主動復華未來50",
-            "delta": -140000,
+            "delta": 1400000,
             "is_new": false,
-            "is_removed": true
+            "is_removed": false
           },
           {
             "etfid": "00403A",
             "fund_name": "主動統一升級50",
-            "delta": -30000,
+            "delta": 680000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ]
+      },
+      {
+        "ticker": "3008",
+        "name": "大立光",
+        "count": 2,
+        "flag_count": 0,
+        "etfs": [
+          {
+            "etfid": "00992A",
+            "fund_name": "主動群益科技創新",
+            "delta": 100000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": 3000,
             "is_new": false,
             "is_removed": false
           }
         ]
       }
     ],
+    "sell": [],
     "diverge": [
       {
         "ticker": "2330",
         "name": "台積電",
         "buyers": [
+          {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
+            "delta": 1400000,
+            "is_new": false,
+            "is_removed": false
+          },
           {
             "etfid": "00403A",
             "fund_name": "主動統一升級50",
@@ -124,7 +239,7 @@
             "is_removed": false
           }
         ],
-        "buy_count": 1,
+        "buy_count": 2,
         "sell_count": 1
       },
       {
@@ -1295,289 +1410,322 @@
     {
       "etfid": "00991A",
       "fund_name": "主動復華未來50",
-      "data_date": "2026-07-30",
-      "prev_date": "2026-07-29",
-      "holdings_count": 23,
+      "data_date": "2026-07-31",
+      "prev_date": "2026-07-30",
+      "holdings_count": 24,
       "is_baseline": false,
-      "is_current": false,
+      "is_current": true,
       "diff": {
         "added": [
           {
-            "ticker": "2360",
-            "name": "致茂",
-            "shares": 660000,
-            "pct": 1.91
+            "ticker": "3653",
+            "name": "健策",
+            "shares": 100000,
+            "pct": 0.4
           }
         ],
-        "removed": [
-          {
-            "ticker": "6515",
-            "name": "穎崴",
-            "old_shares": 140000,
-            "pct": 1.16
-          }
-        ],
+        "removed": [],
         "buys": [
           {
-            "ticker": "2360",
-            "name": "致茂",
-            "delta": 660000,
+            "ticker": "2330",
+            "name": "台積電",
+            "delta": 1400000,
+            "old_shares": 4000000,
+            "new_shares": 5400000,
+            "pct": 15.14,
+            "is_new": false
+          },
+          {
+            "ticker": "2308",
+            "name": "台達電",
+            "delta": 200000,
+            "old_shares": 660000,
+            "new_shares": 860000,
+            "pct": 1.63,
+            "is_new": false
+          },
+          {
+            "ticker": "3017",
+            "name": "奇鋐",
+            "delta": 100000,
+            "old_shares": 900000,
+            "new_shares": 1000000,
+            "pct": 2.68,
+            "is_new": false
+          },
+          {
+            "ticker": "3653",
+            "name": "健策",
+            "delta": 100000,
             "old_shares": 0,
-            "new_shares": 660000,
-            "pct": 1.91,
+            "new_shares": 100000,
+            "pct": 0.4,
             "is_new": true
           },
           {
-            "ticker": "2408",
-            "name": "南亞科",
-            "delta": 600000,
-            "old_shares": 12400000,
-            "new_shares": 13000000,
-            "pct": 6.47,
-            "is_new": false
-          },
-          {
-            "ticker": "2345",
-            "name": "智邦",
-            "delta": 200000,
-            "old_shares": 1500000,
-            "new_shares": 1700000,
-            "pct": 4.99,
-            "is_new": false
-          },
-          {
-            "ticker": "3189",
-            "name": "景碩",
-            "delta": 200000,
-            "old_shares": 3000000,
-            "new_shares": 3200000,
-            "pct": 2.81,
-            "is_new": false
-          },
-          {
-            "ticker": "8299",
-            "name": "群聯",
-            "delta": 100000,
-            "old_shares": 1100000,
-            "new_shares": 1200000,
-            "pct": 2.72,
+            "ticker": "6669",
+            "name": "緯穎",
+            "delta": 70000,
+            "old_shares": 450000,
+            "new_shares": 520000,
+            "pct": 3.24,
             "is_new": false
           }
         ],
-        "sells": [
-          {
-            "ticker": "6515",
-            "name": "穎崴",
-            "delta": -140000,
-            "old_shares": 140000,
-            "new_shares": 0,
-            "pct": 0.0,
-            "is_removed": true
-          }
-        ]
+        "sells": []
       },
       "holdings": [
         {
           "ticker": "2330",
           "name": "台積電",
-          "pct": 13.37,
-          "shares": 4000000
+          "pct": 15.14,
+          "shares": 5400000
         },
         {
           "ticker": "2383",
           "name": "台光電",
-          "pct": 8.7,
+          "pct": 7.3,
           "shares": 1330000
         },
         {
           "ticker": "2408",
           "name": "南亞科",
-          "pct": 6.47,
+          "pct": 5.42,
           "shares": 13000000
         },
         {
           "ticker": "2454",
           "name": "聯發科",
-          "pct": 5.3,
+          "pct": 4.44,
           "shares": 1080000
         },
         {
           "ticker": "2327",
           "name": "國巨*",
-          "pct": 5.19,
+          "pct": 4.35,
           "shares": 7500000
         },
         {
           "ticker": "2345",
           "name": "智邦",
-          "pct": 4.99,
+          "pct": 4.18,
           "shares": 1700000
         },
         {
           "ticker": "6223",
           "name": "旺矽",
-          "pct": 4.95,
+          "pct": 4.15,
           "shares": 680000
         },
         {
           "ticker": "2059",
           "name": "川湖",
-          "pct": 4.87,
+          "pct": 4.08,
           "shares": 450000
         },
         {
           "ticker": "3037",
           "name": "欣興",
-          "pct": 4.61,
+          "pct": 3.87,
           "shares": 4250000
-        },
-        {
-          "ticker": "8046",
-          "name": "南電",
-          "pct": 3.81,
-          "shares": 3000000
         },
         {
           "ticker": "6669",
           "name": "緯穎",
-          "pct": 3.34,
-          "shares": 450000
+          "pct": 3.24,
+          "shares": 520000
+        },
+        {
+          "ticker": "8046",
+          "name": "南電",
+          "pct": 3.19,
+          "shares": 3000000
         },
         {
           "ticker": "6274",
           "name": "台燿",
-          "pct": 3.29,
+          "pct": 2.76,
           "shares": 2150000
         },
         {
           "ticker": "3711",
           "name": "日月光投控",
-          "pct": 3.22,
+          "pct": 2.7,
           "shares": 4200000
-        },
-        {
-          "ticker": "7769",
-          "name": "鴻勁",
-          "pct": 3.07,
-          "shares": 360000
         },
         {
           "ticker": "3017",
           "name": "奇鋐",
-          "pct": 2.88,
-          "shares": 900000
+          "pct": 2.68,
+          "shares": 1000000
+        },
+        {
+          "ticker": "7769",
+          "name": "鴻勁",
+          "pct": 2.57,
+          "shares": 360000
         },
         {
           "ticker": "3189",
           "name": "景碩",
-          "pct": 2.81,
+          "pct": 2.35,
           "shares": 3200000
         },
         {
           "ticker": "8299",
           "name": "群聯",
-          "pct": 2.72,
+          "pct": 2.28,
           "shares": 1200000
-        },
-        {
-          "ticker": "5274",
-          "name": "信驊",
-          "pct": 1.91,
-          "shares": 95500
         },
         {
           "ticker": "2360",
           "name": "致茂",
-          "pct": 1.91,
-          "shares": 660000
+          "pct": 1.7,
+          "shares": 700000
         },
         {
-          "ticker": "3026",
-          "name": "禾伸堂",
-          "pct": 1.75,
-          "shares": 2700000
-        },
-        {
-          "ticker": "3665",
-          "name": "貿聯-KY",
-          "pct": 1.71,
-          "shares": 590000
+          "ticker": "5274",
+          "name": "信驊",
+          "pct": 1.69,
+          "shares": 100500
         },
         {
           "ticker": "2308",
           "name": "台達電",
-          "pct": 1.53,
-          "shares": 660000
+          "pct": 1.63,
+          "shares": 860000
+        },
+        {
+          "ticker": "3665",
+          "name": "貿聯-KY",
+          "pct": 1.55,
+          "shares": 640000
+        },
+        {
+          "ticker": "3026",
+          "name": "禾伸堂",
+          "pct": 1.41,
+          "shares": 2700000
         },
         {
           "ticker": "2404",
           "name": "漢唐",
-          "pct": 1.22,
+          "pct": 1.02,
           "shares": 799000
+        },
+        {
+          "ticker": "3653",
+          "name": "健策",
+          "pct": 0.4,
+          "shares": 100000
         }
       ]
     },
     {
       "etfid": "00992A",
       "fund_name": "主動群益科技創新",
-      "data_date": "2026-07-30",
-      "prev_date": "2026-07-29",
-      "holdings_count": 36,
+      "data_date": "2026-07-31",
+      "prev_date": "2026-07-30",
+      "holdings_count": 37,
       "is_baseline": false,
-      "is_current": false,
+      "is_current": true,
       "diff": {
-        "added": [],
-        "removed": [
+        "added": [
           {
-            "ticker": "2303",
-            "name": "聯電",
-            "old_shares": 7000000,
-            "pct": 2.15
+            "ticker": "5347",
+            "name": "世界",
+            "shares": 629000,
+            "pct": 0.25
           },
           {
-            "ticker": "2327",
-            "name": "國巨*",
-            "old_shares": 1247000,
-            "pct": 1.89
+            "ticker": "2308",
+            "name": "台達電",
+            "shares": 300000,
+            "pct": 1.3
           }
         ],
-        "buys": [],
-        "sells": [
+        "removed": [
           {
-            "ticker": "2303",
-            "name": "聯電",
-            "delta": -7000000,
-            "old_shares": 7000000,
-            "new_shares": 0,
-            "pct": 0.0,
-            "is_removed": true
+            "ticker": "3491",
+            "name": "昇達科",
+            "old_shares": 1000,
+            "pct": 0.0
+          }
+        ],
+        "buys": [
+          {
+            "ticker": "3231",
+            "name": "緯創",
+            "delta": 2000000,
+            "old_shares": 5662000,
+            "new_shares": 7662000,
+            "pct": 3.56,
+            "is_new": false
           },
           {
-            "ticker": "2327",
-            "name": "國巨*",
-            "delta": -1247000,
-            "old_shares": 1247000,
-            "new_shares": 0,
-            "pct": 0.0,
-            "is_removed": true
+            "ticker": "5347",
+            "name": "世界",
+            "delta": 629000,
+            "old_shares": 0,
+            "new_shares": 629000,
+            "pct": 0.25,
+            "is_new": true
+          },
+          {
+            "ticker": "2308",
+            "name": "台達電",
+            "delta": 300000,
+            "old_shares": 0,
+            "new_shares": 300000,
+            "pct": 1.3,
+            "is_new": true
+          },
+          {
+            "ticker": "3008",
+            "name": "大立光",
+            "delta": 100000,
+            "old_shares": 420000,
+            "new_shares": 520000,
+            "pct": 5.54,
+            "is_new": false
+          },
+          {
+            "ticker": "3665",
+            "name": "貿聯-KY",
+            "delta": 36000,
+            "old_shares": 955000,
+            "new_shares": 991000,
+            "pct": 5.49,
+            "is_new": false
+          }
+        ],
+        "sells": [
+          {
+            "ticker": "3026",
+            "name": "禾伸堂",
+            "delta": -303000,
+            "old_shares": 821000,
+            "new_shares": 518000,
+            "pct": 0.62,
+            "is_new": false
           },
           {
             "ticker": "3363",
             "name": "上詮",
             "delta": -100000,
-            "old_shares": 300000,
-            "new_shares": 200000,
-            "pct": 0.26,
+            "old_shares": 200000,
+            "new_shares": 100000,
+            "pct": 0.13,
             "is_new": false
           },
           {
-            "ticker": "3026",
-            "name": "禾伸堂",
-            "delta": -88000,
-            "old_shares": 909000,
-            "new_shares": 821000,
-            "pct": 1.06,
-            "is_new": false
+            "ticker": "3491",
+            "name": "昇達科",
+            "delta": -1000,
+            "old_shares": 1000,
+            "new_shares": 0,
+            "pct": 0.0,
+            "is_removed": true
           }
         ]
       },
@@ -1585,218 +1733,224 @@
         {
           "ticker": "2330",
           "name": "台積電",
-          "pct": 9.39,
+          "pct": 9.0,
           "shares": 1406000
         },
         {
           "ticker": "2383",
           "name": "台光電",
-          "pct": 7.36,
+          "pct": 7.05,
           "shares": 563000
         },
         {
           "ticker": "3017",
           "name": "奇鋐",
-          "pct": 6.41,
+          "pct": 6.13,
           "shares": 1002000
         },
         {
           "ticker": "2059",
           "name": "川湖",
-          "pct": 6.34,
+          "pct": 6.07,
           "shares": 293000
         },
         {
           "ticker": "2345",
           "name": "智邦",
-          "pct": 6.33,
+          "pct": 6.06,
           "shares": 1080000
-        },
-        {
-          "ticker": "3665",
-          "name": "貿聯-KY",
-          "pct": 5.53,
-          "shares": 955000
-        },
-        {
-          "ticker": "6223",
-          "name": "旺矽",
-          "pct": 4.74,
-          "shares": 326000
         },
         {
           "ticker": "3008",
           "name": "大立光",
-          "pct": 4.73,
-          "shares": 420000
+          "pct": 5.54,
+          "shares": 520000
+        },
+        {
+          "ticker": "3665",
+          "name": "貿聯-KY",
+          "pct": 5.49,
+          "shares": 991000
+        },
+        {
+          "ticker": "6223",
+          "name": "旺矽",
+          "pct": 4.54,
+          "shares": 326000
         },
         {
           "ticker": "3037",
           "name": "欣興",
-          "pct": 4.55,
+          "pct": 4.35,
           "shares": 2097000
         },
         {
           "ticker": "2454",
           "name": "聯發科",
-          "pct": 3.98,
+          "pct": 3.81,
           "shares": 406000
         },
         {
           "ticker": "8996",
           "name": "高力",
-          "pct": 3.84,
+          "pct": 3.68,
           "shares": 1630000
+        },
+        {
+          "ticker": "3231",
+          "name": "緯創",
+          "pct": 3.56,
+          "shares": 7662000
         },
         {
           "ticker": "6187",
           "name": "萬潤",
-          "pct": 3.12,
+          "pct": 2.99,
           "shares": 1220000
         },
         {
           "ticker": "6584",
           "name": "南俊國際",
-          "pct": 2.75,
+          "pct": 2.5,
           "shares": 2231000
-        },
-        {
-          "ticker": "3231",
-          "name": "緯創",
-          "pct": 2.75,
-          "shares": 5662000
         },
         {
           "ticker": "3711",
           "name": "日月光投控",
-          "pct": 2.49,
+          "pct": 2.39,
           "shares": 1629000
         },
         {
           "ticker": "8021",
           "name": "尖點",
-          "pct": 2.23,
+          "pct": 2.13,
           "shares": 2501000
         },
         {
           "ticker": "3443",
           "name": "創意",
-          "pct": 2.21,
+          "pct": 2.12,
           "shares": 211000
         },
         {
           "ticker": "2455",
           "name": "全新",
-          "pct": 2.21,
+          "pct": 2.12,
           "shares": 2753000
         },
         {
           "ticker": "3661",
           "name": "世芯-KY",
-          "pct": 1.81,
+          "pct": 1.74,
           "shares": 215000
         },
         {
           "ticker": "8299",
           "name": "群聯",
-          "pct": 1.66,
+          "pct": 1.58,
           "shares": 366000
+        },
+        {
+          "ticker": "2308",
+          "name": "台達電",
+          "pct": 1.3,
+          "shares": 300000
         },
         {
           "ticker": "6669",
           "name": "緯穎",
-          "pct": 1.14,
+          "pct": 1.1,
           "shares": 77000
-        },
-        {
-          "ticker": "3026",
-          "name": "禾伸堂",
-          "pct": 1.06,
-          "shares": 821000
         },
         {
           "ticker": "7751",
           "name": "竑騰",
-          "pct": 1.05,
+          "pct": 1.01,
           "shares": 310000
         },
         {
           "ticker": "6488",
           "name": "環球晶",
-          "pct": 0.93,
+          "pct": 0.89,
           "shares": 394000
         },
         {
           "ticker": "3189",
           "name": "景碩",
-          "pct": 0.77,
+          "pct": 0.74,
           "shares": 440013
         },
         {
           "ticker": "6515",
           "name": "穎崴",
-          "pct": 0.67,
+          "pct": 0.64,
           "shares": 42000
+        },
+        {
+          "ticker": "3026",
+          "name": "禾伸堂",
+          "pct": 0.62,
+          "shares": 518000
         },
         {
           "ticker": "7734",
           "name": "印能科技",
-          "pct": 0.52,
+          "pct": 0.5,
           "shares": 56000
         },
         {
           "ticker": "6139",
           "name": "亞翔",
-          "pct": 0.49,
+          "pct": 0.47,
           "shares": 250000
         },
         {
           "ticker": "6805",
           "name": "富世達",
-          "pct": 0.41,
+          "pct": 0.39,
           "shares": 109000
         },
         {
           "ticker": "3260",
           "name": "威剛",
-          "pct": 0.41,
+          "pct": 0.38,
           "shares": 358000
         },
         {
           "ticker": "2337",
           "name": "旺宏",
-          "pct": 0.37,
+          "pct": 0.36,
           "shares": 1343000
         },
         {
           "ticker": "5289",
           "name": "宜鼎",
-          "pct": 0.35,
+          "pct": 0.33,
           "shares": 98000
+        },
+        {
+          "ticker": "5347",
+          "name": "世界",
+          "pct": 0.25,
+          "shares": 629000
         },
         {
           "ticker": "3583",
           "name": "辛耘",
-          "pct": 0.26,
+          "pct": 0.25,
           "shares": 147000
         },
         {
           "ticker": "3363",
           "name": "上詮",
-          "pct": 0.26,
-          "shares": 200000
+          "pct": 0.13,
+          "shares": 100000
         },
         {
           "ticker": "3264",
           "name": "欣銓",
-          "pct": 0.04,
+          "pct": 0.03,
           "shares": 72000
-        },
-        {
-          "ticker": "3491",
-          "name": "昇達科",
-          "pct": 0.0,
-          "shares": 1000
         }
       ]
     }
