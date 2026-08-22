@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21 19:27",
+  "generated_at": "2026-08-23 00:24",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -15,7 +15,7 @@
       "prev_date": "2026-08-20",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [],
         "removed": [],
@@ -259,26 +259,14 @@
           "shares": 1000
         },
         {
-          "ticker": "2481",
-          "name": "強茂",
-          "pct": 0.0,
-          "shares": 5000
-        },
-        {
-          "ticker": "2382",
-          "name": "廣達",
+          "ticker": "3661",
+          "name": "世芯-KY",
           "pct": 0.0,
           "shares": 1000
         },
         {
-          "ticker": "2408",
-          "name": "南亞科",
-          "pct": 0.0,
-          "shares": 1000
-        },
-        {
-          "ticker": "2439",
-          "name": "美律",
+          "ticker": "5347",
+          "name": "世界",
           "pct": 0.0,
           "shares": 1000
         },
@@ -307,16 +295,28 @@
           "shares": 1000
         },
         {
-          "ticker": "5347",
-          "name": "世界",
+          "ticker": "2382",
+          "name": "廣達",
           "pct": 0.0,
           "shares": 1000
         },
         {
-          "ticker": "3661",
-          "name": "世芯-KY",
+          "ticker": "2408",
+          "name": "南亞科",
           "pct": 0.0,
           "shares": 1000
+        },
+        {
+          "ticker": "2439",
+          "name": "美律",
+          "pct": 0.0,
+          "shares": 1000
+        },
+        {
+          "ticker": "2481",
+          "name": "強茂",
+          "pct": 0.0,
+          "shares": 5000
         },
         {
           "ticker": "6488",
@@ -331,14 +331,14 @@
           "shares": 1000
         },
         {
-          "ticker": "8150",
-          "name": "南茂",
+          "ticker": "8358",
+          "name": "金居",
           "pct": 0.0,
           "shares": 1000
         },
         {
-          "ticker": "8358",
-          "name": "金居",
+          "ticker": "8150",
+          "name": "南茂",
           "pct": 0.0,
           "shares": 1000
         }
@@ -351,7 +351,7 @@
       "prev_date": "2026-08-20",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [],
         "removed": [],
@@ -697,7 +697,7 @@
       "prev_date": "2026-08-20",
       "holdings_count": 59,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [
           {
@@ -1113,7 +1113,7 @@
       "prev_date": "2026-08-20",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [],
         "removed": [],
@@ -1458,7 +1458,7 @@
       "prev_date": "2026-08-20",
       "holdings_count": 41,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "diff": {
         "added": [],
         "removed": [],
