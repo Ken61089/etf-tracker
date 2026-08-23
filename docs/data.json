@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23 22:16",
+  "generated_at": "2026-08-24 00:26",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -259,14 +259,26 @@
           "shares": 1000
         },
         {
-          "ticker": "3661",
-          "name": "世芯-KY",
+          "ticker": "2481",
+          "name": "強茂",
+          "pct": 0.0,
+          "shares": 5000
+        },
+        {
+          "ticker": "2382",
+          "name": "廣達",
           "pct": 0.0,
           "shares": 1000
         },
         {
-          "ticker": "5347",
-          "name": "世界",
+          "ticker": "2408",
+          "name": "南亞科",
+          "pct": 0.0,
+          "shares": 1000
+        },
+        {
+          "ticker": "2439",
+          "name": "美律",
           "pct": 0.0,
           "shares": 1000
         },
@@ -295,28 +307,16 @@
           "shares": 1000
         },
         {
-          "ticker": "2382",
-          "name": "廣達",
+          "ticker": "5347",
+          "name": "世界",
           "pct": 0.0,
           "shares": 1000
         },
         {
-          "ticker": "2408",
-          "name": "南亞科",
+          "ticker": "3661",
+          "name": "世芯-KY",
           "pct": 0.0,
           "shares": 1000
-        },
-        {
-          "ticker": "2439",
-          "name": "美律",
-          "pct": 0.0,
-          "shares": 1000
-        },
-        {
-          "ticker": "2481",
-          "name": "強茂",
-          "pct": 0.0,
-          "shares": 5000
         },
         {
           "ticker": "6488",
@@ -331,14 +331,14 @@
           "shares": 1000
         },
         {
-          "ticker": "8358",
-          "name": "金居",
+          "ticker": "8150",
+          "name": "南茂",
           "pct": 0.0,
           "shares": 1000
         },
         {
-          "ticker": "8150",
-          "name": "南茂",
+          "ticker": "8358",
+          "name": "金居",
           "pct": 0.0,
           "shares": 1000
         }
