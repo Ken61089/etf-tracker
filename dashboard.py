@@ -130,7 +130,9 @@ PAGE = r"""<!DOCTYPE html>
   <div id="pages"></div>
   <footer>
     資料來源：ETF 持股＝籌碼小宇（備援 MoneyDJ 理財網）、投信買賣超＝富邦 DJ ｜ 紅=買入/新增，綠=賣出/剔除（依台股慣例）<br>
-    比對基準為「資料日期」變化，非日曆日。
+    比對基準為「資料日期」變化，非日曆日。<br>
+    🙏 感謝 <a href="https://xiaoyu-etf.pages.dev/" target="_blank" rel="noopener">籌碼小宇 ETF</a> 公開整理主動型 ETF 持股與加減碼資料，更完整的分析請到原站查看。<br>
+    本網站僅供個人研究用途，非商業使用，不提供任何投資建議。
   </footer>
 </div>
 
