@@ -8,252 +8,302 @@
     "2303": {
       "name": "聯電",
       "pct": 4.04,
-      "shares": 79618000
+      "shares": 79618000,
+      "price": 148.5
     },
     "2327": {
       "name": "國巨*",
       "pct": 5.2,
-      "shares": 23519000
+      "shares": 23519000,
+      "price": 647.0
     },
     "3037": {
       "name": "欣興",
       "pct": 8.61,
-      "shares": 19300000
+      "shares": 19300000,
+      "price": 1305.0
     },
     "2449": {
       "name": "京元電子",
       "pct": 1.32,
-      "shares": 12938000
+      "shares": 12938000,
+      "price": 299.5
     },
     "2330": {
       "name": "台積電",
       "pct": 10.13,
-      "shares": 11464000
+      "shares": 11464000,
+      "price": 2585.0
     },
     "3711": {
       "name": "日月光投控",
       "pct": 2.32,
-      "shares": 9276000
+      "shares": 9276000,
+      "price": 732.0
     },
     "8046": {
       "name": "南電",
       "pct": 4.52,
-      "shares": 8937000
+      "shares": 8937000,
+      "price": 1480.0
     },
     "2308": {
       "name": "台達電",
       "pct": 5.03,
-      "shares": 7389000
+      "shares": 7389000,
+      "price": 1990.0
     },
     "6274": {
       "name": "台燿",
       "pct": 3.8,
-      "shares": 6467000
+      "shares": 6467000,
+      "price": 1720.0
     },
     "2345": {
       "name": "智邦",
       "pct": 4.32,
-      "shares": 6264000
+      "shares": 6264000,
+      "price": 2015.0
     },
     "3017": {
       "name": "奇鋐",
       "pct": 7.35,
-      "shares": 6062000
+      "shares": 6062000,
+      "price": 3545.0
     },
     "2002": {
       "name": "中鋼",
       "pct": 0.03,
-      "shares": 5163000
+      "shares": 5163000,
+      "price": 18.95
     },
     "2454": {
       "name": "聯發科",
       "pct": 8.41,
-      "shares": 5086000
+      "shares": 5086000,
+      "price": 4835.0
     },
     "2383": {
       "name": "台光電",
       "pct": 9.46,
-      "shares": 4650000
+      "shares": 4650000,
+      "price": 5950.0
     },
     "6669": {
       "name": "緯穎",
       "pct": 3.31,
-      "shares": 4316000
+      "shares": 4316000,
+      "price": 2240.0
     },
     "6191": {
       "name": "精成科",
       "pct": 0.12,
-      "shares": 3921000
+      "shares": 3921000,
+      "price": 87.5
     },
     "2368": {
       "name": "金像電",
       "pct": 1.46,
-      "shares": 3420000
+      "shares": 3420000,
+      "price": 1245.0
     },
     "3665": {
       "name": "貿聯-KY",
       "pct": 2.41,
-      "shares": 3040000
+      "shares": 3040000,
+      "price": 2315.0
     },
     "3653": {
       "name": "健策",
       "pct": 5.82,
-      "shares": 2502000
+      "shares": 2502000,
+      "price": 6805.0
     },
     "6223": {
       "name": "旺矽",
       "pct": 4.73,
-      "shares": 2499000
+      "shares": 2499000,
+      "price": 5530.0
     },
     "6271": {
       "name": "同欣電",
       "pct": 0.18,
-      "shares": 2185000
+      "shares": 2185000,
+      "price": 241.5
     },
     "3376": {
       "name": "新日興",
       "pct": 0.1,
-      "shares": 1740000
+      "shares": 1740000,
+      "price": 169.0
     },
     "6805": {
       "name": "富世達",
       "pct": 0.58,
-      "shares": 692000
+      "shares": 692000,
+      "price": 2455.0
     },
     "3443": {
       "name": "創意",
       "pct": 1.78,
-      "shares": 616000
+      "shares": 616000,
+      "price": 8460.0
     },
     "2313": {
       "name": "華通",
       "pct": 0.04,
-      "shares": 501000
+      "shares": 501000,
+      "price": 246.0
     },
     "8210": {
       "name": "勤誠",
       "pct": 0.14,
-      "shares": 478000
+      "shares": 478000,
+      "price": 872.0
     },
     "8996": {
       "name": "高力",
       "pct": 0.27,
-      "shares": 476000
+      "shares": 476000,
+      "price": 1645.0
     },
     "6510": {
       "name": "精測",
       "pct": 0.26,
-      "shares": 251000
+      "shares": 251000,
+      "price": 3020.0
     },
     "5274": {
       "name": "信驊",
       "pct": 0.96,
-      "shares": 158000
+      "shares": 158000,
+      "price": 17750.0
     },
     "6187": {
       "name": "萬潤",
       "pct": 0.06,
-      "shares": 121000
+      "shares": 121000,
+      "price": 1535.0
     },
     "6515": {
       "name": "穎崴",
       "pct": 0.18,
-      "shares": 93000
+      "shares": 93000,
+      "price": 5520.0
     },
     "2481": {
       "name": "強茂",
       "pct": 0.0,
-      "shares": 5000
+      "shares": 5000,
+      "price": 178.5
     },
     "1590": {
       "name": "亞德客-KY",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 1230.0
     },
     "2317": {
       "name": "鴻海",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 252.0
     },
     "2360": {
       "name": "致茂",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 2400.0
     },
     "2382": {
       "name": "廣達",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 335.0
     },
     "2408": {
       "name": "南亞科",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 514.0
     },
     "2439": {
       "name": "美律",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 78.7
     },
     "2637": {
       "name": "慧洋-KY",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 96.8
     },
     "3008": {
       "name": "大立光",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 6845.0
     },
     "3264": {
       "name": "欣銓",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 250.0
     },
     "3661": {
       "name": "世芯-KY",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 4190.0
     },
     "4958": {
       "name": "臻鼎-KY",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 595.0
     },
     "4966": {
       "name": "譜瑞-KY",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 568.0
     },
     "4979": {
       "name": "華星光",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 579.0
     },
     "5347": {
       "name": "世界",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 190.0
     },
     "6278": {
       "name": "台表科",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 250.5
     },
     "6488": {
       "name": "環球晶",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 1215.0
     },
     "8150": {
       "name": "南茂",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 128.5
     },
     "8358": {
       "name": "金居",
       "pct": 0.0,
-      "shares": 1000
+      "shares": 1000,
+      "price": 549.0
     }
   },
   "xy_d1": {

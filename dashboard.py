@@ -77,6 +77,36 @@ PAGE = r"""<!DOCTYPE html>
   .unit-sw button{background:transparent;color:var(--sub);border:0;cursor:pointer;
     font-size:12px;padding:4px 12px;font-family:inherit}
   .unit-sw button.on{background:var(--accent);color:#0b0d10;font-weight:600}
+  /* 小宇式動作清單 */
+  .fbar{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+  .fchip{padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:#13161c;
+    color:var(--txt);cursor:pointer;font-size:14px;font-family:inherit}
+  .fchip b{color:var(--sub);font-weight:400;margin-left:4px;font-variant-numeric:tabular-nums}
+  .fchip.on{background:#0f766e;border-color:#14b8a6;color:#fff}
+  .fchip.on b{color:#d5fff9}
+  .alist{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:14px}
+  .ahead,.arow{display:grid;grid-template-columns:28px minmax(0,1fr) 78px 64px 72px;
+    gap:8px;align-items:start;padding:10px 12px}
+  .ahead{color:var(--sub);font-size:12px;border-bottom:1px solid var(--line)}
+  .ahead span{cursor:pointer;user-select:none;text-align:right}
+  .ahead span.on{color:#2dd4bf;font-weight:600}
+  .ahead span:nth-child(-n+2){text-align:left;cursor:default}
+  .arow{border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+  .arow:first-of-type{border-top:0}
+  .arow .rk{color:var(--sub);font-size:13px;padding-top:2px}
+  .arow .nm{border-left:3px solid transparent;padding-left:8px;min-width:0}
+  .arow.add .nm,.arow.new .nm{border-left-color:var(--buy)}
+  .arow.reduce .nm,.arow.clear .nm{border-left-color:var(--sell)}
+  .arow .nm b{font-size:15px}
+  .arow .cd{color:var(--sub);font-size:12px;margin:0 4px}
+  .arow .nb{font-size:11px;font-weight:600;margin-right:3px}
+  .arow .r{text-align:right;font-size:14px;padding-top:2px}
+  .arow .ln2{grid-column:2/-1;font-size:12px;color:var(--sub);margin:-4px 0 0 11px;white-space:normal}
+  .act{display:inline-block;font-size:11px;padding:1px 6px;border-radius:5px;margin-right:6px;font-weight:600}
+  .act.add,.act.new{background:var(--buy-bg);color:var(--buy)}
+  .act.reduce,.act.clear{background:var(--sell-bg);color:var(--sell)}
+  @media(max-width:560px){.ahead,.arow{grid-template-columns:22px minmax(0,1fr) 60px 52px 56px;gap:6px;padding:9px 8px}
+    .arow .r{font-size:13px}}
   footer{color:var(--sub);font-size:12px;text-align:center;margin-top:30px}
   a{color:var(--accent)}
 </style>
@@ -115,62 +145,71 @@ const delta = n => (n>0?'+':'') + numStr(n);
 
 document.getElementById('genAt').textContent = '更新時間：' + DATA.generated_at;
 
-function rowsBuySell(list, kind){
-  if(!list.length) return '<div class="empty">— 無 —</div>';
-  const cls = kind==='buy'?'buy':'sell';
-  const hasMoney = list.some(c=>c.money!=null);
-  return `<table><thead><tr>
-      <th>個股</th><th class="num">變化${unitName()}數</th><th class="num">→ 持有</th><th class="num">比例%</th>${hasMoney?'<th class="num">金額(億)</th>':''}
-    </tr></thead><tbody>` +
-    list.map(c=>`<tr>
-      <td>${c.name}<span class="pill"> ${c.ticker}</span>${c.is_new?'<span class="tag new">新增</span>':''}${c.is_removed?'<span class="tag rm">剔除</span>':''}</td>
-      <td class="num ${cls}">${delta(c.delta)}</td>
-      <td class="num">${fmt(c.new_shares)}</td>
-      <td class="num">${c.pct.toFixed(2)}</td>${hasMoney?`<td class="num ${cls}">${c.money!=null?c.money.toFixed(2):'—'}</td>`:''}
-    </tr>`).join('') + `</tbody></table>`;
-}
+// ===== 各 ETF:小宇式「全部/新增/加碼/減碼/出清」清單 =====
+const ACTS = [['all','全部'],['new','新增'],['add','加碼'],['reduce','減碼'],['clear','出清']];
+const ACT_LABEL = {new:'新增', add:'加碼', reduce:'減碼', clear:'出清'};
+const VIEW = {};   // etfid -> {f:篩選, k:排序欄, d:方向}
+const sgn = (v,dig=2) => (v>0?'+':'') + v.toFixed(dig);
 
-function rowsAddRm(list, kind){
-  if(!list.length) return '<div class="empty">— 無 —</div>';
-  if(kind==='add'){
-    return `<table><thead><tr><th>個股</th><th class="num">持有${unitName()}數</th><th class="num">比例%</th></tr></thead><tbody>`+
-      list.map(x=>`<tr><td>${x.name}<span class="pill"> ${x.ticker}</span></td>
-        <td class="num buy">${fmt(x.shares)}</td><td class="num">${x.pct.toFixed(2)}</td></tr>`).join('')+`</tbody></table>`;
-  }
-  return `<table><thead><tr><th>個股</th><th class="num">原持股</th></tr></thead><tbody>`+
-    list.map(x=>`<tr><td>${x.name}<span class="pill"> ${x.ticker}</span></td>
-      <td class="num sell">${fmt(x.old_shares)}</td></tr>`).join('')+`</tbody></table>`;
-}
-
-function fullTable(holdings){
-  return `<table class="full"><thead><tr><th>個股</th><th class="num">比例%</th><th class="num">持有${unitName()}數</th></tr></thead><tbody>`+
-    holdings.map(h=>`<tr><td>${h.name}<span class="pill"> ${h.ticker}</span></td>
-      <td class="num">${h.pct.toFixed(2)}</td><td class="num">${fmt(h.shares)}</td></tr>`).join('')+
-    `</tbody></table>`;
+function actList(e){
+  const v = VIEW[e.etfid] || (VIEW[e.etfid] = {f:'all', k:'mv', d:-1});
+  let rows = e.rows.filter(r => v.f==='all' || r.act===v.f);
+  const key = r => (v.k==='mv' ? (r.mv ?? -1) : v.k==='pct' ? r.pct : r.shares);
+  rows = rows.slice().sort((a,b)=> (key(a)-key(b))*v.d || Math.abs(b.delta)-Math.abs(a.delta));
+  const arrow = k => v.k===k ? (v.d<0?' ▾':' ▴') : ' ⇅';
+  const head = `<div class="ahead"><span>#</span><span>標的</span>
+    <span class="${v.k==='mv'?'on':''}" data-sort="mv">市值億${arrow('mv')}</span>
+    <span class="${v.k==='pct'?'on':''}" data-sort="pct">權重${arrow('pct')}</span>
+    <span class="${v.k==='shares'?'on':''}" data-sort="shares">${unitName()}數${arrow('shares')}</span></div>`;
+  if(!rows.length) return `<div class="alist">${head}<div class="empty" style="padding:12px">— 無 —</div></div>`;
+  return `<div class="alist">${head}` + rows.map((r,i)=>{
+    const buy = r.delta>0;
+    const nb = (r.nbuy?`<span class="nb buy">買${r.nbuy}</span>`:'') + (r.nsell?`<span class="nb sell">賣${r.nsell}</span>`:'');
+    const ln2 = r.act==='hold' ? '' : `<div class="ln2"><span class="act ${r.act}">${ACT_LABEL[r.act]}</span>`+
+      `<span class="${buy?'buy':'sell'}">${delta(r.delta)} ${unitName()}</span>`+
+      (r.dmoney!=null?` · <span class="${buy?'buy':'sell'}">${sgn(r.dmoney)} 億</span>`:'')+
+      (r.dpct!=null?` · 權重 <span class="${r.dpct>0?'buy':r.dpct<0?'sell':''}">${sgn(r.dpct)}%</span>`:'')+`</div>`;
+    return `<div class="arow ${r.act}"><span class="rk">${i+1}</span>
+      <div class="nm"><b>${r.name}</b><span class="cd">${r.ticker}</span>${nb}</div>
+      <span class="r">${r.mv!=null?r.mv.toFixed(2):'—'}</span>
+      <span class="r">${r.pct.toFixed(2)}%</span>
+      <span class="r">${fmt(r.shares)}</span>${ln2}</div>`;
+  }).join('') + `</div>`;
 }
 
 function renderEtf(e){
-  const d = e.diff;
   const baseline = e.is_baseline
-    ? `<div class="baseline">⚠️ 這是第一次建立基準（目前只有一份資料日期 ${e.data_date}）。等下一次資料日期更新後，就會自動顯示新增 / 剔除 / 買賣前五。</div>`
+    ? `<div class="baseline">⚠️ 這是第一次建立基準（目前只有一份資料日期 ${e.data_date}）。等下一次資料日期更新後，就會自動顯示新增 / 加碼 / 減碼 / 出清。</div>`
     : '';
   const cmp = e.is_baseline ? '' : `（對比 ${e.prev_date} → ${e.data_date}）`;
   const stale = (e.is_current === false)
     ? `<div class="baseline">⏳ 此檔來源（${e.source==='xiaoyu'?'籌碼小宇':'MoneyDJ'}）資料日期為 ${e.data_date}，尚未更新到最新交易日。系統每小時會再試，更新到當日後此處會自動刷新。</div>`
     : '';
-  return `<div class="card">
+  const v = VIEW[e.etfid] || (VIEW[e.etfid] = {f:'all', k:'mv', d:-1});
+  const cnt = k => k==='all' ? e.rows.length : e.rows.filter(r=>r.act===k).length;
+  return `<div class="card" data-etf="${e.etfid}">
     <h2>${e.fund_name} <span class="pill">${e.etfid}</span></h2>
     <div class="sub">資料日期 ${e.data_date}　持股 ${e.holdings_count} 檔　${cmp}　來源 ${e.source==='xiaoyu'?'籌碼小宇':'MoneyDJ（備援）'}</div>
     ${stale}${baseline}
-    <div class="grid">
-      <div class="box"><h3>🔴➕ 新增標的 <span class="pill">${d.added.length}</span></h3>${rowsAddRm(d.added,'add')}</div>
-      <div class="box"><h3>🟢➖ 剔除持股 <span class="pill">${d.removed.length}</span></h3>${rowsAddRm(d.removed,'rm')}</div>
-      <div class="box"><h3>🔴 今日買入前五</h3>${rowsBuySell(d.buys,'buy')}</div>
-      <div class="box"><h3>🟢 今日賣出前五</h3>${rowsBuySell(d.sells,'sell')}</div>
-    </div>
-    <details><summary>展開完整持股（${e.holdings_count} 檔）</summary>${fullTable(e.holdings)}</details>
+    <div class="fbar">${ACTS.map(([k,l])=>`<button class="fchip ${v.f===k?'on':''}" data-f="${k}">${l}<b>${cnt(k)}</b></button>`).join('')}</div>
+    <div class="alist-wrap">${actList(e)}</div>
+    <div class="sub">市值＝持有股數 × 當日收盤價；金額為小宇估算的買賣金額；買N／賣N＝追蹤的 ${DATA.etfs.length} 檔中當天有幾檔加碼／減碼。完整持股每日存檔於 <a href="archive/${e.etfid}.csv">archive/${e.etfid}.csv</a>。</div>
   </div>`;
 }
+
+// 篩選 / 排序點擊(事件委派,只重繪該檔清單)
+document.addEventListener('click', ev=>{
+  const card = ev.target.closest('.card[data-etf]');
+  if(!card) return;
+  const e = DATA.etfs.find(x=>x.etfid===card.dataset.etf);
+  const v = VIEW[e.etfid];
+  const f = ev.target.closest('[data-f]'), so = ev.target.closest('[data-sort]');
+  if(f){ v.f = f.dataset.f;
+    card.querySelectorAll('.fchip').forEach(b=>b.classList.toggle('on', b===f)); }
+  else if(so){ const k = so.dataset.sort; v.d = (v.k===k) ? -v.d : -1; v.k = k; }
+  else return;
+  card.querySelector('.alist-wrap').innerHTML = actList(e);
+});
 
 // ===== 跨 ETF 共同動作 =====
 const shortName = n => n.replace(/^主動/,'');

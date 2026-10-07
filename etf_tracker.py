@@ -85,11 +85,15 @@ def fetch_xiaoyu(etfid):
     latest = d["snap_dates"][0]
     rows = d["snaps"].get(latest) or []
     names = d.get("names", {})
-    holdings = {
-        code: {"name": names.get(code, code), "pct": float(pct),
-               "shares": int(round(lots * 1000))}
-        for code, lots, pct in rows
-    }
+    prices = d.get("prices", {})      # 每檔收盤價序列，新到舊，與 snap_dates 對齊
+    holdings = {}
+    for code, lots, pct in rows:
+        h = {"name": names.get(code, code), "pct": float(pct),
+             "shares": int(round(lots * 1000))}
+        px = (prices.get(code) or [None])[0]
+        if px:
+            h["price"] = float(px)
+        holdings[code] = h
     if not holdings:
         raise RuntimeError(f"{etfid}: 小宇解析不到任何持股")
 
@@ -498,13 +502,53 @@ def update_one(etfid, fetch=True):
         "is_current": curr["data_date"] >= today_tpe(),
         "source": curr.get("source", "moneydj"),
         "diff": diff,
-        "holdings": [
-            {"ticker": t, **info}
-            for t, info in sorted(curr["holdings"].items(),
-                                  key=lambda kv: kv[1]["pct"], reverse=True)
-        ],
+        # 完整持股只留在 data/ 快照與 CSV 封存，網頁改顯示小宇式動作清單
+        "rows": build_rows(prev, curr, diff) if prev else [],
     }
     return result
+
+
+def build_rows(prev, curr, diff):
+    """組出小宇式清單：每檔持股（含今日出清）一列，標動作 新增/加碼/減碼/出清/持平。
+    mv=市值(億)、dmoney=買賣金額(億，小宇值優先，否則以收盤價估)、dpct=權重變化。"""
+    prev_h = prev["holdings"] if prev else {}
+    chg = {c["ticker"]: c for c in diff["changes"]}
+
+    def yi(shares, price):
+        return round(shares * price / 1e8, 2) if price else None
+
+    rows = []
+    for t, h in curr["holdings"].items():
+        c = chg.get(t)
+        if not c:
+            act = "hold"
+        elif c.get("is_new"):
+            act = "new"
+        else:
+            act = "add" if c["delta"] > 0 else "reduce"
+        old = prev_h.get(t)
+        px = h.get("price") or (old or {}).get("price")
+        rows.append({
+            "ticker": t, "name": h["name"], "act": act,
+            "shares": h["shares"], "pct": h["pct"], "mv": yi(h["shares"], px),
+            "delta": c["delta"] if c else 0,
+            "dmoney": (c.get("money") if c and c.get("money") is not None
+                       else (yi(c["delta"], px) if c else None)),
+            "dpct": round(h["pct"] - old["pct"], 2) if old else (h["pct"] if prev else None),
+        })
+    for t, c in chg.items():
+        if t in curr["holdings"] or not c.get("is_removed"):
+            continue
+        old = prev_h.get(t, {})
+        px = old.get("price")
+        rows.append({
+            "ticker": t, "name": c["name"], "act": "clear",
+            "shares": 0, "pct": 0.0, "mv": 0.0 if px else None,
+            "delta": c["delta"],
+            "dmoney": c.get("money") if c.get("money") is not None else yi(c["delta"], px),
+            "dpct": -old["pct"] if "pct" in old else None,
+        })
+    return rows
 
 
 def export_archive():
@@ -557,6 +601,17 @@ def main():
             trust = build_trust_cross(trust, results)
     except Exception as e:  # 投信失敗不影響 ETF 部分
         print(f"  ⚠️  投信買賣超失敗：{e}", file=sys.stderr)
+
+    # 每列標「追蹤的 ETF 中，今天有幾檔加碼/減碼這檔」（小宇的 買N / 賣N）
+    nbuy, nsell = defaultdict(int), defaultdict(int)
+    for r in results:
+        if r["is_baseline"]:
+            continue
+        for c in r["diff"]["changes"]:
+            (nbuy if c["delta"] > 0 else nsell)[c["ticker"]] += 1
+    for r in results:
+        for row in r["rows"]:
+            row["nbuy"], row["nsell"] = nbuy[row["ticker"]], nsell[row["ticker"]]
 
     generated_at = datetime.now(TPE).strftime("%Y-%m-%d %H:%M")
     consensus = build_consensus(results)
