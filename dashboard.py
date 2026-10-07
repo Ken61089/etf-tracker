@@ -79,6 +79,12 @@ PAGE = r"""<!DOCTYPE html>
   .unit-sw button.on{background:var(--accent);color:#0b0d10;font-weight:600}
   /* 小宇式動作清單 */
   .fbar{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+  .dsel{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:13px;color:var(--sub)}
+  .dsel select{background:#13161c;color:var(--txt);border:1px solid var(--line);border-radius:8px;
+    padding:6px 10px;font-size:14px;font-family:inherit}
+  .dsel button{background:#13161c;color:var(--txt);border:1px solid var(--line);border-radius:8px;
+    padding:5px 10px;cursor:pointer;font-family:inherit}
+  .dsel button:disabled{opacity:.35;cursor:default}
   .fchip{padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:#13161c;
     color:var(--txt);cursor:pointer;font-size:14px;font-family:inherit}
   .fchip b{color:var(--sub);font-weight:400;margin-left:4px;font-variant-numeric:tabular-nums}
@@ -148,12 +154,14 @@ document.getElementById('genAt').textContent = '更新時間：' + DATA.generate
 // ===== 各 ETF:小宇式「全部/新增/加碼/減碼/出清」清單 =====
 const ACTS = [['all','全部'],['new','新增'],['add','加碼'],['reduce','減碼'],['clear','出清']];
 const ACT_LABEL = {new:'新增', add:'加碼', reduce:'減碼', clear:'出清'};
-const VIEW = {};   // etfid -> {f:篩選, k:排序欄, d:方向}
+const VIEW = {};   // etfid -> {f:篩選, k:排序欄, d:方向, i:第幾個資料日(0=最新)}
+const getView = e => VIEW[e.etfid] || (VIEW[e.etfid] = {f:'all', k:'mv', d:-1, i:0});
+const curDay = e => e.history[getView(e).i] || {rows:[]};
 const sgn = (v,dig=2) => (v>0?'+':'') + v.toFixed(dig);
 
 function actList(e){
-  const v = VIEW[e.etfid] || (VIEW[e.etfid] = {f:'all', k:'mv', d:-1});
-  let rows = e.rows.filter(r => v.f==='all' || r.act===v.f);
+  const v = getView(e);
+  let rows = curDay(e).rows.filter(r => v.f==='all' || r.act===v.f);
   const key = r => (v.k==='mv' ? (r.mv ?? -1) : v.k==='pct' ? r.pct : r.shares);
   rows = rows.slice().sort((a,b)=> (key(a)-key(b))*v.d || Math.abs(b.delta)-Math.abs(a.delta));
   const arrow = k => v.k===k ? (v.d<0?' ▾':' ▴') : ' ⇅';
@@ -181,19 +189,24 @@ function renderEtf(e){
   const baseline = e.is_baseline
     ? `<div class="baseline">⚠️ 這是第一次建立基準（目前只有一份資料日期 ${e.data_date}）。等下一次資料日期更新後，就會自動顯示新增 / 加碼 / 減碼 / 出清。</div>`
     : '';
-  const cmp = e.is_baseline ? '' : `（對比 ${e.prev_date} → ${e.data_date}）`;
   const stale = (e.is_current === false)
     ? `<div class="baseline">⏳ 此檔來源（${e.source==='xiaoyu'?'籌碼小宇':'MoneyDJ'}）資料日期為 ${e.data_date}，尚未更新到最新交易日。系統每小時會再試，更新到當日後此處會自動刷新。</div>`
     : '';
-  const v = VIEW[e.etfid] || (VIEW[e.etfid] = {f:'all', k:'mv', d:-1});
-  const cnt = k => k==='all' ? e.rows.length : e.rows.filter(r=>r.act===k).length;
+  const v = getView(e);
+  const day = curDay(e);
+  const cnt = k => k==='all' ? day.rows.length : day.rows.filter(r=>r.act===k).length;
+  const dsel = e.history.length ? `<div class="dsel">資料日
+    <button data-step="1" ${v.i>=e.history.length-1?'disabled':''}>‹ 前一日</button>
+    <select data-date>${e.history.map((h,i)=>`<option value="${i}" ${i===v.i?'selected':''}>${h.date}（對比 ${h.prev_date}）</option>`).join('')}</select>
+    <button data-step="-1" ${v.i<=0?'disabled':''}>後一日 ›</button></div>` : '';
   return `<div class="card" data-etf="${e.etfid}">
     <h2>${e.fund_name} <span class="pill">${e.etfid}</span></h2>
-    <div class="sub">資料日期 ${e.data_date}　持股 ${e.holdings_count} 檔　${cmp}　來源 ${e.source==='xiaoyu'?'籌碼小宇':'MoneyDJ（備援）'}</div>
+    <div class="sub">資料日期 ${day.date||e.data_date}　持股 ${day.holdings_count||e.holdings_count} 檔　${day.prev_date?`（對比 ${day.prev_date} → ${day.date}）`:""}${v.i===0?`　來源 ${e.source==="xiaoyu"?"籌碼小宇":"MoneyDJ（備援）"}`:""}</div>
     ${stale}${baseline}
+    ${dsel}
     <div class="fbar">${ACTS.map(([k,l])=>`<button class="fchip ${v.f===k?'on':''}" data-f="${k}">${l}<b>${cnt(k)}</b></button>`).join('')}</div>
     <div class="alist-wrap">${actList(e)}</div>
-    <div class="sub">市值＝持有股數 × 當日收盤價；金額為小宇估算的買賣金額；買N／賣N＝追蹤的 ${DATA.etfs.length} 檔中當天有幾檔加碼／減碼。完整持股每日存檔於 <a href="archive/${e.etfid}.csv">archive/${e.etfid}.csv</a>。</div>
+    <div class="sub">市值＝持有股數 × 當日收盤價；金額＝買賣張數 × 當日成交均價（最新一日直接用小宇的數字）；買N／賣N＝追蹤的 ${DATA.etfs.length} 檔中當天有幾檔加碼／減碼。完整持股每日存檔於 <a href="archive/${e.etfid}.csv">archive/${e.etfid}.csv</a>。</div>
   </div>`;
 }
 
@@ -207,8 +220,19 @@ document.addEventListener('click', ev=>{
   if(f){ v.f = f.dataset.f;
     card.querySelectorAll('.fchip').forEach(b=>b.classList.toggle('on', b===f)); }
   else if(so){ const k = so.dataset.sort; v.d = (v.k===k) ? -v.d : -1; v.k = k; }
+  else if(ev.target.closest('[data-step]')){
+    v.i = Math.min(e.history.length-1, Math.max(0, v.i + Number(ev.target.closest('[data-step]').dataset.step)));
+    card.outerHTML = renderEtf(e); return;
+  }
   else return;
   card.querySelector('.alist-wrap').innerHTML = actList(e);
+});
+document.addEventListener('change', ev=>{
+  if(!ev.target.matches('select[data-date]')) return;
+  const card = ev.target.closest('.card[data-etf]');
+  const e = DATA.etfs.find(x=>x.etfid===card.dataset.etf);
+  getView(e).i = Number(ev.target.value);
+  card.outerHTML = renderEtf(e);
 });
 
 // ===== 跨 ETF 共同動作 =====

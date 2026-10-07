@@ -50,6 +50,8 @@ DATA_DIR = os.path.join(ROOT, "data")        # 每日快照
 SITE_DIR = os.path.join(ROOT, "docs")        # 產生的儀表板（GitHub Pages 用 /docs）
 
 TPE = timezone(timedelta(hours=8))           # 台灣時區
+HIST_DAYS = 20                               # 網頁日期切換可回看的資料日數
+PX_DIR = os.path.join(DATA_DIR, "_prices")   # 小宇的每日收盤價/均價（算歷史市值與金額用）
 
 # ---- 抓取與解析 -------------------------------------------------------
 
@@ -82,6 +84,9 @@ def fetch_xiaoyu(etfid):
     d = json.loads(curl_bytes(XY_URL.format(etfid=etfid)).decode("utf-8"))
     if d.get("code") != etfid or not d.get("snap_dates"):
         raise RuntimeError(f"{etfid}: 小宇資料格式不符")
+    def ymd(s):
+        return f"{s[:4]}-{s[4:6]}-{s[6:]}"
+
     latest = d["snap_dates"][0]
     rows = d["snaps"].get(latest) or []
     names = d.get("names", {})
@@ -97,9 +102,6 @@ def fetch_xiaoyu(etfid):
     if not holdings:
         raise RuntimeError(f"{etfid}: 小宇解析不到任何持股")
 
-    def ymd(s):
-        return f"{s[:4]}-{s[4:6]}-{s[6:]}"
-
     snap = {
         "etfid": etfid,
         "fund_name": ETFS.get(etfid) or etfid,
@@ -108,6 +110,16 @@ def fetch_xiaoyu(etfid):
         "lot_precision": True,
         "holdings": holdings,
     }
+    # 收盤價 / 成交均價序列（新到舊，與 snap_dates 對齊），供歷史日期估市值與買賣金額
+    vwaps = d.get("vwaps", {})
+    px = defaultdict(dict)
+    for i, sd in enumerate(d["snap_dates"]):
+        for code, arr in prices.items():
+            if i < len(arr) and arr[i]:
+                va = vwaps.get(code) or []
+                px[ymd(sd)][code] = [arr[i], va[i] if i < len(va) and va[i] else arr[i]]
+    save_prices(etfid, px)
+
     d1 = (d.get("wins") or {}).get("d1") or {}
     # 只有小宇的 d1 正好是「最新快照 vs 前一份」才帶回，否則交給本系統自行比對
     if d1.get("available") and d.get("date") == latest and d1.get("base"):
@@ -195,6 +207,25 @@ def save_snapshot(snap):
     return path
 
 
+def load_prices(etfid):
+    path = os.path.join(PX_DIR, f"{etfid}.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_prices(etfid, px):
+    """與既有價格檔合併（小宇只給近 61 日，舊的要自己留）。"""
+    merged = load_prices(etfid)
+    for d, m in px.items():
+        merged.setdefault(d, {}).update(m)
+    os.makedirs(PX_DIR, exist_ok=True)
+    with open(os.path.join(PX_DIR, f"{etfid}.json"), "w", encoding="utf-8") as f:
+        json.dump(dict(sorted(merged.items())), f, ensure_ascii=False,
+                  separators=(",", ":"))
+
+
 def list_snapshot_dates(etfid):
     folder = os.path.join(DATA_DIR, etfid)
     if not os.path.isdir(folder):
@@ -210,12 +241,13 @@ def load_snapshot(etfid, data_date):
 
 # ---- 比對邏輯 ---------------------------------------------------------
 
-def diff_snapshots(prev, curr, top_n=5):
+def diff_snapshots(prev, curr, top_n=5, lot=None):
     """比較兩份快照，回傳新增 / 剔除 / 買入前五 / 賣出前五。"""
     prev_h = prev["holdings"] if prev else {}
     curr_h = curr["holdings"]
     # 任一邊來自小宇（只到張），兩邊都統一捨成張再比，避免零股差異變成假買賣
-    lot = bool((prev or {}).get("lot_precision") or curr.get("lot_precision"))
+    if lot is None:
+        lot = bool((prev or {}).get("lot_precision") or curr.get("lot_precision"))
 
     def sh(info):
         return int(round(info["shares"] / 1000)) * 1000 if lot else info["shares"]
@@ -488,10 +520,20 @@ def update_one(etfid, fetch=True):
     # 首次建立基準時沒有可比對的前一份，diff 留空（避免把全部持股誤標為「新增」）
     if prev is None:
         diff = {"added": [], "removed": [], "buys": [], "sells": [], "changes": []}
-    elif (curr.get("xy_d1") or {}).get("base") == prev["data_date"]:
-        diff = diff_from_xiaoyu(curr)       # 小宇已算好，且基準日正好是我們的前一份
     else:
-        diff = diff_snapshots(prev, curr)   # 備援來源或基準日對不上 → 自行比對
+        diff = diff_pair(prev, curr)
+
+    # 日期切換：最近 HIST_DAYS 個資料日各自對前一份，一律以張比對（與小宇口徑一致）
+    px = load_prices(etfid)
+    history = []
+    for i in range(len(dates) - 1, max(0, len(dates) - 1 - HIST_DAYS), -1):
+        last = i == len(dates) - 1
+        c = curr if last else load_snapshot(etfid, dates[i])
+        p = prev if last else load_snapshot(etfid, dates[i - 1])
+        dd = diff if last else diff_pair(p, c)
+        history.append({"date": c["data_date"], "prev_date": p["data_date"],
+                        "holdings_count": len(c["holdings"]),
+                        "rows": build_rows(p, c, dd, px)})
     result = {
         "etfid": etfid,
         "fund_name": curr["fund_name"],
@@ -502,20 +544,34 @@ def update_one(etfid, fetch=True):
         "is_current": curr["data_date"] >= today_tpe(),
         "source": curr.get("source", "moneydj"),
         "diff": diff,
-        # 完整持股只留在 data/ 快照與 CSV 封存，網頁改顯示小宇式動作清單
-        "rows": build_rows(prev, curr, diff) if prev else [],
+        # 完整持股只留在 data/ 快照與 CSV 封存，網頁改顯示小宇式動作清單（可切日期）
+        "history": history,
     }
     return result
 
 
-def build_rows(prev, curr, diff):
-    """組出小宇式清單：每檔持股（含今日出清）一列，標動作 新增/加碼/減碼/出清/持平。
-    mv=市值(億)、dmoney=買賣金額(億，小宇值優先，否則以收盤價估)、dpct=權重變化。"""
+def diff_pair(prev, curr):
+    if (curr.get("xy_d1") or {}).get("base") == prev["data_date"]:
+        return diff_from_xiaoyu(curr)            # 小宇已算好，且基準日正好是我們的前一份
+    return diff_snapshots(prev, curr, lot=True)  # 歷史/備援 → 自行比對，以張為準
+
+
+def build_rows(prev, curr, diff, px=None):
+    """組出小宇式清單：每檔持股（含當日出清）一列，標動作 新增/加碼/減碼/出清/持平。
+    mv=市值(億，收盤價)、dmoney=買賣金額(億，小宇值優先，否則以成交均價估)、dpct=權重變化。"""
     prev_h = prev["holdings"] if prev else {}
     chg = {c["ticker"]: c for c in diff["changes"]}
+    day_px = (px or {}).get(curr["data_date"], {})
 
     def yi(shares, price):
         return round(shares * price / 1e8, 2) if price else None
+
+    def close(t, h):
+        return (day_px.get(t) or [None])[0] or (h or {}).get("price")
+
+    def vwap(t, h):
+        v = day_px.get(t)
+        return v[1] if v else (h or {}).get("price")
 
     rows = []
     for t, h in curr["holdings"].items():
@@ -527,25 +583,24 @@ def build_rows(prev, curr, diff):
         else:
             act = "add" if c["delta"] > 0 else "reduce"
         old = prev_h.get(t)
-        px = h.get("price") or (old or {}).get("price")
         rows.append({
             "ticker": t, "name": h["name"], "act": act,
-            "shares": h["shares"], "pct": h["pct"], "mv": yi(h["shares"], px),
+            "shares": h["shares"], "pct": h["pct"], "mv": yi(h["shares"], close(t, h)),
             "delta": c["delta"] if c else 0,
             "dmoney": (c.get("money") if c and c.get("money") is not None
-                       else (yi(c["delta"], px) if c else None)),
+                       else (yi(c["delta"], vwap(t, h)) if c else None)),
             "dpct": round(h["pct"] - old["pct"], 2) if old else (h["pct"] if prev else None),
         })
     for t, c in chg.items():
         if t in curr["holdings"] or not c.get("is_removed"):
             continue
         old = prev_h.get(t, {})
-        px = old.get("price")
         rows.append({
             "ticker": t, "name": c["name"], "act": "clear",
-            "shares": 0, "pct": 0.0, "mv": 0.0 if px else None,
+            "shares": 0, "pct": 0.0, "mv": 0.0,
             "delta": c["delta"],
-            "dmoney": c.get("money") if c.get("money") is not None else yi(c["delta"], px),
+            "dmoney": (c.get("money") if c.get("money") is not None
+                       else yi(c["delta"], vwap(t, old))),
             "dpct": -old["pct"] if "pct" in old else None,
         })
     return rows
@@ -603,15 +658,18 @@ def main():
         print(f"  ⚠️  投信買賣超失敗：{e}", file=sys.stderr)
 
     # 每列標「追蹤的 ETF 中，今天有幾檔加碼/減碼這檔」（小宇的 買N / 賣N）
+    # （依資料日期分開算，切到舊日期時也正確）
     nbuy, nsell = defaultdict(int), defaultdict(int)
     for r in results:
-        if r["is_baseline"]:
-            continue
-        for c in r["diff"]["changes"]:
-            (nbuy if c["delta"] > 0 else nsell)[c["ticker"]] += 1
+        for h in r["history"]:
+            for row in h["rows"]:
+                if row["delta"]:
+                    (nbuy if row["delta"] > 0 else nsell)[(h["date"], row["ticker"])] += 1
     for r in results:
-        for row in r["rows"]:
-            row["nbuy"], row["nsell"] = nbuy[row["ticker"]], nsell[row["ticker"]]
+        for h in r["history"]:
+            for row in h["rows"]:
+                k = (h["date"], row["ticker"])
+                row["nbuy"], row["nsell"] = nbuy[k], nsell[k]
 
     generated_at = datetime.now(TPE).strftime("%Y-%m-%d %H:%M")
     consensus = build_consensus(results)
