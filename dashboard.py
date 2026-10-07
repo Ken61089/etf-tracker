@@ -63,6 +63,7 @@ PAGE = r"""<!DOCTYPE html>
     margin:2px 3px 2px 0;border:1px solid var(--line);white-space:nowrap}
   .chip.buy{background:var(--buy-bg);color:#ffb4b4;border-color:#5a2a2c}
   .chip.sell{background:var(--sell-bg);color:#a7e8bf;border-color:#1f5236}
+  .chip.trust{background:#2a2410;color:#e8d27a;border-color:#5a4d18}
   td.wrap{white-space:normal}
   .empty{color:var(--sub);font-size:13px;padding:8px 2px}
   .baseline{background:#2a2410;border:1px solid #5a4d18;color:#e8d27a;
@@ -92,7 +93,7 @@ PAGE = r"""<!DOCTYPE html>
   <div class="tabs" id="tabs"></div>
   <div id="pages"></div>
   <footer>
-    資料來源：MoneyDJ 理財網 ｜ 紅=買入/新增，綠=賣出/剔除（依台股慣例）<br>
+    資料來源：ETF 持股＝籌碼小宇（備援 MoneyDJ 理財網）、投信買賣超＝富邦 DJ ｜ 紅=買入/新增，綠=賣出/剔除（依台股慣例）<br>
     比對基準為「資料日期」變化，非日曆日。
   </footer>
 </div>
@@ -117,14 +118,15 @@ document.getElementById('genAt').textContent = '更新時間：' + DATA.generate
 function rowsBuySell(list, kind){
   if(!list.length) return '<div class="empty">— 無 —</div>';
   const cls = kind==='buy'?'buy':'sell';
+  const hasMoney = list.some(c=>c.money!=null);
   return `<table><thead><tr>
-      <th>個股</th><th class="num">變化${unitName()}數</th><th class="num">→ 持有</th><th class="num">比例%</th>
+      <th>個股</th><th class="num">變化${unitName()}數</th><th class="num">→ 持有</th><th class="num">比例%</th>${hasMoney?'<th class="num">金額(億)</th>':''}
     </tr></thead><tbody>` +
     list.map(c=>`<tr>
       <td>${c.name}<span class="pill"> ${c.ticker}</span>${c.is_new?'<span class="tag new">新增</span>':''}${c.is_removed?'<span class="tag rm">剔除</span>':''}</td>
       <td class="num ${cls}">${delta(c.delta)}</td>
       <td class="num">${fmt(c.new_shares)}</td>
-      <td class="num">${c.pct.toFixed(2)}</td>
+      <td class="num">${c.pct.toFixed(2)}</td>${hasMoney?`<td class="num ${cls}">${c.money!=null?c.money.toFixed(2):'—'}</td>`:''}
     </tr>`).join('') + `</tbody></table>`;
 }
 
@@ -154,11 +156,11 @@ function renderEtf(e){
     : '';
   const cmp = e.is_baseline ? '' : `（對比 ${e.prev_date} → ${e.data_date}）`;
   const stale = (e.is_current === false)
-    ? `<div class="baseline">⏳ 此檔來源（MoneyDJ）資料日期為 ${e.data_date}，尚未更新到最新交易日。系統每小時會再試，更新到當日後此處會自動刷新。</div>`
+    ? `<div class="baseline">⏳ 此檔來源（${e.source==='xiaoyu'?'籌碼小宇':'MoneyDJ'}）資料日期為 ${e.data_date}，尚未更新到最新交易日。系統每小時會再試，更新到當日後此處會自動刷新。</div>`
     : '';
   return `<div class="card">
     <h2>${e.fund_name} <span class="pill">${e.etfid}</span></h2>
-    <div class="sub">資料日期 ${e.data_date}　持股 ${e.holdings_count} 檔　${cmp}</div>
+    <div class="sub">資料日期 ${e.data_date}　持股 ${e.holdings_count} 檔　${cmp}　來源 ${e.source==='xiaoyu'?'籌碼小宇':'MoneyDJ（備援）'}</div>
     ${stale}${baseline}
     <div class="grid">
       <div class="box"><h3>🔴➕ 新增標的 <span class="pill">${d.added.length}</span></h3>${rowsAddRm(d.added,'add')}</div>
@@ -172,6 +174,18 @@ function renderEtf(e){
 
 // ===== 跨 ETF 共同動作 =====
 const shortName = n => n.replace(/^主動/,'');
+// 投信買賣超查表(只在投信資料日期 = ETF 資料日期時才標)
+const TRUST_MAP = {};
+if(DATA.trust){
+  ['twse','tpex'].forEach(k=>['buy','sell'].forEach(side=>
+    (DATA.trust[k]?.[side]||[]).forEach(r=>{ TRUST_MAP[r.ticker] = r; })));
+}
+function trustChip(ticker, etfDate){
+  const r = TRUST_MAP[ticker];
+  if(!r || (etfDate && DATA.trust.data_date !== etfDate)) return '';
+  return `<span class="chip trust">🏦 投信${r.lots>0?'買超':'賣超'} ${r.lots.toLocaleString()} 張</span>`;
+}
+const latestEtfDate = () => DATA.etfs.reduce((m,e)=>e.data_date>m?e.data_date:m,'');
 
 function consTable(list, kind){
   const th = DATA.consensus.threshold;
@@ -181,7 +195,7 @@ function consTable(list, kind){
       <th>個股</th><th class="num">家數</th><th>哪幾檔 ETF（變化${unitName()}數）</th>
     </tr></thead><tbody>` +
     list.map(x=>`<tr>
-      <td>${x.name}<span class="pill"> ${x.ticker}</span></td>
+      <td>${x.name}<span class="pill"> ${x.ticker}</span><br>${trustChip(x.ticker, latestEtfDate())}</td>
       <td class="num ${cls}" style="font-weight:600">${x.count} 家${x.flag_count?`<br><span class="pill">${kind==='buy'?'🆕 新進':'✖ 剔除'} ${x.flag_count}</span>`:''}</td>
       <td class="wrap">${x.etfs.map(e=>`<span class="chip ${cls}">${shortName(e.fund_name)} ${delta(e.delta)}${e.is_new?' 🆕':''}${e.is_removed?' ✖':''}</span>`).join('')}</td>
     </tr>`).join('') + `</tbody></table>`;
@@ -218,6 +232,58 @@ function renderConsensus(c){
   </div>`;
 }
 
+// ===== 投信買賣超 =====
+function etfChips(list){
+  if(!list || !list.length) return '<span class="pill">—</span>';
+  return list.map(e=>`<span class="chip ${e.delta>0?'buy':'sell'}">${shortName(e.fund_name)} ${delta(e.delta)}${e.is_new?' 🆕':''}${e.is_removed?' ✖':''}</span>`).join('');
+}
+function trustTable(list, kind){
+  if(!list || !list.length) return '<div class="empty">— 無 —</div>';
+  const cls = kind==='buy'?'buy':'sell';
+  return `<table><thead><tr>
+      <th class="num">#</th><th>個股</th><th class="num">超張數</th><th class="num">收盤</th><th class="num">漲跌</th><th>主動 ETF 同日動作</th>
+    </tr></thead><tbody>` +
+    list.map(r=>`<tr>
+      <td class="num">${r.rank}</td>
+      <td>${r.name}<span class="pill"> ${r.ticker}</span></td>
+      <td class="num ${cls}">${r.lots.toLocaleString()}</td>
+      <td class="num">${r.close}</td>
+      <td class="num">${r.chg}</td>
+      <td class="wrap">${etfChips(r.etfs)}</td>
+    </tr>`).join('') + `</tbody></table>`;
+}
+function crossTable(list, kind){
+  if(!list.length) return `<div class="empty">— 今日沒有投信${kind==='buy'?'買超':'賣超'}且主動 ETF 同步${kind==='buy'?'加碼':'減碼'}的個股 —</div>`;
+  const cls = kind==='buy'?'buy':'sell';
+  return `<table><thead><tr>
+      <th>個股</th><th class="num">投信超張數</th><th>同向的主動 ETF（變化${unitName()}數）</th>
+    </tr></thead><tbody>` +
+    list.map(r=>`<tr>
+      <td>${r.name}<span class="pill"> ${r.ticker}・${r.market}</span></td>
+      <td class="num ${cls}" style="font-weight:600">${r.lots.toLocaleString()}<br><span class="pill">${r.etfs.length} 檔 ETF 同向</span></td>
+      <td class="wrap">${etfChips(r.etfs)}</td>
+    </tr>`).join('') + `</tbody></table>`;
+}
+function renderTrust(t){
+  const other = (t.etf_other_day||[]).length
+    ? `<div class="baseline">⏳ 以下 ETF 資料日期與投信（${t.data_date}）不同，未納入交叉比對：${t.etf_other_day.join('、')}</div>` : '';
+  const cross = t.cross || {buy:[],sell:[]};
+  return `<div class="card">
+    <h2>🏦 投信 × 主動 ETF 同向 <span class="pill">${t.data_date}</span></h2>
+    <div class="sub">投信買賣超排行（上市＋上櫃前 50）中，追蹤的主動 ETF 當天也同方向加碼／減碼的個股。ETF 家數越多排越前面。</div>
+    ${other}
+    <div class="grid">
+      <div class="box"><h3>🔴 投信買超 ＋ ETF 加碼 <span class="pill">${cross.buy.length}</span></h3>${crossTable(cross.buy,'buy')}</div>
+      <div class="box"><h3>🟢 投信賣超 ＋ ETF 減碼 <span class="pill">${cross.sell.length}</span></h3>${crossTable(cross.sell,'sell')}</div>
+    </div>
+  </div>` + [['twse','上市'],['tpex','上櫃']].map(([k,label])=>`<div class="card">
+    <h2>${label}投信買賣超一日排行 <span class="pill">${t.data_date}・單位：張</span></h2>
+    <div class="sub">來源：富邦 DJ。最右欄標出追蹤的主動 ETF 當天對該股的加減碼。</div>
+    <div class="box" style="margin-bottom:14px"><h3>🔴 買超 <span class="pill">${t[k].buy.length}</span></h3>${trustTable(t[k].buy,'buy')}</div>
+    <div class="box" style="margin-bottom:14px"><h3>🟢 賣超 <span class="pill">${t[k].sell.length}</span></h3>${trustTable(t[k].sell,'sell')}</div>
+  </div>`).join('');
+}
+
 // ===== 分頁建立 =====
 const tabs = document.getElementById('tabs');
 const pages = document.getElementById('pages');
@@ -248,6 +314,7 @@ function buildAll(){
     return;
   }
   if(DATA.consensus) addTab('🤝 共同動作', renderConsensus(DATA.consensus), false);
+  if(DATA.trust) addTab('🏦 投信買賣超', renderTrust(DATA.trust), false);
   DATA.etfs.forEach(e=> addTab(e.fund_name, renderEtf(e), false));
   const all = document.querySelectorAll('.tab');
   if(all.length){
