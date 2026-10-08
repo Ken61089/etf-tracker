@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09 02:12",
+  "generated_at": "2026-10-09 03:09",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -66168,20 +66168,20 @@
           "etfs": []
         },
         {
-          "ticker": "2618",
-          "name": "長榮航",
-          "lots": -330,
-          "close": 41.4,
-          "chg": "-0.55",
-          "rank": 14,
-          "etfs": []
-        },
-        {
           "ticker": "2542",
           "name": "興富發",
           "lots": -330,
           "close": 39.05,
           "chg": "0.25",
+          "rank": 14,
+          "etfs": []
+        },
+        {
+          "ticker": "2618",
+          "name": "長榮航",
+          "lots": -330,
+          "close": 41.4,
+          "chg": "-0.55",
           "rank": 15,
           "etfs": []
         },
@@ -66344,20 +66344,20 @@
           "etfs": []
         },
         {
-          "ticker": "9917",
-          "name": "中保科",
-          "lots": -58,
-          "close": 106.5,
-          "chg": "0",
-          "rank": 32,
-          "etfs": []
-        },
-        {
           "ticker": "3015",
           "name": "全漢",
           "lots": -58,
           "close": 51.7,
           "chg": "-0.9",
+          "rank": 32,
+          "etfs": []
+        },
+        {
+          "ticker": "9917",
+          "name": "中保科",
+          "lots": -58,
+          "close": 106.5,
+          "chg": "0",
           "rank": 33,
           "etfs": []
         },
