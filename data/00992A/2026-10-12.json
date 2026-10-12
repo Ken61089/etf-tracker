@@ -388,11 +388,11 @@
         "clear": false
       },
       {
-        "code": "6213",
-        "name": "聯茂",
-        "lots": 6,
+        "code": "2357",
+        "name": "華碩",
+        "lots": 5,
         "money": 0.05,
-        "chg": 0.74,
+        "chg": -1.91,
         "new": false,
         "clear": false
       },
@@ -406,15 +406,6 @@
         "clear": false
       },
       {
-        "code": "3026",
-        "name": "禾伸堂",
-        "lots": 6,
-        "money": 0.05,
-        "chg": -4.22,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2301",
         "name": "光寶科",
         "lots": 16,
@@ -424,20 +415,29 @@
         "clear": false
       },
       {
-        "code": "2357",
-        "name": "華碩",
-        "lots": 5,
+        "code": "3026",
+        "name": "禾伸堂",
+        "lots": 6,
         "money": 0.05,
-        "chg": -1.91,
+        "chg": -4.22,
         "new": false,
         "clear": false
       },
       {
-        "code": "2404",
-        "name": "漢唐",
-        "lots": 3,
+        "code": "6213",
+        "name": "聯茂",
+        "lots": 6,
+        "money": 0.05,
+        "chg": 0.74,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3711",
+        "name": "日月光投控",
+        "lots": 5,
         "money": 0.04,
-        "chg": -5.36,
+        "chg": 2.42,
         "new": false,
         "clear": false
       },
@@ -451,20 +451,20 @@
         "clear": false
       },
       {
+        "code": "2404",
+        "name": "漢唐",
+        "lots": 3,
+        "money": 0.04,
+        "chg": -5.36,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "2376",
         "name": "技嘉",
         "lots": 12,
         "money": 0.04,
         "chg": -1.93,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "3711",
-        "name": "日月光投控",
-        "lots": 5,
-        "money": 0.04,
-        "chg": 2.42,
         "new": false,
         "clear": false
       },

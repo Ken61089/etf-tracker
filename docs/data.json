@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12 21:22",
+  "generated_at": "2026-10-13 03:29",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -83,7 +83,7 @@
       "prev_date": "2026-10-08",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -13297,7 +13297,7 @@
       "prev_date": "2026-10-08",
       "holdings_count": 51,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -26618,7 +26618,7 @@
       "prev_date": "2026-10-08",
       "holdings_count": 55,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -41466,7 +41466,7 @@
       "prev_date": "2026-10-08",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -54679,7 +54679,7 @@
       "prev_date": "2026-10-08",
       "holdings_count": 42,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
