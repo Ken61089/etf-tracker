@@ -320,7 +320,7 @@
         "name": "大立光",
         "lots": 43,
         "money": 2.97,
-        "chg": 9.98,
+        "chg": -0.68,
         "new": false,
         "clear": false
       },
@@ -329,7 +329,7 @@
         "name": "華通",
         "lots": 800,
         "money": 2.04,
-        "chg": 1.61,
+        "chg": -3.37,
         "new": true,
         "clear": false
       }
@@ -340,7 +340,7 @@
         "name": "富世達",
         "lots": -180,
         "money": -4.07,
-        "chg": -4.22,
+        "chg": -2.64,
         "new": false,
         "clear": false
       },
@@ -349,7 +349,7 @@
         "name": "環球晶",
         "lots": -100,
         "money": -1.12,
-        "chg": -1.33,
+        "chg": -8.97,
         "new": false,
         "clear": false
       }
