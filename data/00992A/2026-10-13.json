@@ -469,11 +469,11 @@
         "clear": false
       },
       {
-        "code": "2357",
-        "name": "華碩",
-        "lots": 5,
+        "code": "2301",
+        "name": "光寶科",
+        "lots": 18,
         "money": 0.05,
-        "chg": -1.13,
+        "chg": -4.17,
         "new": false,
         "clear": false
       },
@@ -487,20 +487,20 @@
         "clear": false
       },
       {
+        "code": "2357",
+        "name": "華碩",
+        "lots": 5,
+        "money": 0.05,
+        "chg": -1.13,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "8150",
         "name": "南茂",
         "lots": 41,
         "money": 0.05,
         "chg": -5.69,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2301",
-        "name": "光寶科",
-        "lots": 18,
-        "money": 0.05,
-        "chg": -4.17,
         "new": false,
         "clear": false
       },
