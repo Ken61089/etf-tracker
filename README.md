@@ -84,12 +84,16 @@ MoneyDJ 網頁**每次只顯示「最新一天」**的持股。能做到日對�
 
 ## 自動更新（線上版）
 
-已設定 GitHub Actions（見 `.github/workflows/update.yml`）：
+更新程式是 GitHub Actions（見 `.github/workflows/update.yml`），由兩個來源觸發（2026-10-13 起）：
 
-- **台灣時間 18:00 起每小時**跑一次（cron UTC 10:00–17:00，共 8 個時段），直到各檔都更新到當日資料。任務具冪等性：沒有新資料日期就不存、不 commit，等於自動停。
-- 之所以每小時：MoneyDJ 各檔更新時間錯開、且常落後，傍晚輪詢可在它更新到當日時就抓到。
-- 排程時間不保證分秒準時（GitHub 免費排程尖峰可能延遲），push 失敗會自動 rebase 重試。
-- 也可在 GitHub 的 **Actions 分頁 →「每日更新 ETF 持股」→ Run workflow** 手動立即觸發。
+1. **主力：cron-job.org 準時觸發**——週一～五台灣時間 **18:30、19:30、20:30、21:30**
+   呼叫 GitHub API `POST /repos/Ken61089/etf-tracker/actions/workflows/update.yml/dispatches`（body `{"ref":"main"}`），
+   成功回 204。權杖是只限本 repo、只開 Actions Read and write 的 fine-grained token，**有到期日，到期前要重建並換掉 cron-job.org 的 Authorization header**。
+2. **備援：GitHub 內建排程**——cron UTC 10:00–17:00 每小時。
+   ⚠️ 實測（2026-10-08～12）GitHub 免費排程會**延遲 5～6 小時**，第一次常到台灣 23:30～00:40 才跑，所以只當備援，不靠它準時。
+
+- 任務具冪等性：沒有新資料日期就不存、不 commit，多次觸發沒有副作用；push 失敗會自動 rebase 重試。
+- 也可在 GitHub 的 **Actions 分頁 →「每日更新 ETF 持股」→ Run workflow** 手動立即觸發（或 `gh workflow run update.yml`）。
 
 ## 完整存檔（供人工比對）
 
