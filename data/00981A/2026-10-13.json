@@ -314,7 +314,7 @@
         "name": "台積電",
         "lots": 364,
         "money": 9.09,
-        "chg": -1.97,
+        "chg": 0.0,
         "new": false,
         "clear": false
       },
@@ -323,7 +323,7 @@
         "name": "奇鋐",
         "lots": 85,
         "money": 2.83,
-        "chg": -3.1,
+        "chg": 1.07,
         "new": false,
         "clear": false
       },
@@ -332,7 +332,7 @@
         "name": "高力",
         "lots": 100,
         "money": 1.7,
-        "chg": -0.29,
+        "chg": -1.75,
         "new": false,
         "clear": false
       },
@@ -341,7 +341,7 @@
         "name": "台燿",
         "lots": 76,
         "money": 1.26,
-        "chg": -4.61,
+        "chg": 4.83,
         "new": false,
         "clear": false
       }
@@ -352,7 +352,7 @@
         "name": "台光電",
         "lots": -322,
         "money": -18.22,
-        "chg": -9.84,
+        "chg": -0.45,
         "new": false,
         "clear": false
       }

@@ -266,7 +266,7 @@
         "name": "日月光投控",
         "lots": 500,
         "money": 3.7,
-        "chg": -2.89,
+        "chg": 0.95,
         "new": false,
         "clear": false
       },
@@ -275,7 +275,7 @@
         "name": "健策",
         "lots": 35,
         "money": 2.46,
-        "chg": -2.37,
+        "chg": 1.14,
         "new": false,
         "clear": false
       },
@@ -284,7 +284,7 @@
         "name": "萬潤",
         "lots": 144,
         "money": 2.34,
-        "chg": -4.48,
+        "chg": -3.75,
         "new": false,
         "clear": false
       },
@@ -293,7 +293,7 @@
         "name": "大立光",
         "lots": 30,
         "money": 2.18,
-        "chg": -0.68,
+        "chg": -5.43,
         "new": false,
         "clear": false
       },
@@ -302,7 +302,7 @@
         "name": "貿聯-KY",
         "lots": 80,
         "money": 1.81,
-        "chg": -4.03,
+        "chg": -1.11,
         "new": false,
         "clear": false
       },
@@ -311,7 +311,7 @@
         "name": "富喬",
         "lots": 1200,
         "money": 1.54,
-        "chg": -2.26,
+        "chg": 3.08,
         "new": false,
         "clear": false
       },
@@ -320,7 +320,7 @@
         "name": "台積電",
         "lots": 50,
         "money": 1.25,
-        "chg": -1.97,
+        "chg": 0.0,
         "new": false,
         "clear": false
       },
@@ -329,7 +329,7 @@
         "name": "旺矽",
         "lots": 20,
         "money": 1.2,
-        "chg": -3.1,
+        "chg": -0.93,
         "new": false,
         "clear": false
       },
@@ -338,7 +338,7 @@
         "name": "臻鼎-KY",
         "lots": 200,
         "money": 1.09,
-        "chg": -4.99,
+        "chg": 2.72,
         "new": false,
         "clear": false
       },
@@ -347,7 +347,7 @@
         "name": "奇鋐",
         "lots": 27,
         "money": 0.9,
-        "chg": -3.1,
+        "chg": 1.07,
         "new": false,
         "clear": false
       },
@@ -356,7 +356,7 @@
         "name": "台燿",
         "lots": 50,
         "money": 0.83,
-        "chg": -4.61,
+        "chg": 4.83,
         "new": false,
         "clear": false
       },
@@ -365,7 +365,7 @@
         "name": "禾伸堂",
         "lots": 100,
         "money": 0.82,
-        "chg": -4.05,
+        "chg": 5.96,
         "new": false,
         "clear": false
       },
@@ -374,7 +374,7 @@
         "name": "聯茂",
         "lots": 100,
         "money": 0.77,
-        "chg": -2.09,
+        "chg": 7.67,
         "new": false,
         "clear": false
       },
@@ -383,7 +383,7 @@
         "name": "川湖",
         "lots": 7,
         "money": 0.71,
-        "chg": -4.91,
+        "chg": -0.55,
         "new": false,
         "clear": false
       },
@@ -392,7 +392,7 @@
         "name": "創意",
         "lots": 8,
         "money": 0.63,
-        "chg": -0.06,
+        "chg": 1.85,
         "new": false,
         "clear": false
       },
@@ -401,7 +401,7 @@
         "name": "智邦",
         "lots": 28,
         "money": 0.58,
-        "chg": -4.23,
+        "chg": 0.49,
         "new": false,
         "clear": false
       },
@@ -410,7 +410,7 @@
         "name": "高力",
         "lots": 33,
         "money": 0.56,
-        "chg": -0.29,
+        "chg": -1.75,
         "new": false,
         "clear": false
       },
@@ -419,7 +419,7 @@
         "name": "景碩",
         "lots": 50,
         "money": 0.51,
-        "chg": -1.89,
+        "chg": 0.96,
         "new": false,
         "clear": false
       },
@@ -428,7 +428,7 @@
         "name": "穎崴",
         "lots": 5,
         "money": 0.29,
-        "chg": -5.39,
+        "chg": -1.49,
         "new": false,
         "clear": false
       },
@@ -437,7 +437,7 @@
         "name": "南電",
         "lots": 21,
         "money": 0.29,
-        "chg": 0.0,
+        "chg": -0.69,
         "new": false,
         "clear": false
       },
@@ -446,7 +446,7 @@
         "name": "聯亞",
         "lots": 5,
         "money": 0.14,
-        "chg": -9.92,
+        "chg": 5.69,
         "new": false,
         "clear": false
       },
@@ -455,7 +455,7 @@
         "name": "漢唐",
         "lots": 8,
         "money": 0.09,
-        "chg": -7.69,
+        "chg": 1.32,
         "new": false,
         "clear": false
       },
@@ -464,7 +464,7 @@
         "name": "亞翔",
         "lots": 10,
         "money": 0.07,
-        "chg": -4.27,
+        "chg": 0.28,
         "new": false,
         "clear": false
       },
@@ -473,16 +473,7 @@
         "name": "華碩",
         "lots": 5,
         "money": 0.05,
-        "chg": -1.13,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "8150",
-        "name": "南茂",
-        "lots": 41,
-        "money": 0.05,
-        "chg": -5.69,
+        "chg": 2.48,
         "new": false,
         "clear": false
       },
@@ -491,7 +482,7 @@
         "name": "技嘉",
         "lots": 14,
         "money": 0.05,
-        "chg": -0.14,
+        "chg": 0.14,
         "new": false,
         "clear": false
       },
@@ -500,7 +491,16 @@
         "name": "光寶科",
         "lots": 18,
         "money": 0.05,
-        "chg": -4.17,
+        "chg": 2.54,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "8150",
+        "name": "南茂",
+        "lots": 41,
+        "money": 0.05,
+        "chg": 0.86,
         "new": false,
         "clear": false
       },
@@ -509,7 +509,7 @@
         "name": "致茂",
         "lots": 2,
         "money": 0.04,
-        "chg": -6.98,
+        "chg": 2.27,
         "new": false,
         "clear": false
       },
@@ -518,7 +518,7 @@
         "name": "宜鼎",
         "lots": 3,
         "money": 0.04,
-        "chg": -5.56,
+        "chg": -1.68,
         "new": false,
         "clear": false
       }

@@ -314,7 +314,7 @@
         "name": "大立光",
         "lots": 24,
         "money": 1.74,
-        "chg": -0.68,
+        "chg": -5.43,
         "new": false,
         "clear": false
       },
@@ -323,7 +323,7 @@
         "name": "欣興",
         "lots": 70,
         "money": 0.83,
-        "chg": -5.98,
+        "chg": 0.42,
         "new": false,
         "clear": false
       },
@@ -332,7 +332,7 @@
         "name": "南亞",
         "lots": 200,
         "money": 0.63,
-        "chg": 5.28,
+        "chg": 9.4,
         "new": false,
         "clear": false
       }
@@ -343,7 +343,7 @@
         "name": "台達電",
         "lots": -199,
         "money": -3.58,
-        "chg": -6.58,
+        "chg": 0.56,
         "new": false,
         "clear": false
       }
