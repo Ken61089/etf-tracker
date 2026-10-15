@@ -345,7 +345,7 @@
         "name": "川湖",
         "lots": -50,
         "money": -5.03,
-        "chg": -0.55,
+        "chg": -2.85,
         "new": false,
         "clear": false
       },
@@ -354,7 +354,7 @@
         "name": "微星",
         "lots": -650,
         "money": -1.03,
-        "chg": 1.27,
+        "chg": -0.63,
         "new": false,
         "clear": false
       }
