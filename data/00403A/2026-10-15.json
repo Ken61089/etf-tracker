@@ -314,7 +314,7 @@
         "name": "台燿",
         "lots": 120,
         "money": 1.99,
-        "chg": -6.34,
+        "chg": -0.62,
         "new": false,
         "clear": false
       }
@@ -325,7 +325,7 @@
         "name": "聯發科",
         "lots": -250,
         "money": -10.54,
-        "chg": -6.93,
+        "chg": 2.04,
         "new": false,
         "clear": false
       }

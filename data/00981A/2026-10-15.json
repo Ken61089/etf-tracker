@@ -314,7 +314,7 @@
         "name": "金像電",
         "lots": 385,
         "money": 4.56,
-        "chg": -5.56,
+        "chg": 4.62,
         "new": false,
         "clear": false
       },
@@ -323,7 +323,7 @@
         "name": "台燿",
         "lots": 199,
         "money": 3.3,
-        "chg": -6.34,
+        "chg": -0.62,
         "new": false,
         "clear": false
       },
@@ -332,7 +332,7 @@
         "name": "欣興",
         "lots": 217,
         "money": 2.35,
-        "chg": -9.28,
+        "chg": 1.4,
         "new": false,
         "clear": false
       }
