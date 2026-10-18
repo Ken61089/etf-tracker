@@ -364,20 +364,20 @@
         "clear": false
       },
       {
-        "code": "5274",
-        "name": "信驊",
-        "lots": 15,
-        "money": 2.45,
-        "chg": 3.36,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2454",
         "name": "聯發科",
         "lots": 57,
         "money": 2.45,
         "chg": 2.04,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5274",
+        "name": "信驊",
+        "lots": 15,
+        "money": 2.45,
+        "chg": 3.36,
         "new": false,
         "clear": false
       },
