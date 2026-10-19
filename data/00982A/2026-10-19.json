@@ -1,0 +1,543 @@
+{
+  "etfid": "00982A",
+  "fund_name": "主動群益台灣強棒",
+  "data_date": "2026-10-19",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "5425": {
+      "name": "台半",
+      "pct": 1.25,
+      "shares": 6406000,
+      "price": 91.4
+    },
+    "3105": {
+      "name": "穩懋",
+      "pct": 5.85,
+      "shares": 5709000,
+      "price": 482.0
+    },
+    "2303": {
+      "name": "聯電",
+      "pct": 1.44,
+      "shares": 5153000,
+      "price": 131.5
+    },
+    "2478": {
+      "name": "大毅",
+      "pct": 1.13,
+      "shares": 4364000,
+      "price": 122.0
+    },
+    "8070": {
+      "name": "長華*",
+      "pct": 0.47,
+      "shares": 4343000,
+      "price": 51.2
+    },
+    "6139": {
+      "name": "亞翔",
+      "pct": 5.28,
+      "shares": 3745000,
+      "price": 663.0
+    },
+    "3231": {
+      "name": "緯創",
+      "pct": 1.39,
+      "shares": 3638000,
+      "price": 180.0
+    },
+    "5483": {
+      "name": "中美晶",
+      "pct": 1.42,
+      "shares": 3439000,
+      "price": 193.5
+    },
+    "6214": {
+      "name": "精誠",
+      "pct": 1.44,
+      "shares": 3438000,
+      "price": 196.5
+    },
+    "3265": {
+      "name": "台星科",
+      "pct": 1.8,
+      "shares": 3364000,
+      "price": 251.0
+    },
+    "3090": {
+      "name": "日電貿",
+      "pct": 1.13,
+      "shares": 3280000,
+      "price": 162.5
+    },
+    "2301": {
+      "name": "光寶科",
+      "pct": 1.82,
+      "shares": 3234000,
+      "price": 264.0
+    },
+    "4958": {
+      "name": "臻鼎-KY",
+      "pct": 3.68,
+      "shares": 3158000,
+      "price": 547.0
+    },
+    "2428": {
+      "name": "興勤",
+      "pct": 1.25,
+      "shares": 2287000,
+      "price": 256.5
+    },
+    "2885": {
+      "name": "元大金",
+      "pct": 0.34,
+      "shares": 2214000,
+      "price": 71.7
+    },
+    "6531": {
+      "name": "愛普*",
+      "pct": 3.69,
+      "shares": 2110000,
+      "price": 821.0
+    },
+    "6239": {
+      "name": "力成",
+      "pct": 1.07,
+      "shares": 1910000,
+      "price": 263.0
+    },
+    "2376": {
+      "name": "技嘉",
+      "pct": 1.31,
+      "shares": 1751000,
+      "price": 352.0
+    },
+    "2486": {
+      "name": "一詮",
+      "pct": 0.73,
+      "shares": 1607000,
+      "price": 213.5
+    },
+    "2330": {
+      "name": "台積電",
+      "pct": 7.95,
+      "shares": 1544000,
+      "price": 2420.0
+    },
+    "2455": {
+      "name": "全新",
+      "pct": 1.61,
+      "shares": 1539000,
+      "price": 491.5
+    },
+    "2476": {
+      "name": "鉅祥",
+      "pct": 0.34,
+      "shares": 1291000,
+      "price": 124.0
+    },
+    "3491": {
+      "name": "昇達科",
+      "pct": 3.48,
+      "shares": 1180000,
+      "price": 1385.0
+    },
+    "6672": {
+      "name": "騰輝電子-KY",
+      "pct": 1.4,
+      "shares": 1175000,
+      "price": 562.0
+    },
+    "6488": {
+      "name": "環球晶",
+      "pct": 2.05,
+      "shares": 1091000,
+      "price": 882.0
+    },
+    "6472": {
+      "name": "保瑞",
+      "pct": 0.91,
+      "shares": 1032000,
+      "price": 412.5
+    },
+    "2377": {
+      "name": "微星",
+      "pct": 0.35,
+      "shares": 1022000,
+      "price": 159.5
+    },
+    "6669": {
+      "name": "緯穎",
+      "pct": 4.08,
+      "shares": 1016000,
+      "price": 1885.0
+    },
+    "2467": {
+      "name": "志聖",
+      "pct": 1.04,
+      "shares": 1000000,
+      "price": 491.0
+    },
+    "2395": {
+      "name": "研華",
+      "pct": 1.39,
+      "shares": 964000,
+      "price": 679.0
+    },
+    "6213": {
+      "name": "聯茂",
+      "pct": 1.54,
+      "shares": 942000,
+      "price": 767.0
+    },
+    "3711": {
+      "name": "日月光投控",
+      "pct": 1.26,
+      "shares": 883000,
+      "price": 670.0
+    },
+    "2360": {
+      "name": "致茂",
+      "pct": 3.63,
+      "shares": 851000,
+      "price": 2005.0
+    },
+    "3583": {
+      "name": "辛耘",
+      "pct": 1.07,
+      "shares": 790000,
+      "price": 634.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 7.03,
+      "shares": 786000,
+      "price": 4205.0
+    },
+    "3617": {
+      "name": "碩天",
+      "pct": 0.35,
+      "shares": 632000,
+      "price": 259.0
+    },
+    "5536": {
+      "name": "聖暉*",
+      "pct": 0.8,
+      "shares": 455000,
+      "price": 827.0
+    },
+    "6274": {
+      "name": "台燿",
+      "pct": 1.46,
+      "shares": 421000,
+      "price": 1630.0
+    },
+    "8996": {
+      "name": "高力",
+      "pct": 1.24,
+      "shares": 382000,
+      "price": 1525.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 2.64,
+      "shares": 374000,
+      "price": 3320.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 3.37,
+      "shares": 309000,
+      "price": 5125.0
+    },
+    "6196": {
+      "name": "帆宣",
+      "pct": 0.39,
+      "shares": 306000,
+      "price": 598.0
+    },
+    "6223": {
+      "name": "旺矽",
+      "pct": 3.35,
+      "shares": 301000,
+      "price": 5235.0
+    },
+    "3008": {
+      "name": "大立光",
+      "pct": 3.36,
+      "shares": 253000,
+      "price": 6245.0
+    },
+    "6177": {
+      "name": "達麗",
+      "pct": 0.02,
+      "shares": 194000,
+      "price": 45.2
+    },
+    "6640": {
+      "name": "均華",
+      "pct": 0.3,
+      "shares": 143000,
+      "price": 985.0
+    },
+    "2059": {
+      "name": "川湖",
+      "pct": 2.72,
+      "shares": 129000,
+      "price": 9920.0
+    },
+    "6446": {
+      "name": "藥華藥",
+      "pct": 0.1,
+      "shares": 42000,
+      "price": 1175.0
+    },
+    "5274": {
+      "name": "信驊",
+      "pct": 1.22,
+      "shares": 36000,
+      "price": 15980.0
+    },
+    "4441": {
+      "name": "振大環球",
+      "pct": 0.0,
+      "shares": 4000,
+      "price": 163.0
+    },
+    "1519": {
+      "name": "華城",
+      "pct": 0.0,
+      "shares": 1000,
+      "price": 644.0
+    },
+    "2886": {
+      "name": "兆豐金",
+      "pct": 0.0,
+      "shares": 1000,
+      "price": 53.9
+    },
+    "3443": {
+      "name": "創意",
+      "pct": 0.02,
+      "shares": 1000,
+      "price": 7830.0
+    },
+    "3529": {
+      "name": "力旺",
+      "pct": 0.01,
+      "shares": 1000,
+      "price": 2695.0
+    },
+    "8358": {
+      "name": "金居",
+      "pct": 0.0,
+      "shares": 1000,
+      "price": 484.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-10-16",
+    "buy": [
+      {
+        "code": "2454",
+        "name": "聯發科",
+        "lots": 50,
+        "money": 2.1,
+        "chg": -1.06,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3008",
+        "name": "大立光",
+        "lots": 2,
+        "money": 0.12,
+        "chg": -2.42,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2360",
+        "name": "致茂",
+        "lots": 6,
+        "money": 0.12,
+        "chg": 0.25,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6488",
+        "name": "環球晶",
+        "lots": 9,
+        "money": 0.08,
+        "chg": -2.22,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3017",
+        "name": "奇鋐",
+        "lots": 2,
+        "money": 0.07,
+        "chg": 0.15,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2301",
+        "name": "光寶科",
+        "lots": 18,
+        "money": 0.05,
+        "chg": -0.19,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2303",
+        "name": "聯電",
+        "lots": 37,
+        "money": 0.05,
+        "chg": -1.13,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2455",
+        "name": "全新",
+        "lots": 10,
+        "money": 0.05,
+        "chg": -0.3,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5483",
+        "name": "中美晶",
+        "lots": 24,
+        "money": 0.05,
+        "chg": -3.25,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3711",
+        "name": "日月光投控",
+        "lots": 7,
+        "money": 0.05,
+        "chg": -0.15,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6274",
+        "name": "台燿",
+        "lots": 3,
+        "money": 0.05,
+        "chg": 0.93,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2428",
+        "name": "興勤",
+        "lots": 19,
+        "money": 0.05,
+        "chg": -1.91,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2376",
+        "name": "技嘉",
+        "lots": 14,
+        "money": 0.05,
+        "chg": -1.54,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3265",
+        "name": "台星科",
+        "lots": 19,
+        "money": 0.05,
+        "chg": -6.69,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2478",
+        "name": "大毅",
+        "lots": 33,
+        "money": 0.04,
+        "chg": -8.27,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6213",
+        "name": "聯茂",
+        "lots": 2,
+        "money": 0.02,
+        "chg": -0.9,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "8070",
+        "name": "長華*",
+        "lots": 31,
+        "money": 0.02,
+        "chg": -1.92,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5425",
+        "name": "台半",
+        "lots": 24,
+        "money": 0.02,
+        "chg": -1.3,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6672",
+        "name": "騰輝電子-KY",
+        "lots": 2,
+        "money": 0.01,
+        "chg": -4.91,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6196",
+        "name": "帆宣",
+        "lots": 2,
+        "money": 0.01,
+        "chg": -1.81,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2476",
+        "name": "鉅祥",
+        "lots": 10,
+        "money": 0.01,
+        "chg": 0.4,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3617",
+        "name": "碩天",
+        "lots": 5,
+        "money": 0.01,
+        "chg": -2.08,
+        "new": false,
+        "clear": false
+      }
+    ],
+    "sell": []
+  }
+}
