@@ -314,7 +314,7 @@
         "name": "緯穎",
         "lots": 153,
         "money": 2.95,
-        "chg": 2.12,
+        "chg": -2.34,
         "new": false,
         "clear": false
       },
@@ -323,7 +323,7 @@
         "name": "奇鋐",
         "lots": 60,
         "money": 2.02,
-        "chg": 0.15,
+        "chg": -2.71,
         "new": false,
         "clear": false
       },
@@ -332,7 +332,7 @@
         "name": "川湖",
         "lots": 15,
         "money": 1.53,
-        "chg": 1.81,
+        "chg": -0.2,
         "new": false,
         "clear": false
       },
@@ -341,7 +341,7 @@
         "name": "中砂",
         "lots": 100,
         "money": 0.87,
-        "chg": -1.04,
+        "chg": 2.21,
         "new": false,
         "clear": false
       }
@@ -352,7 +352,7 @@
         "name": "聯電",
         "lots": -5000,
         "money": -6.43,
-        "chg": -3.42,
+        "chg": 0.79,
         "new": false,
         "clear": false
       }
