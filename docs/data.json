@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21 20:30",
+  "generated_at": "2026-10-21 23:51",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -65966,20 +65966,20 @@
           "etfs": []
         },
         {
-          "ticker": "2006",
-          "name": "東和鋼鐵",
-          "lots": 399,
-          "close": 93.3,
-          "chg": "2.6",
-          "rank": 29,
-          "etfs": []
-        },
-        {
           "ticker": "2897",
           "name": "王道銀行",
           "lots": 399,
           "close": 10.9,
           "chg": "0.05",
+          "rank": 29,
+          "etfs": []
+        },
+        {
+          "ticker": "2006",
+          "name": "東和鋼鐵",
+          "lots": 399,
+          "close": 93.3,
+          "chg": "2.6",
           "rank": 30,
           "etfs": []
         },
@@ -66379,20 +66379,20 @@
           ]
         },
         {
-          "ticker": "2027",
-          "name": "大成鋼",
-          "lots": -735,
-          "close": 49.9,
-          "chg": "-0.05",
-          "rank": 20,
-          "etfs": []
-        },
-        {
           "ticker": "3450",
           "name": "聯鈞",
           "lots": -735,
           "close": 450.0,
           "chg": "19.5",
+          "rank": 20,
+          "etfs": []
+        },
+        {
+          "ticker": "2027",
+          "name": "大成鋼",
+          "lots": -735,
+          "close": 49.9,
+          "chg": "-0.05",
           "rank": 21,
           "etfs": []
         },
