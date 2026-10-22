@@ -320,7 +320,7 @@
         "name": "欣銓",
         "lots": 2170,
         "money": 5.71,
-        "chg": 7.29,
+        "chg": -6.98,
         "new": false,
         "clear": false
       },
@@ -329,7 +329,7 @@
         "name": "奇鋐",
         "lots": 114,
         "money": 3.79,
-        "chg": -2.71,
+        "chg": -2.78,
         "new": false,
         "clear": false
       },
@@ -338,7 +338,7 @@
         "name": "緯創",
         "lots": 1300,
         "money": 2.55,
-        "chg": 3.17,
+        "chg": -2.56,
         "new": false,
         "clear": false
       },
@@ -347,7 +347,7 @@
         "name": "富世達",
         "lots": 100,
         "money": 2.43,
-        "chg": 4.59,
+        "chg": -2.51,
         "new": false,
         "clear": false
       },
@@ -356,7 +356,7 @@
         "name": "欣興",
         "lots": 190,
         "money": 2.12,
-        "chg": 4.27,
+        "chg": -1.36,
         "new": false,
         "clear": false
       },
@@ -365,7 +365,7 @@
         "name": "智邦",
         "lots": 67,
         "money": 1.27,
-        "chg": -7.87,
+        "chg": -2.2,
         "new": false,
         "clear": false
       },
@@ -374,7 +374,7 @@
         "name": "京元電子",
         "lots": 236,
         "money": 0.64,
-        "chg": 7.13,
+        "chg": -5.58,
         "new": false,
         "clear": false
       }

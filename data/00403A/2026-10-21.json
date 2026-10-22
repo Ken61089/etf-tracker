@@ -314,7 +314,7 @@
         "name": "大立光",
         "lots": 40,
         "money": 2.5,
-        "chg": 3.26,
+        "chg": 0.08,
         "new": false,
         "clear": false
       },
@@ -323,7 +323,7 @@
         "name": "信驊",
         "lots": 11,
         "money": 1.81,
-        "chg": 3.87,
+        "chg": -3.06,
         "new": false,
         "clear": false
       },
@@ -332,7 +332,7 @@
         "name": "南亞",
         "lots": 500,
         "money": 1.59,
-        "chg": 8.28,
+        "chg": -6.08,
         "new": false,
         "clear": false
       },
@@ -341,7 +341,7 @@
         "name": "奇鋐",
         "lots": 35,
         "money": 1.16,
-        "chg": -2.71,
+        "chg": -2.78,
         "new": false,
         "clear": false
       },
@@ -350,7 +350,7 @@
         "name": "凱基金",
         "lots": 2000,
         "money": 0.76,
-        "chg": 2.68,
+        "chg": -1.31,
         "new": true,
         "clear": false
       },
@@ -359,7 +359,7 @@
         "name": "中砂",
         "lots": 80,
         "money": 0.7,
-        "chg": 2.21,
+        "chg": -3.53,
         "new": false,
         "clear": false
       }
@@ -370,7 +370,7 @@
         "name": "漢唐",
         "lots": -1,
         "money": -0.01,
-        "chg": 1.38,
+        "chg": -1.36,
         "new": false,
         "clear": true
       }
