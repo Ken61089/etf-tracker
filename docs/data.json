@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28 01:04",
+  "generated_at": "2026-10-28 05:08",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -66731,20 +66731,20 @@
           "etfs": []
         },
         {
-          "ticker": "1515",
-          "name": "力山",
-          "lots": -77,
-          "close": 27.75,
-          "chg": "0.2",
-          "rank": 38,
-          "etfs": []
-        },
-        {
           "ticker": "2484",
           "name": "希華",
           "lots": -77,
           "close": 75.2,
           "chg": "-1.5",
+          "rank": 38,
+          "etfs": []
+        },
+        {
+          "ticker": "1515",
+          "name": "力山",
+          "lots": -77,
+          "close": 27.75,
+          "chg": "0.2",
           "rank": 39,
           "etfs": []
         },
