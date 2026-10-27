@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27 21:30",
+  "generated_at": "2026-10-28 01:04",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -133,7 +133,7 @@
       "prev_date": "2026-10-22",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -13395,7 +13395,7 @@
       "prev_date": "2026-10-22",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -26691,7 +26691,7 @@
       "prev_date": "2026-10-22",
       "holdings_count": 57,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -41459,7 +41459,7 @@
       "prev_date": "2026-10-22",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -54649,7 +54649,7 @@
       "prev_date": "2026-10-22",
       "holdings_count": 43,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -66731,20 +66731,20 @@
           "etfs": []
         },
         {
-          "ticker": "2484",
-          "name": "希華",
-          "lots": -77,
-          "close": 75.2,
-          "chg": "-1.5",
-          "rank": 38,
-          "etfs": []
-        },
-        {
           "ticker": "1515",
           "name": "力山",
           "lots": -77,
           "close": 27.75,
           "chg": "0.2",
+          "rank": 38,
+          "etfs": []
+        },
+        {
+          "ticker": "2484",
+          "name": "希華",
+          "lots": -77,
+          "close": 75.2,
+          "chg": "-1.5",
           "rank": 39,
           "etfs": []
         },
