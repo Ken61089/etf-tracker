@@ -314,7 +314,7 @@
         "name": "日月光投控",
         "lots": 399,
         "money": 2.61,
-        "chg": -0.46,
+        "chg": 6.76,
         "new": false,
         "clear": false
       },
@@ -323,7 +323,7 @@
         "name": "信驊",
         "lots": 14,
         "money": 2.28,
-        "chg": 0.03,
+        "chg": 7.99,
         "new": false,
         "clear": false
       },
@@ -332,7 +332,7 @@
         "name": "奇鋐",
         "lots": 55,
         "money": 1.73,
-        "chg": -0.48,
+        "chg": 2.72,
         "new": false,
         "clear": false
       },
@@ -341,7 +341,7 @@
         "name": "凱基金",
         "lots": 2000,
         "money": 0.76,
-        "chg": 1.85,
+        "chg": 0.26,
         "new": false,
         "clear": false
       }
@@ -352,7 +352,7 @@
         "name": "聯電",
         "lots": -4000,
         "money": -4.94,
-        "chg": -2.39,
+        "chg": 4.49,
         "new": false,
         "clear": false
       }
