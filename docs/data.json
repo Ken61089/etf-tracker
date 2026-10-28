@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28 20:30",
+  "generated_at": "2026-10-29 00:19",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -112,7 +112,7 @@
       "prev_date": "2026-10-27",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -13374,7 +13374,7 @@
       "prev_date": "2026-10-27",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -26679,7 +26679,7 @@
       "prev_date": "2026-10-27",
       "holdings_count": 57,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -41457,7 +41457,7 @@
       "prev_date": "2026-10-27",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -54666,7 +54666,7 @@
       "prev_date": "2026-10-27",
       "holdings_count": 43,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -66697,20 +66697,20 @@
           "etfs": []
         },
         {
-          "ticker": "3167",
-          "name": "大量",
-          "lots": -42,
-          "close": 1030.0,
-          "chg": "70",
-          "rank": 36,
-          "etfs": []
-        },
-        {
           "ticker": "6691",
           "name": "洋基工程",
           "lots": -42,
           "close": 660.0,
           "chg": "12",
+          "rank": 36,
+          "etfs": []
+        },
+        {
+          "ticker": "3167",
+          "name": "大量",
+          "lots": -42,
+          "close": 1030.0,
+          "chg": "70",
           "rank": 37,
           "etfs": []
         },
