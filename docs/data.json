@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29 02:39",
+  "generated_at": "2026-10-29 05:32",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -66697,20 +66697,20 @@
           "etfs": []
         },
         {
-          "ticker": "3167",
-          "name": "大量",
-          "lots": -42,
-          "close": 1030.0,
-          "chg": "70",
-          "rank": 36,
-          "etfs": []
-        },
-        {
           "ticker": "6691",
           "name": "洋基工程",
           "lots": -42,
           "close": 660.0,
           "chg": "12",
+          "rank": 36,
+          "etfs": []
+        },
+        {
+          "ticker": "3167",
+          "name": "大量",
+          "lots": -42,
+          "close": 1030.0,
+          "chg": "70",
           "rank": 37,
           "etfs": []
         },
