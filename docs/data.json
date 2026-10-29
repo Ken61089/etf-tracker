@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30 02:48",
+  "generated_at": "2026-10-30 03:22",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -66424,20 +66424,20 @@
           "etfs": []
         },
         {
-          "ticker": "2637",
-          "name": "慧洋-KY",
-          "lots": -199,
-          "close": 101.5,
-          "chg": "1.5",
-          "rank": 18,
-          "etfs": []
-        },
-        {
           "ticker": "2606",
           "name": "裕民",
           "lots": -199,
           "close": 74.3,
           "chg": "0.8",
+          "rank": 18,
+          "etfs": []
+        },
+        {
+          "ticker": "2637",
+          "name": "慧洋-KY",
+          "lots": -199,
+          "close": 101.5,
+          "chg": "1.5",
           "rank": 19,
           "etfs": []
         },
@@ -66668,20 +66668,20 @@
           "etfs": []
         },
         {
+          "ticker": "1102",
+          "name": "亞泥",
+          "lots": -1,
+          "close": 37.8,
+          "chg": "0.1",
+          "rank": 42,
+          "etfs": []
+        },
+        {
           "ticker": "2609",
           "name": "陽明",
           "lots": -1,
           "close": 62.0,
           "chg": "-0.9",
-          "rank": 42,
-          "etfs": []
-        },
-        {
-          "ticker": "8210",
-          "name": "勤誠",
-          "lots": -1,
-          "close": 756.0,
-          "chg": "-25",
           "rank": 43,
           "etfs": []
         },
@@ -66695,11 +66695,11 @@
           "etfs": []
         },
         {
-          "ticker": "1102",
-          "name": "亞泥",
+          "ticker": "8210",
+          "name": "勤誠",
           "lots": -1,
-          "close": 37.8,
-          "chg": "0.1",
+          "close": 756.0,
+          "chg": "-25",
           "rank": 45,
           "etfs": []
         }
