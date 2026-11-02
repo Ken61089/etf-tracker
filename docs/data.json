@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 20:30",
+  "generated_at": "2026-11-03 07:19",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -66438,20 +66438,20 @@
           "etfs": []
         },
         {
-          "ticker": "2105",
-          "name": "正新",
-          "lots": -34,
-          "close": 31.4,
-          "chg": "0.1",
-          "rank": 27,
-          "etfs": []
-        },
-        {
           "ticker": "2404",
           "name": "漢唐",
           "lots": -34,
           "close": 1060.0,
           "chg": "-15",
+          "rank": 27,
+          "etfs": []
+        },
+        {
+          "ticker": "2105",
+          "name": "正新",
+          "lots": -34,
+          "close": 31.4,
+          "chg": "0.1",
           "rank": 28,
           "etfs": []
         },
