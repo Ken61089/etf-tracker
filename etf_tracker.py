@@ -88,28 +88,32 @@ def fetch_xiaoyu(etfid):
         return f"{s[:4]}-{s[4:6]}-{s[6:]}"
 
     latest = d["snap_dates"][0]
-    rows = d["snaps"].get(latest) or []
     names = d.get("names", {})
     prices = d.get("prices", {})      # 每檔收盤價序列，新到舊，與 snap_dates 對齊
-    holdings = {}
-    for code, lots, pct in rows:
-        h = {"name": names.get(code, code), "pct": float(pct),
-             "shares": int(round(lots * 1000))}
-        px = (prices.get(code) or [None])[0]
-        if px:
-            h["price"] = float(px)
-        holdings[code] = h
-    if not holdings:
-        raise RuntimeError(f"{etfid}: 小宇解析不到任何持股")
 
-    snap = {
-        "etfid": etfid,
-        "fund_name": ETFS.get(etfid) or etfid,
-        "data_date": ymd(latest),
-        "source": "xiaoyu",
-        "lot_precision": True,
-        "holdings": holdings,
-    }
+    def build(i, sd):
+        holdings = {}
+        for code, lots, pct in d["snaps"].get(sd) or []:
+            h = {"name": names.get(code, code), "pct": float(pct),
+                 "shares": int(round(lots * 1000))}
+            arr = prices.get(code) or []
+            if i < len(arr) and arr[i]:
+                h["price"] = float(arr[i])
+            holdings[code] = h
+        return {"etfid": etfid, "fund_name": ETFS.get(etfid) or etfid,
+                "data_date": ymd(sd), "source": "xiaoyu", "lot_precision": True,
+                "holdings": holdings}
+
+    snap = build(0, latest)
+    if not snap["holdings"]:
+        raise RuntimeError(f"{etfid}: 小宇解析不到任何持股")
+    # 補存：小宇有、我方沒存過、又比我方最新快照新的日期（例如小宇晚出、我們那幾次只抓到舊的）
+    saved = set(list_snapshot_dates(etfid))
+    latest_saved = max(saved) if saved else ""
+    snap["backfill"] = [
+        b for b in (build(i, sd) for i, sd in enumerate(d["snap_dates"]) if i > 0)
+        if b["data_date"] > latest_saved and b["data_date"] not in saved and b["holdings"]
+    ]
     # 收盤價 / 成交均價序列（新到舊，與 snap_dates 對齊），供歷史日期估市值與買賣金額
     vwaps = d.get("vwaps", {})
     px = defaultdict(dict)
@@ -129,7 +133,8 @@ def fetch_xiaoyu(etfid):
 
 
 def fetch_snapshot(etfid):
-    """主來源小宇；失敗或資料日期落後於已存的最新快照時，改試 MoneyDJ，取較新者。"""
+    """主來源小宇；失敗或資料日期落後於今天時，也試 MoneyDJ，取較新者。
+    （2026-11-02 小宇隔天早上才出資料，MoneyDJ 當晚已有，舊條件「落後於已存快照」沒觸發）"""
     saved = list_snapshot_dates(etfid)
     latest_saved = saved[-1] if saved else ""
     snap, err = None, None
@@ -138,11 +143,17 @@ def fetch_snapshot(etfid):
     except Exception as e:
         err = e
         print(f"  ⚠️  {etfid} 小宇失敗，改用 MoneyDJ：{e}", file=sys.stderr)
-    if snap is None or snap["data_date"] < latest_saved:
+    if snap is None or snap["data_date"] < max(latest_saved, today_tpe()):
         try:
             mdj = parse(fetch_html(etfid), etfid)
             mdj["source"] = "moneydj"
             if snap is None or mdj["data_date"] > snap["data_date"]:
+                # MoneyDJ 較新時，小宇那份（含它帶的補存）若也比已存的新，一起補存
+                if snap is not None:
+                    xy_back = snap.pop("backfill", [])
+                    if snap["data_date"] > latest_saved:
+                        xy_back.append(snap)
+                    mdj["backfill"] = xy_back
                 snap = mdj
         except Exception as e:
             if snap is None:
@@ -506,6 +517,9 @@ def update_one(etfid, fetch=True):
     """
     if fetch:
         snap = fetch_snapshot(etfid)
+        for b in snap.pop("backfill", []):
+            save_snapshot(b)
+            print(f"  ↩️  {etfid} 補存漏掉的 {b['data_date']}（小宇）", flush=True)
         existed = snap["data_date"] in list_snapshot_dates(etfid)
         save_snapshot(snap)
         tag = "（已存在，更新內容）" if existed else "（新資料日期）"
