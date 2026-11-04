@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05 04:17",
+  "generated_at": "2026-11-05 06:28",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -66976,20 +66976,20 @@
           "etfs": []
         },
         {
-          "ticker": "3661",
-          "name": "世芯-KY",
-          "lots": -17,
-          "close": 3180.0,
-          "chg": "40",
-          "rank": 49,
-          "etfs": []
-        },
-        {
           "ticker": "1608",
           "name": "華榮",
           "lots": -17,
           "close": 31.7,
           "chg": "-0.35",
+          "rank": 49,
+          "etfs": []
+        },
+        {
+          "ticker": "3661",
+          "name": "世芯-KY",
+          "lots": -17,
+          "close": 3180.0,
+          "chg": "40",
           "rank": 50,
           "etfs": []
         }
