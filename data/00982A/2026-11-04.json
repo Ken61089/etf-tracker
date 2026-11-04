@@ -445,6 +445,24 @@
         "clear": false
       },
       {
+        "code": "2428",
+        "name": "興勤",
+        "lots": 59,
+        "money": 0.13,
+        "chg": 0.23,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3265",
+        "name": "台星科",
+        "lots": 72,
+        "money": 0.13,
+        "chg": -0.56,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "6274",
         "name": "台燿",
         "lots": 12,
@@ -463,29 +481,11 @@
         "clear": false
       },
       {
-        "code": "2428",
-        "name": "興勤",
-        "lots": 59,
-        "money": 0.13,
-        "chg": 0.23,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2301",
         "name": "光寶科",
         "lots": 56,
         "money": 0.13,
         "chg": -0.88,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "3265",
-        "name": "台星科",
-        "lots": 72,
-        "money": 0.13,
-        "chg": -0.56,
         "new": false,
         "clear": false
       },
@@ -499,11 +499,11 @@
         "clear": false
       },
       {
-        "code": "2377",
-        "name": "微星",
-        "lots": 83,
+        "code": "2395",
+        "name": "研華",
+        "lots": 20,
         "money": 0.12,
-        "chg": -1.63,
+        "chg": 1.45,
         "new": false,
         "clear": false
       },
@@ -517,15 +517,6 @@
         "clear": false
       },
       {
-        "code": "6214",
-        "name": "精誠",
-        "lots": 67,
-        "money": 0.12,
-        "chg": -9.9,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "5483",
         "name": "中美晶",
         "lots": 76,
@@ -535,11 +526,29 @@
         "clear": false
       },
       {
-        "code": "2395",
-        "name": "研華",
-        "lots": 20,
+        "code": "2377",
+        "name": "微星",
+        "lots": 83,
         "money": 0.12,
-        "chg": 1.45,
+        "chg": -1.63,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6214",
+        "name": "精誠",
+        "lots": 67,
+        "money": 0.12,
+        "chg": -9.9,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2478",
+        "name": "大毅",
+        "lots": 105,
+        "money": 0.11,
+        "chg": 3.41,
         "new": false,
         "clear": false
       },
@@ -562,20 +571,20 @@
         "clear": false
       },
       {
-        "code": "2478",
-        "name": "大毅",
-        "lots": 105,
-        "money": 0.11,
-        "chg": 3.41,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "5425",
         "name": "台半",
         "lots": 72,
         "money": 0.06,
         "chg": 1.15,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "8070",
+        "name": "長華*",
+        "lots": 91,
+        "money": 0.04,
+        "chg": 2.5,
         "new": false,
         "clear": false
       },
@@ -589,11 +598,11 @@
         "clear": false
       },
       {
-        "code": "8070",
-        "name": "長華*",
-        "lots": 91,
-        "money": 0.04,
-        "chg": 2.5,
+        "code": "3617",
+        "name": "碩天",
+        "lots": 13,
+        "money": 0.03,
+        "chg": -1.49,
         "new": false,
         "clear": false
       },
@@ -612,15 +621,6 @@
         "lots": 7,
         "money": 0.03,
         "chg": -0.92,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "3617",
-        "name": "碩天",
-        "lots": 13,
-        "money": 0.03,
-        "chg": -1.49,
         "new": false,
         "clear": false
       }
