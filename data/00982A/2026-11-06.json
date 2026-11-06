@@ -451,11 +451,11 @@
         "clear": false
       },
       {
-        "code": "2377",
-        "name": "微星",
-        "lots": 43,
+        "code": "5483",
+        "name": "中美晶",
+        "lots": 40,
         "money": 0.06,
-        "chg": -3.86,
+        "chg": -2.36,
         "new": false,
         "clear": false
       },
@@ -469,29 +469,20 @@
         "clear": false
       },
       {
-        "code": "6274",
-        "name": "台燿",
-        "lots": 7,
+        "code": "3265",
+        "name": "台星科",
+        "lots": 41,
         "money": 0.06,
-        "chg": -9.85,
+        "chg": -9.72,
         "new": false,
         "clear": false
       },
       {
-        "code": "5483",
-        "name": "中美晶",
-        "lots": 40,
+        "code": "2428",
+        "name": "興勤",
+        "lots": 31,
         "money": 0.06,
-        "chg": -2.36,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2301",
-        "name": "光寶科",
-        "lots": 30,
-        "money": 0.06,
-        "chg": -6.38,
+        "chg": -7.69,
         "new": false,
         "clear": false
       },
@@ -501,15 +492,6 @@
         "lots": 11,
         "money": 0.06,
         "chg": -7.38,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "3265",
-        "name": "台星科",
-        "lots": 41,
-        "money": 0.06,
-        "chg": -9.72,
         "new": false,
         "clear": false
       },
@@ -532,6 +514,33 @@
         "clear": false
       },
       {
+        "code": "2301",
+        "name": "光寶科",
+        "lots": 30,
+        "money": 0.06,
+        "chg": -6.38,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6274",
+        "name": "台燿",
+        "lots": 7,
+        "money": 0.06,
+        "chg": -9.85,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2377",
+        "name": "微星",
+        "lots": 43,
+        "money": 0.06,
+        "chg": -3.86,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "2455",
         "name": "全新",
         "lots": 18,
@@ -541,11 +550,11 @@
         "clear": false
       },
       {
-        "code": "2428",
-        "name": "興勤",
-        "lots": 31,
-        "money": 0.06,
-        "chg": -7.69,
+        "code": "3090",
+        "name": "日電貿",
+        "lots": 41,
+        "money": 0.05,
+        "chg": -1.95,
         "new": false,
         "clear": false
       },
@@ -568,15 +577,6 @@
         "clear": false
       },
       {
-        "code": "3090",
-        "name": "日電貿",
-        "lots": 41,
-        "money": 0.05,
-        "chg": -1.95,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "5425",
         "name": "台半",
         "lots": 39,
@@ -586,11 +586,11 @@
         "clear": false
       },
       {
-        "code": "6213",
-        "name": "聯茂",
-        "lots": 3,
+        "code": "6196",
+        "name": "帆宣",
+        "lots": 4,
         "money": 0.02,
-        "chg": -9.98,
+        "chg": -7.89,
         "new": false,
         "clear": false
       },
@@ -604,11 +604,11 @@
         "clear": false
       },
       {
-        "code": "6196",
-        "name": "帆宣",
-        "lots": 4,
+        "code": "6213",
+        "name": "聯茂",
+        "lots": 3,
         "money": 0.02,
-        "chg": -7.89,
+        "chg": -9.98,
         "new": false,
         "clear": false
       },
