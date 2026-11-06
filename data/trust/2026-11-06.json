@@ -1,0 +1,1311 @@
+{
+  "data_date": "2026-11-06",
+  "twse": {
+    "buy": [
+      {
+        "ticker": "2887",
+        "name": "台新新光金",
+        "lots": 8818,
+        "close": 38.45,
+        "chg": "-1.65",
+        "rank": 1
+      },
+      {
+        "ticker": "2891",
+        "name": "中信金",
+        "lots": 8430,
+        "close": 73.4,
+        "chg": "-1.5",
+        "rank": 2
+      },
+      {
+        "ticker": "0050",
+        "name": "元大台灣50",
+        "lots": 8361,
+        "close": 92.5,
+        "chg": "-4.65",
+        "rank": 3
+      },
+      {
+        "ticker": "2890",
+        "name": "永豐金",
+        "lots": 7590,
+        "close": 41.7,
+        "chg": "-1.2",
+        "rank": 4
+      },
+      {
+        "ticker": "2330",
+        "name": "台積電",
+        "lots": 4669,
+        "close": 2135.0,
+        "chg": "-105",
+        "rank": 5
+      },
+      {
+        "ticker": "2882",
+        "name": "國泰金",
+        "lots": 3900,
+        "close": 106.0,
+        "chg": "-6",
+        "rank": 6
+      },
+      {
+        "ticker": "1303",
+        "name": "南亞",
+        "lots": 3638,
+        "close": 239.5,
+        "chg": "-9.5",
+        "rank": 7
+      },
+      {
+        "ticker": "2886",
+        "name": "兆豐金",
+        "lots": 3335,
+        "close": 53.5,
+        "chg": "-0.5",
+        "rank": 8
+      },
+      {
+        "ticker": "2880",
+        "name": "華南金",
+        "lots": 3206,
+        "close": 48.95,
+        "chg": "-0.65",
+        "rank": 9
+      },
+      {
+        "ticker": "2884",
+        "name": "玉山金",
+        "lots": 2885,
+        "close": 47.0,
+        "chg": "-0.95",
+        "rank": 10
+      },
+      {
+        "ticker": "4904",
+        "name": "遠傳",
+        "lots": 2834,
+        "close": 112.0,
+        "chg": "-0.5",
+        "rank": 11
+      },
+      {
+        "ticker": "2885",
+        "name": "元大金",
+        "lots": 2821,
+        "close": 66.9,
+        "chg": "-2.2",
+        "rank": 12
+      },
+      {
+        "ticker": "2883",
+        "name": "凱基金",
+        "lots": 2676,
+        "close": 33.65,
+        "chg": "-0.7",
+        "rank": 13
+      },
+      {
+        "ticker": "3045",
+        "name": "台灣大",
+        "lots": 2519,
+        "close": 133.0,
+        "chg": "0.5",
+        "rank": 14
+      },
+      {
+        "ticker": "2412",
+        "name": "中華電",
+        "lots": 2466,
+        "close": 163.5,
+        "chg": "2",
+        "rank": 15
+      },
+      {
+        "ticker": "2303",
+        "name": "聯電",
+        "lots": 2153,
+        "close": 92.0,
+        "chg": "-6.4",
+        "rank": 16
+      },
+      {
+        "ticker": "2317",
+        "name": "鴻海",
+        "lots": 2101,
+        "close": 224.5,
+        "chg": "-10.5",
+        "rank": 17
+      },
+      {
+        "ticker": "2892",
+        "name": "第一金",
+        "lots": 2095,
+        "close": 40.95,
+        "chg": "-1.3",
+        "rank": 18
+      },
+      {
+        "ticker": "3711",
+        "name": "日月光投控",
+        "lots": 1629,
+        "close": 527.0,
+        "chg": "-45",
+        "rank": 19
+      },
+      {
+        "ticker": "4915",
+        "name": "致伸",
+        "lots": 1397,
+        "close": 52.6,
+        "chg": "-2.2",
+        "rank": 20
+      },
+      {
+        "ticker": "2382",
+        "name": "廣達",
+        "lots": 1290,
+        "close": 290.5,
+        "chg": "-9.5",
+        "rank": 21
+      },
+      {
+        "ticker": "2603",
+        "name": "長榮",
+        "lots": 1217,
+        "close": 246.5,
+        "chg": "-12.5",
+        "rank": 22
+      },
+      {
+        "ticker": "5880",
+        "name": "合庫金",
+        "lots": 1189,
+        "close": 27.9,
+        "chg": "-0.6",
+        "rank": 23
+      },
+      {
+        "ticker": "009816",
+        "name": "凱基台灣TOP50",
+        "lots": 1000,
+        "close": 13.88,
+        "chg": "-0.65",
+        "rank": 24
+      },
+      {
+        "ticker": "4938",
+        "name": "和碩",
+        "lots": 944,
+        "close": 92.9,
+        "chg": "-4.3",
+        "rank": 25
+      },
+      {
+        "ticker": "8926",
+        "name": "台汽電",
+        "lots": 819,
+        "close": 51.9,
+        "chg": "-1.2",
+        "rank": 26
+      },
+      {
+        "ticker": "2356",
+        "name": "英業達",
+        "lots": 788,
+        "close": 52.6,
+        "chg": "-2.4",
+        "rank": 27
+      },
+      {
+        "ticker": "00410A",
+        "name": "主動永豐科技趨勢",
+        "lots": 766,
+        "close": 9.16,
+        "chg": "-0.52",
+        "rank": 28
+      },
+      {
+        "ticker": "3037",
+        "name": "欣興",
+        "lots": 614,
+        "close": 727.0,
+        "chg": "-73",
+        "rank": 29
+      },
+      {
+        "ticker": "3231",
+        "name": "緯創",
+        "lots": 550,
+        "close": 160.0,
+        "chg": "-8.5",
+        "rank": 30
+      },
+      {
+        "ticker": "2501",
+        "name": "國建",
+        "lots": 550,
+        "close": 20.5,
+        "chg": "-0.55",
+        "rank": 31
+      },
+      {
+        "ticker": "2454",
+        "name": "聯發科",
+        "lots": 512,
+        "close": 3390.0,
+        "chg": "-70",
+        "rank": 32
+      },
+      {
+        "ticker": "2542",
+        "name": "興富發",
+        "lots": 486,
+        "close": 37.75,
+        "chg": "-0.9",
+        "rank": 33
+      },
+      {
+        "ticker": "2383",
+        "name": "台光電",
+        "lots": 483,
+        "close": 3820.0,
+        "chg": "-280",
+        "rank": 34
+      },
+      {
+        "ticker": "1216",
+        "name": "統一",
+        "lots": 457,
+        "close": 76.8,
+        "chg": "-4.1",
+        "rank": 35
+      },
+      {
+        "ticker": "4958",
+        "name": "臻鼎-KY",
+        "lots": 452,
+        "close": 373.0,
+        "chg": "-21",
+        "rank": 36
+      },
+      {
+        "ticker": "6446",
+        "name": "藥華藥",
+        "lots": 413,
+        "close": 1270.0,
+        "chg": "85",
+        "rank": 37
+      },
+      {
+        "ticker": "2355",
+        "name": "敬鵬",
+        "lots": 408,
+        "close": 47.25,
+        "chg": "-0.8",
+        "rank": 38
+      },
+      {
+        "ticker": "3017",
+        "name": "奇鋐",
+        "lots": 405,
+        "close": 2310.0,
+        "chg": "-255",
+        "rank": 39
+      },
+      {
+        "ticker": "8046",
+        "name": "南電",
+        "lots": 399,
+        "close": 875.0,
+        "chg": "-97",
+        "rank": 40
+      },
+      {
+        "ticker": "2618",
+        "name": "長榮航",
+        "lots": 393,
+        "close": 43.6,
+        "chg": "-1.5",
+        "rank": 41
+      },
+      {
+        "ticker": "2345",
+        "name": "智邦",
+        "lots": 391,
+        "close": 1280.0,
+        "chg": "-100",
+        "rank": 42
+      },
+      {
+        "ticker": "2301",
+        "name": "光寶科",
+        "lots": 388,
+        "close": 198.0,
+        "chg": "-13.5",
+        "rank": 43
+      },
+      {
+        "ticker": "00935",
+        "name": "野村臺灣新科技50",
+        "lots": 382,
+        "close": 44.43,
+        "chg": "-2.6",
+        "rank": 44
+      },
+      {
+        "ticker": "3034",
+        "name": "聯詠",
+        "lots": 367,
+        "close": 495.5,
+        "chg": "-14.5",
+        "rank": 45
+      },
+      {
+        "ticker": "5515",
+        "name": "建國",
+        "lots": 362,
+        "close": 46.9,
+        "chg": "-0.7",
+        "rank": 46
+      },
+      {
+        "ticker": "1301",
+        "name": "台塑",
+        "lots": 350,
+        "close": 62.7,
+        "chg": "-2.4",
+        "rank": 47
+      },
+      {
+        "ticker": "2845",
+        "name": "遠東銀",
+        "lots": 347,
+        "close": 12.65,
+        "chg": "-0.2",
+        "rank": 48
+      },
+      {
+        "ticker": "6139",
+        "name": "亞翔",
+        "lots": 330,
+        "close": 535.0,
+        "chg": "-32",
+        "rank": 49
+      },
+      {
+        "ticker": "3406",
+        "name": "玉晶光",
+        "lots": 307,
+        "close": 825.0,
+        "chg": "-21",
+        "rank": 50
+      }
+    ],
+    "sell": [
+      {
+        "ticker": "2881",
+        "name": "富邦金",
+        "lots": -6423,
+        "close": 148.0,
+        "chg": "-7.5",
+        "rank": 1
+      },
+      {
+        "ticker": "6505",
+        "name": "台塑化",
+        "lots": -5517,
+        "close": 85.7,
+        "chg": "-2.2",
+        "rank": 2
+      },
+      {
+        "ticker": "2344",
+        "name": "華邦電",
+        "lots": -4620,
+        "close": 120.5,
+        "chg": "-7",
+        "rank": 3
+      },
+      {
+        "ticker": "3376",
+        "name": "新日興",
+        "lots": -540,
+        "close": 109.5,
+        "chg": "-10",
+        "rank": 4
+      },
+      {
+        "ticker": "2486",
+        "name": "一詮",
+        "lots": -450,
+        "close": 145.0,
+        "chg": "-14",
+        "rank": 5
+      },
+      {
+        "ticker": "1560",
+        "name": "中砂",
+        "lots": -402,
+        "close": 669.0,
+        "chg": "-41",
+        "rank": 6
+      },
+      {
+        "ticker": "1802",
+        "name": "台玻",
+        "lots": -397,
+        "close": 57.8,
+        "chg": "-2.3",
+        "rank": 7
+      },
+      {
+        "ticker": "2637",
+        "name": "慧洋-KY",
+        "lots": -345,
+        "close": 94.4,
+        "chg": "-4.2",
+        "rank": 8
+      },
+      {
+        "ticker": "2606",
+        "name": "裕民",
+        "lots": -326,
+        "close": 66.5,
+        "chg": "-2.9",
+        "rank": 9
+      },
+      {
+        "ticker": "2855",
+        "name": "統一證",
+        "lots": -312,
+        "close": 48.4,
+        "chg": "-1.7",
+        "rank": 10
+      },
+      {
+        "ticker": "1102",
+        "name": "亞泥",
+        "lots": -284,
+        "close": 36.55,
+        "chg": "-0.7",
+        "rank": 11
+      },
+      {
+        "ticker": "2504",
+        "name": "國產",
+        "lots": -251,
+        "close": 29.9,
+        "chg": "-0.9",
+        "rank": 12
+      },
+      {
+        "ticker": "1722",
+        "name": "台肥",
+        "lots": -212,
+        "close": 39.8,
+        "chg": "-0.75",
+        "rank": 13
+      },
+      {
+        "ticker": "3450",
+        "name": "聯鈞",
+        "lots": -200,
+        "close": 309.0,
+        "chg": "-33",
+        "rank": 14
+      },
+      {
+        "ticker": "2455",
+        "name": "全新",
+        "lots": -197,
+        "close": 319.0,
+        "chg": "-27",
+        "rank": 15
+      },
+      {
+        "ticker": "2313",
+        "name": "華通",
+        "lots": -170,
+        "close": 159.0,
+        "chg": "-6.5",
+        "rank": 16
+      },
+      {
+        "ticker": "3189",
+        "name": "景碩",
+        "lots": -148,
+        "close": 671.0,
+        "chg": "-69",
+        "rank": 17
+      },
+      {
+        "ticker": "2404",
+        "name": "漢唐",
+        "lots": -128,
+        "close": 886.0,
+        "chg": "-70",
+        "rank": 18
+      },
+      {
+        "ticker": "6768",
+        "name": "志強-KY",
+        "lots": -124,
+        "close": 59.3,
+        "chg": "-1",
+        "rank": 19
+      },
+      {
+        "ticker": "6525",
+        "name": "捷敏-KY",
+        "lots": -123,
+        "close": 94.7,
+        "chg": "-4.7",
+        "rank": 20
+      },
+      {
+        "ticker": "6414",
+        "name": "樺漢",
+        "lots": -108,
+        "close": 323.0,
+        "chg": "-18.5",
+        "rank": 21
+      },
+      {
+        "ticker": "6206",
+        "name": "飛捷",
+        "lots": -101,
+        "close": 114.0,
+        "chg": "-3.5",
+        "rank": 22
+      },
+      {
+        "ticker": "2351",
+        "name": "順德",
+        "lots": -100,
+        "close": 133.5,
+        "chg": "-14.5",
+        "rank": 23
+      },
+      {
+        "ticker": "3026",
+        "name": "禾伸堂",
+        "lots": -80,
+        "close": 475.5,
+        "chg": "-52.5",
+        "rank": 24
+      },
+      {
+        "ticker": "6670",
+        "name": "復盛應用",
+        "lots": -76,
+        "close": 254.5,
+        "chg": "-2",
+        "rank": 25
+      },
+      {
+        "ticker": "2480",
+        "name": "敦陽科",
+        "lots": -74,
+        "close": 166.0,
+        "chg": "0",
+        "rank": 26
+      },
+      {
+        "ticker": "3033",
+        "name": "威健",
+        "lots": -51,
+        "close": 37.55,
+        "chg": "-1",
+        "rank": 27
+      },
+      {
+        "ticker": "2327",
+        "name": "國巨*",
+        "lots": -49,
+        "close": 374.0,
+        "chg": "-30.5",
+        "rank": 28
+      },
+      {
+        "ticker": "7822",
+        "name": "倍利科",
+        "lots": -44,
+        "close": 572.0,
+        "chg": "-50",
+        "rank": 29
+      },
+      {
+        "ticker": "3583",
+        "name": "辛耘",
+        "lots": -39,
+        "close": 425.0,
+        "chg": "-40",
+        "rank": 30
+      },
+      {
+        "ticker": "5222",
+        "name": "全訊",
+        "lots": -38,
+        "close": 80.3,
+        "chg": "-5.6",
+        "rank": 31
+      },
+      {
+        "ticker": "1608",
+        "name": "華榮",
+        "lots": -35,
+        "close": 29.5,
+        "chg": "-1.55",
+        "rank": 32
+      },
+      {
+        "ticker": "2633",
+        "name": "台灣高鐵",
+        "lots": -27,
+        "close": 25.6,
+        "chg": "-0.25",
+        "rank": 33
+      },
+      {
+        "ticker": "6515",
+        "name": "穎崴",
+        "lots": -27,
+        "close": 3295.0,
+        "chg": "-325",
+        "rank": 34
+      },
+      {
+        "ticker": "8016",
+        "name": "矽創",
+        "lots": -25,
+        "close": 246.5,
+        "chg": "-7.5",
+        "rank": 35
+      },
+      {
+        "ticker": "5434",
+        "name": "崇越",
+        "lots": -24,
+        "close": 457.0,
+        "chg": "-27",
+        "rank": 36
+      },
+      {
+        "ticker": "2006",
+        "name": "東和鋼鐵",
+        "lots": -24,
+        "close": 84.3,
+        "chg": "-1.6",
+        "rank": 37
+      },
+      {
+        "ticker": "2031",
+        "name": "新光鋼",
+        "lots": -20,
+        "close": 43.05,
+        "chg": "-1.45",
+        "rank": 38
+      },
+      {
+        "ticker": "3532",
+        "name": "台勝科",
+        "lots": -18,
+        "close": 256.5,
+        "chg": "-25",
+        "rank": 39
+      },
+      {
+        "ticker": "3029",
+        "name": "零壹",
+        "lots": -18,
+        "close": 112.5,
+        "chg": "-0.5",
+        "rank": 40
+      },
+      {
+        "ticker": "00631L",
+        "name": "元大台灣50正2",
+        "lots": -12,
+        "close": 26.3,
+        "chg": "-2.91",
+        "rank": 41
+      },
+      {
+        "ticker": "9939",
+        "name": "宏全",
+        "lots": -8,
+        "close": 119.5,
+        "chg": "-3",
+        "rank": 42
+      },
+      {
+        "ticker": "6189",
+        "name": "豐藝",
+        "lots": -6,
+        "close": 44.35,
+        "chg": "-0.95",
+        "rank": 43
+      },
+      {
+        "ticker": "8028",
+        "name": "昇陽半導體",
+        "lots": -6,
+        "close": 178.5,
+        "chg": "-15.5",
+        "rank": 44
+      },
+      {
+        "ticker": "4583",
+        "name": "台灣精銳",
+        "lots": -5,
+        "close": 319.5,
+        "chg": "-17.5",
+        "rank": 45
+      },
+      {
+        "ticker": "2634",
+        "name": "漢翔",
+        "lots": -4,
+        "close": 51.3,
+        "chg": "-2.6",
+        "rank": 46
+      },
+      {
+        "ticker": "2645",
+        "name": "長榮航太",
+        "lots": -2,
+        "close": 147.0,
+        "chg": "-7",
+        "rank": 47
+      },
+      {
+        "ticker": "2753",
+        "name": "八方雲集",
+        "lots": -2,
+        "close": 175.5,
+        "chg": "-2",
+        "rank": 48
+      },
+      {
+        "ticker": "3008",
+        "name": "大立光",
+        "lots": 0,
+        "close": 4480.0,
+        "chg": "-45",
+        "rank": 49
+      }
+    ]
+  },
+  "tpex": {
+    "buy": [
+      {
+        "ticker": "3264",
+        "name": "欣銓",
+        "lots": 570,
+        "close": 164.5,
+        "chg": "-15",
+        "rank": 1
+      },
+      {
+        "ticker": "4123",
+        "name": "晟德",
+        "lots": 356,
+        "close": 28.2,
+        "chg": "-0.7",
+        "rank": 2
+      },
+      {
+        "ticker": "1815",
+        "name": "富喬",
+        "lots": 324,
+        "close": 117.5,
+        "chg": "-4",
+        "rank": 3
+      },
+      {
+        "ticker": "5536",
+        "name": "聖暉*",
+        "lots": 323,
+        "close": 636.0,
+        "chg": "-52",
+        "rank": 4
+      },
+      {
+        "ticker": "3078",
+        "name": "僑威",
+        "lots": 236,
+        "close": 39.85,
+        "chg": "-1.05",
+        "rank": 5
+      },
+      {
+        "ticker": "5904",
+        "name": "寶雅*",
+        "lots": 224,
+        "close": 74.0,
+        "chg": "0.3",
+        "rank": 6
+      },
+      {
+        "ticker": "6223",
+        "name": "旺矽",
+        "lots": 186,
+        "close": 3445.0,
+        "chg": "-280",
+        "rank": 7
+      },
+      {
+        "ticker": "4966",
+        "name": "譜瑞-KY",
+        "lots": 146,
+        "close": 385.5,
+        "chg": "-35",
+        "rank": 8
+      },
+      {
+        "ticker": "4105",
+        "name": "東洋",
+        "lots": 136,
+        "close": 79.2,
+        "chg": "-1",
+        "rank": 9
+      },
+      {
+        "ticker": "8358",
+        "name": "金居",
+        "lots": 133,
+        "close": 303.0,
+        "chg": "-31",
+        "rank": 10
+      },
+      {
+        "ticker": "6548",
+        "name": "長科*",
+        "lots": 128,
+        "close": 57.8,
+        "chg": "-2.2",
+        "rank": 11
+      },
+      {
+        "ticker": "8069",
+        "name": "元太",
+        "lots": 124,
+        "close": 142.5,
+        "chg": "1.5",
+        "rank": 12
+      },
+      {
+        "ticker": "5483",
+        "name": "中美晶",
+        "lots": 84,
+        "close": 144.5,
+        "chg": "-3.5",
+        "rank": 13
+      },
+      {
+        "ticker": "3324",
+        "name": "雙鴻",
+        "lots": 71,
+        "close": 1055.0,
+        "chg": "-115",
+        "rank": 14
+      },
+      {
+        "ticker": "3293",
+        "name": "鈊象",
+        "lots": 64,
+        "close": 736.0,
+        "chg": "-24",
+        "rank": 15
+      },
+      {
+        "ticker": "3227",
+        "name": "原相",
+        "lots": 45,
+        "close": 170.5,
+        "chg": "-3.5",
+        "rank": 16
+      },
+      {
+        "ticker": "3260",
+        "name": "威剛",
+        "lots": 44,
+        "close": 299.5,
+        "chg": "0",
+        "rank": 17
+      },
+      {
+        "ticker": "3265",
+        "name": "台星科",
+        "lots": 41,
+        "close": 144.0,
+        "chg": "-15.5",
+        "rank": 18
+      },
+      {
+        "ticker": "5425",
+        "name": "台半",
+        "lots": 39,
+        "close": 69.2,
+        "chg": "-4.3",
+        "rank": 19
+      },
+      {
+        "ticker": "4162",
+        "name": "智擎",
+        "lots": 30,
+        "close": 52.9,
+        "chg": "-1.7",
+        "rank": 20
+      },
+      {
+        "ticker": "6561",
+        "name": "是方",
+        "lots": 20,
+        "close": 337.5,
+        "chg": "10.5",
+        "rank": 21
+      },
+      {
+        "ticker": "8436",
+        "name": "大江",
+        "lots": 20,
+        "close": 91.4,
+        "chg": "-3.2",
+        "rank": 22
+      },
+      {
+        "ticker": "5351",
+        "name": "鈺創",
+        "lots": 20,
+        "close": 84.0,
+        "chg": "-4.1",
+        "rank": 23
+      },
+      {
+        "ticker": "5274",
+        "name": "信驊",
+        "lots": 18,
+        "close": 11375.0,
+        "chg": "-1260",
+        "rank": 24
+      },
+      {
+        "ticker": "3529",
+        "name": "力旺",
+        "lots": 16,
+        "close": 1885.0,
+        "chg": "-140",
+        "rank": 25
+      },
+      {
+        "ticker": "1785",
+        "name": "光洋科",
+        "lots": 16,
+        "close": 71.9,
+        "chg": "-5.5",
+        "rank": 26
+      },
+      {
+        "ticker": "3131",
+        "name": "弘塑",
+        "lots": 14,
+        "close": 1440.0,
+        "chg": "-115",
+        "rank": 27
+      },
+      {
+        "ticker": "6510",
+        "name": "精測",
+        "lots": 9,
+        "close": 2305.0,
+        "chg": "-190",
+        "rank": 28
+      },
+      {
+        "ticker": "8299",
+        "name": "群聯",
+        "lots": 8,
+        "close": 1500.0,
+        "chg": "-60",
+        "rank": 29
+      },
+      {
+        "ticker": "6182",
+        "name": "合晶",
+        "lots": 8,
+        "close": 69.0,
+        "chg": "-5.7",
+        "rank": 30
+      },
+      {
+        "ticker": "3718",
+        "name": "中光電投控",
+        "lots": 5,
+        "close": 43.8,
+        "chg": "-2.75",
+        "rank": 31
+      },
+      {
+        "ticker": "6147",
+        "name": "頎邦",
+        "lots": 5,
+        "close": 142.0,
+        "chg": "-15.5",
+        "rank": 32
+      },
+      {
+        "ticker": "3455",
+        "name": "由田",
+        "lots": 4,
+        "close": 168.5,
+        "chg": "-16",
+        "rank": 33
+      },
+      {
+        "ticker": "5289",
+        "name": "宜鼎",
+        "lots": 3,
+        "close": 928.0,
+        "chg": "-17",
+        "rank": 34
+      },
+      {
+        "ticker": "3526",
+        "name": "凡甲",
+        "lots": 3,
+        "close": 211.5,
+        "chg": "-4.5",
+        "rank": 35
+      },
+      {
+        "ticker": "6138",
+        "name": "茂達",
+        "lots": 3,
+        "close": 200.5,
+        "chg": "-15.5",
+        "rank": 36
+      },
+      {
+        "ticker": "3374",
+        "name": "精材",
+        "lots": 2,
+        "close": 375.0,
+        "chg": "-27.5",
+        "rank": 37
+      },
+      {
+        "ticker": "6643",
+        "name": "M31",
+        "lots": 2,
+        "close": 345.5,
+        "chg": "-32.5",
+        "rank": 38
+      },
+      {
+        "ticker": "6683",
+        "name": "雍智科技",
+        "lots": 2,
+        "close": 782.0,
+        "chg": "-74",
+        "rank": 39
+      },
+      {
+        "ticker": "6290",
+        "name": "良維",
+        "lots": 2,
+        "close": 166.5,
+        "chg": "-17.5",
+        "rank": 40
+      },
+      {
+        "ticker": "3680",
+        "name": "家登",
+        "lots": 1,
+        "close": 384.0,
+        "chg": "-24.5",
+        "rank": 41
+      },
+      {
+        "ticker": "4749",
+        "name": "新應材",
+        "lots": 1,
+        "close": 599.0,
+        "chg": "-6",
+        "rank": 42
+      },
+      {
+        "ticker": "6173",
+        "name": "信昌電",
+        "lots": 1,
+        "close": 191.5,
+        "chg": "-20",
+        "rank": 43
+      },
+      {
+        "ticker": "7751",
+        "name": "竑騰",
+        "lots": 1,
+        "close": 1005.0,
+        "chg": "-110",
+        "rank": 44
+      },
+      {
+        "ticker": "7828",
+        "name": "創新服務",
+        "lots": 1,
+        "close": 1050.0,
+        "chg": "-75",
+        "rank": 45
+      },
+      {
+        "ticker": "3163",
+        "name": "波若威",
+        "lots": 1,
+        "close": 395.0,
+        "chg": "-34.5",
+        "rank": 46
+      },
+      {
+        "ticker": "4979",
+        "name": "華星光",
+        "lots": 1,
+        "close": 317.0,
+        "chg": "-29.5",
+        "rank": 47
+      },
+      {
+        "ticker": "6291",
+        "name": "沛亨",
+        "lots": 1,
+        "close": 276.0,
+        "chg": "-19.5",
+        "rank": 48
+      },
+      {
+        "ticker": "4772",
+        "name": "台特化",
+        "lots": 1,
+        "close": 193.0,
+        "chg": "-14.5",
+        "rank": 49
+      },
+      {
+        "ticker": "3491",
+        "name": "昇達科",
+        "lots": 1,
+        "close": 1085.0,
+        "chg": "-95",
+        "rank": 50
+      }
+    ],
+    "sell": [
+      {
+        "ticker": "5347",
+        "name": "世界",
+        "lots": -2452,
+        "close": 120.0,
+        "chg": "-6",
+        "rank": 1
+      },
+      {
+        "ticker": "6488",
+        "name": "環球晶",
+        "lots": -1789,
+        "close": 512.0,
+        "chg": "-52",
+        "rank": 2
+      },
+      {
+        "ticker": "3211",
+        "name": "順達",
+        "lots": -231,
+        "close": 230.5,
+        "chg": "-19.5",
+        "rank": 3
+      },
+      {
+        "ticker": "6274",
+        "name": "台燿",
+        "lots": -219,
+        "close": 906.0,
+        "chg": "-99",
+        "rank": 4
+      },
+      {
+        "ticker": "8936",
+        "name": "國統",
+        "lots": -204,
+        "close": 40.4,
+        "chg": "-1.35",
+        "rank": 5
+      },
+      {
+        "ticker": "6187",
+        "name": "萬潤",
+        "lots": -64,
+        "close": 864.0,
+        "chg": "-95",
+        "rank": 6
+      },
+      {
+        "ticker": "009814",
+        "name": "富邦標普500",
+        "lots": -50,
+        "close": 11.22,
+        "chg": "-0.51",
+        "rank": 7
+      },
+      {
+        "ticker": "6121",
+        "name": "新普",
+        "lots": -42,
+        "close": 340.0,
+        "chg": "-16",
+        "rank": 8
+      },
+      {
+        "ticker": "3105",
+        "name": "穩懋",
+        "lots": -38,
+        "close": 406.0,
+        "chg": "-45",
+        "rank": 9
+      },
+      {
+        "ticker": "6584",
+        "name": "南俊國際",
+        "lots": -23,
+        "close": 294.5,
+        "chg": "-32.5",
+        "rank": 10
+      },
+      {
+        "ticker": "6279",
+        "name": "胡連",
+        "lots": -11,
+        "close": 99.7,
+        "chg": "-3.8",
+        "rank": 11
+      },
+      {
+        "ticker": "3081",
+        "name": "聯亞",
+        "lots": -10,
+        "close": 1750.0,
+        "chg": "-140",
+        "rank": 12
+      },
+      {
+        "ticker": "4991",
+        "name": "環宇-KY",
+        "lots": -8,
+        "close": 291.0,
+        "chg": "-30.5",
+        "rank": 13
+      }
+    ]
+  }
+}
