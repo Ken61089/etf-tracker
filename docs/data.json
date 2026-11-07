@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08 01:12",
+  "generated_at": "2026-11-08 01:56",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -67077,20 +67077,20 @@
           "etfs": []
         },
         {
-          "ticker": "8028",
-          "name": "昇陽半導體",
-          "lots": -6,
-          "close": 178.5,
-          "chg": "-15.5",
-          "rank": 44,
-          "etfs": []
-        },
-        {
           "ticker": "6189",
           "name": "豐藝",
           "lots": -6,
           "close": 44.35,
           "chg": "-0.95",
+          "rank": 44,
+          "etfs": []
+        },
+        {
+          "ticker": "8028",
+          "name": "昇陽半導體",
+          "lots": -6,
+          "close": 178.5,
+          "chg": "-15.5",
           "rank": 45,
           "etfs": []
         },
