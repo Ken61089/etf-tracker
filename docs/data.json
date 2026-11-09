@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09 20:30",
+  "generated_at": "2026-11-10 04:16",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -219,7 +219,7 @@
       "prev_date": "2026-11-06",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -13514,7 +13514,7 @@
       "prev_date": "2026-11-06",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -26804,7 +26804,7 @@
       "prev_date": "2026-11-06",
       "holdings_count": 57,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -41618,7 +41618,7 @@
       "prev_date": "2026-11-06",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -54944,7 +54944,7 @@
       "prev_date": "2026-11-06",
       "holdings_count": 43,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -67330,20 +67330,20 @@
           "etfs": []
         },
         {
-          "ticker": "6442",
-          "name": "光聖",
-          "lots": -34,
-          "close": 1105.0,
-          "chg": "100",
-          "rank": 40,
-          "etfs": []
-        },
-        {
           "ticker": "8021",
           "name": "尖點",
           "lots": -34,
           "close": 339.0,
           "chg": "30.5",
+          "rank": 40,
+          "etfs": []
+        },
+        {
+          "ticker": "6442",
+          "name": "光聖",
+          "lots": -34,
+          "close": 1105.0,
+          "chg": "100",
           "rank": 41,
           "etfs": []
         },
