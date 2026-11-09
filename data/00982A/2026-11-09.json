@@ -397,20 +397,11 @@
         "clear": false
       },
       {
-        "code": "2376",
-        "name": "技嘉",
-        "lots": 19,
+        "code": "2455",
+        "name": "全新",
+        "lots": 17,
         "money": 0.06,
-        "chg": 3.86,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2395",
-        "name": "研華",
-        "lots": 10,
-        "money": 0.06,
-        "chg": 5.62,
+        "chg": 7.05,
         "new": false,
         "clear": false
       },
@@ -433,20 +424,11 @@
         "clear": false
       },
       {
-        "code": "2377",
-        "name": "微星",
-        "lots": 40,
+        "code": "6274",
+        "name": "台燿",
+        "lots": 6,
         "money": 0.06,
-        "chg": 4.38,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2455",
-        "name": "全新",
-        "lots": 17,
-        "money": 0.06,
-        "chg": 7.05,
+        "chg": 6.18,
         "new": false,
         "clear": false
       },
@@ -460,11 +442,20 @@
         "clear": false
       },
       {
-        "code": "6274",
-        "name": "台燿",
-        "lots": 6,
+        "code": "2377",
+        "name": "微星",
+        "lots": 40,
         "money": 0.06,
-        "chg": 6.18,
+        "chg": 4.38,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2376",
+        "name": "技嘉",
+        "lots": 19,
+        "money": 0.06,
+        "chg": 3.86,
         "new": false,
         "clear": false
       },
@@ -474,6 +465,15 @@
         "lots": 40,
         "money": 0.06,
         "chg": 1.74,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2395",
+        "name": "研華",
+        "lots": 10,
+        "money": 0.06,
+        "chg": 5.62,
         "new": false,
         "clear": false
       },
@@ -505,15 +505,6 @@
         "clear": false
       },
       {
-        "code": "6196",
-        "name": "帆宣",
-        "lots": 4,
-        "money": 0.02,
-        "chg": 3.23,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "8070",
         "name": "長華*",
         "lots": 42,
@@ -532,11 +523,11 @@
         "clear": false
       },
       {
-        "code": "6672",
-        "name": "騰輝電子-KY",
-        "lots": 3,
-        "money": 0.01,
-        "chg": 6.48,
+        "code": "6196",
+        "name": "帆宣",
+        "lots": 4,
+        "money": 0.02,
+        "chg": 3.23,
         "new": false,
         "clear": false
       },
@@ -546,6 +537,15 @@
         "lots": 15,
         "money": 0.01,
         "chg": 6.64,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6672",
+        "name": "騰輝電子-KY",
+        "lots": 3,
+        "money": 0.01,
+        "chg": 6.48,
         "new": false,
         "clear": false
       },
