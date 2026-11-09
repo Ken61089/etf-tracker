@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10 04:16",
+  "generated_at": "2026-11-10 05:20",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -162,30 +162,6 @@
     "sell": [],
     "diverge": [
       {
-        "ticker": "6274",
-        "name": "台燿",
-        "buyers": [
-          {
-            "etfid": "00982A",
-            "fund_name": "主動群益台灣強棒",
-            "delta": 6000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00991A",
-            "fund_name": "主動復華未來50",
-            "delta": -1000,
-            "is_new": false,
-            "is_removed": true
-          }
-        ],
-        "buy_count": 1,
-        "sell_count": 1
-      },
-      {
         "ticker": "2360",
         "name": "致茂",
         "buyers": [
@@ -201,6 +177,30 @@
           {
             "etfid": "00403A",
             "fund_name": "主動統一升級50",
+            "delta": -1000,
+            "is_new": false,
+            "is_removed": true
+          }
+        ],
+        "buy_count": 1,
+        "sell_count": 1
+      },
+      {
+        "ticker": "6274",
+        "name": "台燿",
+        "buyers": [
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": 6000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
             "delta": -1000,
             "is_new": false,
             "is_removed": true
@@ -67330,20 +67330,20 @@
           "etfs": []
         },
         {
-          "ticker": "8021",
-          "name": "尖點",
-          "lots": -34,
-          "close": 339.0,
-          "chg": "30.5",
-          "rank": 40,
-          "etfs": []
-        },
-        {
           "ticker": "6442",
           "name": "光聖",
           "lots": -34,
           "close": 1105.0,
           "chg": "100",
+          "rank": 40,
+          "etfs": []
+        },
+        {
+          "ticker": "8021",
+          "name": "尖點",
+          "lots": -34,
+          "close": 339.0,
+          "chg": "30.5",
           "rank": 41,
           "etfs": []
         },
