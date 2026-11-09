@@ -314,7 +314,7 @@
         "name": "智邦",
         "lots": 209,
         "money": 2.64,
-        "chg": -7.25,
+        "chg": 9.77,
         "new": false,
         "clear": false
       },
@@ -323,7 +323,7 @@
         "name": "旺矽",
         "lots": 76,
         "money": 2.6,
-        "chg": -7.52,
+        "chg": 7.55,
         "new": false,
         "clear": false
       },
@@ -332,7 +332,7 @@
         "name": "鴻勁",
         "lots": 71,
         "money": 2.59,
-        "chg": -7.66,
+        "chg": 9.93,
         "new": false,
         "clear": false
       },
@@ -341,7 +341,7 @@
         "name": "奇鋐",
         "lots": 50,
         "money": 1.16,
-        "chg": -9.94,
+        "chg": 9.96,
         "new": false,
         "clear": false
       },
@@ -350,7 +350,7 @@
         "name": "信驊",
         "lots": 10,
         "money": 1.14,
-        "chg": -9.97,
+        "chg": 2.86,
         "new": false,
         "clear": false
       },
@@ -359,7 +359,7 @@
         "name": "川湖",
         "lots": 15,
         "money": 1.11,
-        "chg": -5.38,
+        "chg": 5.88,
         "new": false,
         "clear": false
       },
@@ -368,7 +368,7 @@
         "name": "臻鼎-KY",
         "lots": 30,
         "money": 0.11,
-        "chg": -5.33,
+        "chg": 6.7,
         "new": false,
         "clear": false
       }
@@ -379,7 +379,7 @@
         "name": "台塑化",
         "lots": -5669,
         "money": -4.75,
-        "chg": -2.5,
+        "chg": 3.15,
         "new": false,
         "clear": false
       }
