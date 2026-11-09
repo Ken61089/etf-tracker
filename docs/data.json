@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10 07:14",
+  "generated_at": "2026-11-10 07:42",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -67330,20 +67330,20 @@
           "etfs": []
         },
         {
-          "ticker": "8021",
-          "name": "尖點",
-          "lots": -34,
-          "close": 339.0,
-          "chg": "30.5",
-          "rank": 40,
-          "etfs": []
-        },
-        {
           "ticker": "6442",
           "name": "光聖",
           "lots": -34,
           "close": 1105.0,
           "chg": "100",
+          "rank": 40,
+          "etfs": []
+        },
+        {
+          "ticker": "8021",
+          "name": "尖點",
+          "lots": -34,
+          "close": 339.0,
+          "chg": "30.5",
           "rank": 41,
           "etfs": []
         },
