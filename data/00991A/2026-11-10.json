@@ -427,20 +427,20 @@
         "clear": false
       },
       {
-        "code": "3231",
-        "name": "緯創",
-        "lots": 200,
-        "money": 0.34,
-        "chg": 1.48,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "7769",
         "name": "鴻勁",
         "lots": 8,
         "money": 0.34,
         "chg": 4.46,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3231",
+        "name": "緯創",
+        "lots": 200,
+        "money": 0.34,
+        "chg": 1.48,
         "new": false,
         "clear": false
       },
