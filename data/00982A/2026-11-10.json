@@ -424,47 +424,11 @@
         "clear": false
       },
       {
-        "code": "2395",
-        "name": "研華",
-        "lots": 8,
-        "money": 0.05,
-        "chg": 1.72,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2428",
-        "name": "興勤",
-        "lots": 24,
-        "money": 0.05,
-        "chg": 0.26,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2301",
-        "name": "光寶科",
-        "lots": 20,
-        "money": 0.05,
-        "chg": 7.36,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3265",
         "name": "台星科",
         "lots": 29,
         "money": 0.05,
         "chg": 7.51,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2376",
-        "name": "技嘉",
-        "lots": 15,
-        "money": 0.05,
-        "chg": -1.62,
         "new": false,
         "clear": false
       },
@@ -478,20 +442,20 @@
         "clear": false
       },
       {
-        "code": "2303",
-        "name": "聯電",
-        "lots": 46,
+        "code": "2395",
+        "name": "研華",
+        "lots": 8,
         "money": 0.05,
-        "chg": 3.93,
+        "chg": 1.72,
         "new": false,
         "clear": false
       },
       {
-        "code": "6274",
-        "name": "台燿",
-        "lots": 5,
+        "code": "2301",
+        "name": "光寶科",
+        "lots": 20,
         "money": 0.05,
-        "chg": 2.08,
+        "chg": 7.36,
         "new": false,
         "clear": false
       },
@@ -505,11 +469,38 @@
         "clear": false
       },
       {
-        "code": "2455",
-        "name": "全新",
-        "lots": 12,
-        "money": 0.04,
-        "chg": 8.2,
+        "code": "2428",
+        "name": "興勤",
+        "lots": 24,
+        "money": 0.05,
+        "chg": 0.26,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6274",
+        "name": "台燿",
+        "lots": 5,
+        "money": 0.05,
+        "chg": 2.08,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2303",
+        "name": "聯電",
+        "lots": 46,
+        "money": 0.05,
+        "chg": 3.93,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2376",
+        "name": "技嘉",
+        "lots": 15,
+        "money": 0.05,
+        "chg": -1.62,
         "new": false,
         "clear": false
       },
@@ -523,15 +514,6 @@
         "clear": false
       },
       {
-        "code": "3090",
-        "name": "日電貿",
-        "lots": 29,
-        "money": 0.04,
-        "chg": 1.87,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2478",
         "name": "大毅",
         "lots": 38,
@@ -541,11 +523,29 @@
         "clear": false
       },
       {
+        "code": "3090",
+        "name": "日電貿",
+        "lots": 29,
+        "money": 0.04,
+        "chg": 1.87,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "3711",
         "name": "日月光投控",
         "lots": 7,
         "money": 0.04,
         "chg": 7.84,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2455",
+        "name": "全新",
+        "lots": 12,
+        "money": 0.04,
+        "chg": 8.2,
         "new": false,
         "clear": false
       },
@@ -577,29 +577,11 @@
         "clear": false
       },
       {
-        "code": "6196",
-        "name": "帆宣",
+        "code": "3617",
+        "name": "碩天",
         "lots": 3,
         "money": 0.01,
-        "chg": 1.08,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2476",
-        "name": "鉅祥",
-        "lots": 12,
-        "money": 0.01,
-        "chg": -0.93,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "6213",
-        "name": "聯茂",
-        "lots": 2,
-        "money": 0.01,
-        "chg": -0.56,
+        "chg": 9.83,
         "new": false,
         "clear": false
       },
@@ -613,11 +595,29 @@
         "clear": false
       },
       {
-        "code": "3617",
-        "name": "碩天",
+        "code": "6213",
+        "name": "聯茂",
+        "lots": 2,
+        "money": 0.01,
+        "chg": -0.56,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2476",
+        "name": "鉅祥",
+        "lots": 12,
+        "money": 0.01,
+        "chg": -0.93,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6196",
+        "name": "帆宣",
         "lots": 3,
         "money": 0.01,
-        "chg": 9.83,
+        "chg": 1.08,
         "new": false,
         "clear": false
       }
