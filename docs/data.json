@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12 06:32",
+  "generated_at": "2026-11-12 07:21",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -67230,30 +67230,21 @@
           "etfs": []
         },
         {
-          "ticker": "2497",
-          "name": "怡利電",
-          "lots": -50,
-          "close": 36.65,
-          "chg": "-0.15",
-          "rank": 36,
-          "etfs": []
-        },
-        {
           "ticker": "8210",
           "name": "勤誠",
           "lots": -50,
           "close": 607.0,
           "chg": "40",
-          "rank": 37,
+          "rank": 36,
           "etfs": []
         },
         {
-          "ticker": "3044",
-          "name": "健鼎",
-          "lots": -44,
-          "close": 520.0,
-          "chg": "46.5",
-          "rank": 38,
+          "ticker": "2497",
+          "name": "怡利電",
+          "lots": -50,
+          "close": 36.65,
+          "chg": "-0.15",
+          "rank": 37,
           "etfs": []
         },
         {
@@ -67262,6 +67253,15 @@
           "lots": -44,
           "close": 995.0,
           "chg": "90",
+          "rank": 38,
+          "etfs": []
+        },
+        {
+          "ticker": "3044",
+          "name": "健鼎",
+          "lots": -44,
+          "close": 520.0,
+          "chg": "46.5",
           "rank": 39,
           "etfs": []
         },
@@ -67311,20 +67311,20 @@
           "etfs": []
         },
         {
-          "ticker": "3167",
-          "name": "大量",
-          "lots": -15,
-          "close": 881.0,
-          "chg": "80",
-          "rank": 45,
-          "etfs": []
-        },
-        {
           "ticker": "7750",
           "name": "新代",
           "lots": -15,
           "close": 1570.0,
           "chg": "60",
+          "rank": 45,
+          "etfs": []
+        },
+        {
+          "ticker": "3167",
+          "name": "大量",
+          "lots": -15,
+          "close": 881.0,
+          "chg": "80",
           "rank": 46,
           "etfs": []
         },
