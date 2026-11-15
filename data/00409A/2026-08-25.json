@@ -1,0 +1,33 @@
+{
+  "etfid": "00409A",
+  "fund_name": "主動復華全球50",
+  "data_date": "2026-08-25",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "6274": {
+      "name": "台燿",
+      "pct": 2.05,
+      "shares": 252000,
+      "price": 1485.0
+    },
+    "6223": {
+      "name": "旺矽",
+      "pct": 1.81,
+      "shares": 59000,
+      "price": 5600.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 1.38,
+      "shares": 45000,
+      "price": 5595.0
+    },
+    "2059": {
+      "name": "川湖",
+      "pct": 1.25,
+      "shares": 16000,
+      "price": 14285.0
+    }
+  }
+}

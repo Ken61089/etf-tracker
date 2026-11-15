@@ -1,0 +1,114 @@
+{
+  "etfid": "00990A",
+  "fund_name": "主動元大AI新經濟",
+  "data_date": "2026-11-12",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "3037": {
+      "name": "欣興",
+      "pct": 1.76,
+      "shares": 667000,
+      "price": 792.0
+    },
+    "2330": {
+      "name": "台積電",
+      "pct": 4.04,
+      "shares": 518000,
+      "price": 2340.0
+    },
+    "2368": {
+      "name": "金像電",
+      "pct": 1.44,
+      "shares": 442000,
+      "price": 975.0
+    },
+    "2308": {
+      "name": "台達電",
+      "pct": 0.99,
+      "shares": 240000,
+      "price": 1240.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 2.48,
+      "shares": 193000,
+      "price": 3850.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 1.76,
+      "shares": 190000,
+      "price": 2775.0
+    },
+    "8046": {
+      "name": "南電",
+      "pct": 0.55,
+      "shares": 170000,
+      "price": 972.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 1.83,
+      "shares": 134000,
+      "price": 4105.0
+    },
+    "3443": {
+      "name": "創意",
+      "pct": 2.85,
+      "shares": 109000,
+      "price": 7860.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-11",
+    "buy": [
+      {
+        "code": "2330",
+        "name": "台積電",
+        "lots": 50,
+        "money": 1.18,
+        "chg": 0.43,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2308",
+        "name": "台達電",
+        "lots": 69,
+        "money": 0.89,
+        "chg": 0.0,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2454",
+        "name": "聯發科",
+        "lots": 22,
+        "money": 0.88,
+        "chg": 7.01,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3017",
+        "name": "奇鋐",
+        "lots": 29,
+        "money": 0.85,
+        "chg": 9.55,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2368",
+        "name": "金像電",
+        "lots": 56,
+        "money": 0.58,
+        "chg": 5.64,
+        "new": false,
+        "clear": false
+      }
+    ],
+    "sell": []
+  }
+}

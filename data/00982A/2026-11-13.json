@@ -451,15 +451,6 @@
         "clear": false
       },
       {
-        "code": "3711",
-        "name": "日月光投控",
-        "lots": 28,
-        "money": 0.17,
-        "chg": 2.05,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3231",
         "name": "緯創",
         "lots": 98,
@@ -478,20 +469,20 @@
         "clear": false
       },
       {
+        "code": "3711",
+        "name": "日月光投控",
+        "lots": 28,
+        "money": 0.17,
+        "chg": 2.05,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "5274",
         "name": "信驊",
         "lots": 1,
         "money": 0.12,
         "chg": 0.38,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "5483",
-        "name": "中美晶",
-        "lots": 66,
-        "money": 0.11,
-        "chg": 0.93,
         "new": false,
         "clear": false
       },
@@ -505,11 +496,11 @@
         "clear": false
       },
       {
-        "code": "2428",
-        "name": "興勤",
-        "lots": 62,
+        "code": "2376",
+        "name": "技嘉",
+        "lots": 39,
         "money": 0.11,
-        "chg": -0.83,
+        "chg": -1.9,
         "new": false,
         "clear": false
       },
@@ -519,6 +510,15 @@
         "lots": 29,
         "money": 0.11,
         "chg": 3.98,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5483",
+        "name": "中美晶",
+        "lots": 66,
+        "money": 0.11,
+        "chg": 0.93,
         "new": false,
         "clear": false
       },
@@ -541,11 +541,11 @@
         "clear": false
       },
       {
-        "code": "2376",
-        "name": "技嘉",
-        "lots": 39,
+        "code": "2428",
+        "name": "興勤",
+        "lots": 62,
         "money": 0.11,
-        "chg": -1.9,
+        "chg": -0.83,
         "new": false,
         "clear": false
       },
@@ -559,20 +559,20 @@
         "clear": false
       },
       {
-        "code": "2377",
-        "name": "微星",
-        "lots": 21,
-        "money": 0.03,
-        "chg": -2.13,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "6213",
         "name": "聯茂",
         "lots": 6,
         "money": 0.03,
         "chg": 2.11,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2377",
+        "name": "微星",
+        "lots": 21,
+        "money": 0.03,
+        "chg": -2.13,
         "new": false,
         "clear": false
       },
