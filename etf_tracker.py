@@ -30,12 +30,30 @@ from datetime import datetime, timezone, timedelta
 
 # 要追蹤的 ETF（代號 -> 名稱；名稱僅供參考，實際以網頁 title 自動解析為準）
 ETFS = {
-    "00981A": "主動統一台股增長",
+    "00401A": "主動摩根台灣鑫收",
     "00403A": "主動統一升級50",
+    "00406A": "主動中信台灣收益",
+    "00407A": "主動凱基台灣",
+    "00408A": "主動第一金優股息",
+    "00409A": "主動復華全球50",
+    "00410A": "主動永豐科技趨勢",
+    "00412A": "主動安聯亞半導體",
+    "00418A": "主動復華台灣新星",
+    "00981A": "主動統一台股增長",
     "00982A": "主動群益台灣強棒",
+    "00985A": "主動野村台灣50",
+    "00990A": "主動元大AI新經濟",
     "00991A": "主動復華未來50",
     "00992A": "主動群益科技創新",
+    "00993A": "主動安聯台灣",
+    "00994A": "主動第一金台股優",
+    "00995A": "主動中信台灣卓越",   # 小宇沒收，只有 MoneyDJ
+    "00996A": "主動兆豐台灣豐收",   # 小宇沒收，只有 MoneyDJ
 }
+
+# 「經理人在想什麼」分析的對象：這兩檔一定納入，其餘依估算規模補滿 TOP_N 檔
+TOP_FIXED = ["00981A", "00403A"]
+TOP_N = 5
 
 # 主來源：籌碼小宇（每檔一個 JSON，已算好加碼/減碼/新增/出清，單位為「張」）
 XY_URL = "https://xiaoyu-etf.pages.dev/data/etf/{etfid}.json"
@@ -224,6 +242,33 @@ def load_prices(etfid):
         return {}
     with open(path, encoding="utf-8") as f:
         return json.load(f)
+
+
+_ALL_PX = None
+
+
+def load_all_prices():
+    """把所有 ETF 的價格檔合併成一份（日期 -> 代號 -> [收盤, 均價]），
+    給只有 MoneyDJ 來源、沒有價格的 ETF 估市值用。"""
+    global _ALL_PX
+    if _ALL_PX is None:
+        _ALL_PX = defaultdict(dict)
+        if os.path.isdir(PX_DIR):
+            for f in sorted(os.listdir(PX_DIR)):
+                if f.endswith(".json"):
+                    for d, m in load_prices(f[:-5]).items():
+                        _ALL_PX[d].update(m)
+    return _ALL_PX
+
+
+def merged_prices(etfid):
+    own = load_prices(etfid)
+    out = {}
+    for d, m in load_all_prices().items():
+        out[d] = {**m, **own.get(d, {})}
+    for d, m in own.items():
+        out.setdefault(d, m)
+    return out
 
 
 def save_prices(etfid, px):
@@ -538,7 +583,7 @@ def update_one(etfid, fetch=True):
         diff = diff_pair(prev, curr)
 
     # 日期切換：最近 HIST_DAYS 個資料日各自對前一份，一律以張比對（與小宇口徑一致）
-    px = load_prices(etfid)
+    px = merged_prices(etfid)
     history = []
     for i in range(len(dates) - 1, max(0, len(dates) - 1 - HIST_DAYS), -1):
         last = i == len(dates) - 1
@@ -550,7 +595,8 @@ def update_one(etfid, fetch=True):
                         "rows": build_rows(p, c, dd, px)})
     result = {
         "etfid": etfid,
-        "fund_name": curr["fund_name"],
+        "fund_name": ETFS.get(etfid) or curr["fund_name"],
+        "aum": estimate_aum(history[0]["rows"] if history else []),
         "data_date": curr["data_date"],
         "prev_date": prev["data_date"] if prev else None,
         "holdings_count": len(curr["holdings"]),
@@ -562,6 +608,24 @@ def update_one(etfid, fetch=True):
         "history": history,
     }
     return result
+
+
+def estimate_aum(rows):
+    """估算基金規模（億）＝ 有價格的持股市值合計 ÷ 這些持股的權重合計。
+    海外/現金部位不在台股持股裡，用權重回推就能估到整檔；有價格的權重太少就不估。"""
+    mv = sum(r["mv"] for r in rows if r.get("mv") and r["pct"] > 0)
+    pct = sum(r["pct"] for r in rows if r.get("mv") and r["pct"] > 0)
+    return round(mv / (pct / 100), 1) if pct >= 10 else None
+
+
+def pick_top(results):
+    """固定納入 TOP_FIXED，其餘依估算規模由大到小補滿 TOP_N 檔。"""
+    by_id = {r["etfid"]: r for r in results}
+    top = [e for e in TOP_FIXED if e in by_id]
+    rest = sorted((r for r in results if r["etfid"] not in top and r.get("aum")),
+                  key=lambda r: -r["aum"])
+    top += [r["etfid"] for r in rest[:max(0, TOP_N - len(top))]]
+    return top
 
 
 def diff_pair(prev, curr):
@@ -690,8 +754,18 @@ def main():
     # 共同動作算完後，把每檔完整 changes 從 payload 移除，保持檔案精簡
     for r in results:
         r["diff"].pop("changes", None)
+    # 經理人分析：市值前五大（固定 00981A、00403A）的加減碼 → Claude 推論＋本日小結
+    top = pick_top(results)
+    import analysis
+    if fetch:
+        try:
+            analysis.run([r for r in results if r["etfid"] in top], top)
+        except Exception as e:  # 分析失敗不影響持股資料
+            print(f"  ⚠️  經理人分析失敗：{e}", file=sys.stderr)
+    # 網頁依估算規模排序（大到小），沒估到的放最後
+    results.sort(key=lambda r: -(r.get("aum") or 0))
     payload = {"generated_at": generated_at, "consensus": consensus, "etfs": results,
-               "trust": trust}
+               "trust": trust, "top": top, "analysis": analysis.load_recent(HIST_DAYS)}
 
     # 存一份 JSON 方便除錯 / 之後做 API
     with open(os.path.join(SITE_DIR, "data.json"), "w", encoding="utf-8") as f:

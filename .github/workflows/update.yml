@@ -34,7 +34,13 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: 安裝 Claude SDK（經理人分析用）
+        run: pip install anthropic
+
       - name: 抓取最新持股並產生儀表板
+        env:
+          # 沒設這個 secret 時分析會自動跳過，持股照常更新
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 etf_tracker.py
 
       - name: 將更新結果寫回 repo（持股有變化才提交，push 失敗自動重試）

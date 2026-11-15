@@ -113,6 +113,24 @@ PAGE = r"""<!DOCTYPE html>
   .act.reduce,.act.clear{background:var(--sell-bg);color:var(--sell)}
   @media(max-width:560px){.ahead,.arow{grid-template-columns:22px minmax(0,1fr) 60px 52px 56px;gap:6px;padding:9px 8px}
     .arow .r{font-size:13px}}
+  /* 經理人在想什麼 */
+  .ai-sum{background:linear-gradient(135deg,#1d2740,#181b22);border-color:#33467a}
+  .ai-sum h2{font-size:19px}
+  .ai-sum p,.ai-card p{font-size:15px;line-height:1.75;margin:8px 0 12px}
+  .ai-card h3{font-size:16px;margin:0 0 2px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+  .hl{font-weight:600;color:#fff;font-size:15px;margin:6px 0 0}
+  .ai-moves{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+  @media(max-width:560px){.ai-moves{grid-template-columns:1fr}}
+  .ai-moves div{font-size:13px;color:var(--sub)}
+  .ai-moves b{display:block;font-size:12px;margin-bottom:2px}
+  .gobtn{background:transparent;border:0;color:var(--accent);cursor:pointer;font-size:13px;
+    padding:0 0 12px;font-family:inherit}
+  .note{color:var(--sub);font-size:12px;margin:0 0 14px}
+  .esel{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
+  .esel button{padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);
+    color:var(--sub);cursor:pointer;font-size:13px;font-family:inherit;text-align:left}
+  .esel button small{display:block;font-size:11px;opacity:.8}
+  .esel button.on{color:#fff;border-color:var(--accent);background:#1d2740}
   footer{color:var(--sub);font-size:12px;text-align:center;margin-top:30px}
   a{color:var(--accent)}
 </style>
@@ -132,6 +150,7 @@ PAGE = r"""<!DOCTYPE html>
     資料來源：ETF 持股＝籌碼小宇（備援 MoneyDJ 理財網）、投信買賣超＝富邦 DJ ｜ 紅=買入/新增，綠=賣出/剔除（依台股慣例）<br>
     比對基準為「資料日期」變化，非日曆日。<br>
     🙏 感謝 <a href="https://xiaoyu-etf.pages.dev/" target="_blank" rel="noopener">籌碼小宇 ETF</a> 公開整理主動型 ETF 持股與加減碼資料，更完整的分析請到原站查看。<br>
+    「經理人在想什麼」由 AI（Claude）依持股異動推論，非經理人本人說法。<br>
     本網站僅供個人研究用途，非商業使用，不提供任何投資建議。
   </footer>
 </div>
@@ -191,8 +210,9 @@ function renderEtf(e){
   const baseline = e.is_baseline
     ? `<div class="baseline">⚠️ 這是第一次建立基準（目前只有一份資料日期 ${e.data_date}）。等下一次資料日期更新後，就會自動顯示新增 / 加碼 / 減碼 / 出清。</div>`
     : '';
-  const stale = (e.is_current === false)
-    ? `<div class="baseline">⏳ 此檔來源（${e.source==='xiaoyu'?'籌碼小宇':'MoneyDJ'}）資料日期為 ${e.data_date}，尚未更新到最新交易日。系統每小時會再試，更新到當日後此處會自動刷新。</div>`
+  // 落後判斷以「其他 ETF 已有的最新資料日」為準（用今天比會在週末、假日誤報）
+  const stale = (e.data_date < latestEtfDate())
+    ? `<div class="baseline">⏳ 此檔來源（${e.source==='xiaoyu'?'籌碼小宇':'MoneyDJ'}）資料日期為 ${e.data_date}，其他 ETF 已更新到 ${latestEtfDate()}。系統每小時會再試，更新後此處會自動刷新。</div>`
     : '';
   const v = getView(e);
   const day = curDay(e);
@@ -236,6 +256,91 @@ document.addEventListener('change', ev=>{
   getView(e).i = Number(ev.target.value);
   card.outerHTML = renderEtf(e);
 });
+
+// ===== 經理人在想什麼(AI 推論) =====
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const AN = DATA.analysis || [];
+let AI_I = 0;
+const aumStr = v => v ? `規模約 ${Math.round(v).toLocaleString()} 億` : '';
+
+function topMoves(e, date){
+  const day = (e && e.history.find(h=>h.date===date)) || null;
+  if(!day) return '';
+  const size = r => r.dmoney!=null ? Math.abs(r.dmoney) : Math.abs(r.delta)/1e6;
+  const pick = acts => day.rows.filter(r=>acts.includes(r.act)).sort((a,b)=>size(b)-size(a)).slice(0,4);
+  const line = r => `${ACT_LABEL[r.act]} ${esc(r.name)} ${delta(r.delta)} ${unitName()}`+
+    (r.dmoney!=null?`（${sgn(r.dmoney)} 億）`:'');
+  const b = pick(['new','add']), s = pick(['reduce','clear']);
+  return `<div class="ai-moves">
+    <div><b class="buy">🔴 主要買進</b>${b.map(line).join('<br>')||'—'}</div>
+    <div><b class="sell">🟢 主要賣出</b>${s.map(line).join('<br>')||'—'}</div></div>`;
+}
+
+function renderAnalysis(){
+  if(!AN.length){
+    return `<div class="card"><h2>🧠 經理人在想什麼</h2>
+      <div class="baseline">尚未產生分析。每天持股更新後會自動請 AI 分析市值前五大主動 ETF 的加減碼（需要在 GitHub 設定 ANTHROPIC_API_KEY）。</div></div>`;
+  }
+  const a = AN[AI_I];
+  const dsel = `<div class="dsel">分析日
+    <button data-ai-step="1" ${AI_I>=AN.length-1?'disabled':''}>‹ 前一日</button>
+    <select data-ai-date>${AN.map((x,i)=>`<option value="${i}" ${i===AI_I?'selected':''}>${x.date}</option>`).join('')}</select>
+    <button data-ai-step="-1" ${AI_I<=0?'disabled':''}>後一日 ›</button></div>`;
+  const pend = (a.pending||[]).length
+    ? `<div class="note">⏳ 前五大中未納入本日分析（資料尚未更新到 ${a.date} 或當日無異動）：${a.pending.map(id=>{
+        const e = DATA.etfs.find(x=>x.etfid===id); return esc(e?e.fund_name:id);}).join('、')}</div>` : '';
+  const cards = a.etfs.map(x=>{
+    const e = DATA.etfs.find(y=>y.etfid===x.etfid);
+    const chips = (x.up||[]).map(t=>`<span class="chip buy">▲ ${esc(t)}</span>`).join('') +
+                  (x.down||[]).map(t=>`<span class="chip sell">▼ ${esc(t)}</span>`).join('');
+    return `<div class="card ai-card">
+      <h3>${esc(x.fund_name)} <span class="pill">${x.etfid}　${aumStr(x.aum)}</span></h3>
+      <div class="hl">${esc(x.headline)}</div>
+      <p>${esc(x.analysis)}</p>
+      ${chips?`<div style="margin:0 0 12px">${chips}</div>`:''}
+      ${topMoves(e, a.date)}
+      <button class="gobtn" data-goto="${x.etfid}">看 ${x.etfid} 完整明細 ›</button>
+    </div>`;
+  }).join('');
+  return `<div id="aiWrap">${dsel}
+    <div class="card ai-sum">
+      <h2>📝 本日小結 <span class="pill">${a.date}・市值前五大主動 ETF</span></h2>
+      <div class="hl" style="margin-top:8px">${esc(a.summary.headline)}</div>
+      <p>${esc(a.summary.text)}</p>
+    </div>
+    ${pend}${cards}
+    <div class="note">以上由 AI（${esc(a.model)}）依當日持股異動推論經理人可能的想法，產業判斷為推論、非經理人說法；張數與金額以本站資料為準。前五大＝統一台股增長、統一升級50 固定納入，其餘依估算規模（持股市值 ÷ 權重）排序。分析時間 ${esc(a.generated_at)}。</div>
+  </div>`;
+}
+
+document.addEventListener('click', ev=>{
+  const st = ev.target.closest('[data-ai-step]');
+  if(st){
+    AI_I = Math.min(AN.length-1, Math.max(0, AI_I + Number(st.dataset.aiStep)));
+    document.getElementById('aiWrap').outerHTML = renderAnalysis();
+    return;
+  }
+  const go = ev.target.closest('[data-goto]');
+  if(go){ SEL = go.dataset.goto; DETAIL_TAB.click(); paintDetail(); window.scrollTo(0,0); return; }
+  const pk = ev.target.closest('[data-pick]');
+  if(pk){ SEL = pk.dataset.pick; paintDetail(); }
+});
+document.addEventListener('change', ev=>{
+  if(!ev.target.matches('select[data-ai-date]')) return;
+  AI_I = Number(ev.target.value);
+  document.getElementById('aiWrap').outerHTML = renderAnalysis();
+});
+
+// ===== 各檔明細:上方選 ETF(依規模排序,⭐=前五大) =====
+let SEL = (DATA.top && DATA.top[0]) || (DATA.etfs[0] && DATA.etfs[0].etfid);
+let DETAIL_TAB = null;
+function paintDetail(){
+  const top = DATA.top || [];
+  document.getElementById('esel').innerHTML = DATA.etfs.map(e=>`<button data-pick="${e.etfid}" class="${e.etfid===SEL?'on':''}">
+    ${top.includes(e.etfid)?'⭐ ':''}${esc(shortName(e.fund_name))}<small>${e.etfid}${e.aum?'・'+Math.round(e.aum).toLocaleString()+' 億':''}${e.data_date<latestEtfDate()?'・⏳':''}</small></button>`).join('');
+  const e = DATA.etfs.find(x=>x.etfid===SEL) || DATA.etfs[0];
+  document.getElementById('etfDetail').innerHTML = e ? renderEtf(e) : '';
+}
 
 // ===== 跨 ETF 共同動作 =====
 const shortName = n => n.replace(/^主動/,'');
@@ -378,9 +483,16 @@ function buildAll(){
     pages.innerHTML='<div class="empty">沒有資料，請先執行 python3 etf_tracker.py</div>';
     return;
   }
+  addTab('🧠 經理人在想什麼', renderAnalysis(), false);
+  if(DATA.etfs.length){
+    addTab(`📋 各檔明細 <span class="pill">${DATA.etfs.length} 檔</span>`,
+           `<div class="esel" id="esel"></div><div id="etfDetail"></div>`, false);
+    const all = document.querySelectorAll('.tab');
+    DETAIL_TAB = all[all.length-1];
+    paintDetail();
+  }
   if(DATA.consensus) addTab('🤝 共同動作', renderConsensus(DATA.consensus), false);
   if(DATA.trust) addTab('🏦 投信買賣超', renderTrust(DATA.trust), false);
-  DATA.etfs.forEach(e=> addTab(e.fund_name, renderEtf(e), false));
   const all = document.querySelectorAll('.tab');
   if(all.length){
     if(ACTIVE >= all.length) ACTIVE = 0;
