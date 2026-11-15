@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15 23:01",
+  "generated_at": "2026-11-16 00:41",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -422,30 +422,6 @@
         "sell_count": 1
       },
       {
-        "ticker": "2303",
-        "name": "聯電",
-        "buyers": [
-          {
-            "etfid": "00982A",
-            "fund_name": "主動群益台灣強棒",
-            "delta": 109000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00981A",
-            "fund_name": "主動統一台股增長",
-            "delta": -6174000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 1,
-        "sell_count": 1
-      },
-      {
         "ticker": "2360",
         "name": "致茂",
         "buyers": [
@@ -464,6 +440,30 @@
             "delta": -626000,
             "is_new": false,
             "is_removed": true
+          }
+        ],
+        "buy_count": 1,
+        "sell_count": 1
+      },
+      {
+        "ticker": "2303",
+        "name": "聯電",
+        "buyers": [
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": 109000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00981A",
+            "fund_name": "主動統一台股增長",
+            "delta": -6174000,
+            "is_new": false,
+            "is_removed": false
           }
         ],
         "buy_count": 1,
