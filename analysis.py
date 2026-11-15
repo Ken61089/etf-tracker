@@ -18,6 +18,7 @@ OUT_DIR = os.path.join(ROOT, "data", "analysis")
 TPE = timezone(timedelta(hours=8))
 
 TOP_MOVES = 12      # 每檔加碼、減碼各取金額最大的前幾筆（新增/出清全列）
+PROMPT_VER = "p2"   # 改了提示詞就改這裡，最新一天會重跑一次
 
 SYSTEM = """你是台股主動型 ETF 的持股變化分析師。使用者會給你幾檔主動型 ETF 同一個資料日的持股異動（新增、加碼、減碼、出清），請推論「這些投信經理人在想什麼、布局什麼」。
 
@@ -25,6 +26,7 @@ SYSTEM = """你是台股主動型 ETF 的持股變化分析師。使用者會給
 - 每檔寫一段 2～4 句的分析：先點出最重要的幾筆動作（附張數），再歸納成產業／題材方向，最後一句講整體結構怎麼變（例如更集中、輪動、降低某類曝險）。
 - 用你對台股產業的知識判斷個股屬性與題材（例如華邦電＝記憶體、旺矽＝半導體測試、貿聯-KY＝高速傳輸線材、聯電＝成熟製程）。
 - 產業面的推論可以寫，但要用「可能」「反映」「顯示」「或許」這類推論語氣，例如「減持華邦電，可能反映對記憶體報價續漲的保留」。
+- up／down 是「題材標籤」，不是個股名：各 1～4 個、每個 2～8 字，寫產業或題材（例如「AI 伺服器散熱」「半導體測試」「先進製程」「記憶體」「成熟製程」），沒有就留空陣列。
 - 本日小結：綜合所有 ETF，點出共同方向（多檔同步加碼／減碼的題材）與分歧（不同經理人配置差異），3～5 句。
 
 嚴格規則：
@@ -120,7 +122,7 @@ def run(top_results, top_ids):
     date = max(d["date"] for _, d in days)
     days = [(r, d) for r, d in days if d["date"] == date]
     days.sort(key=lambda rd: top_ids.index(rd[0]["etfid"]))
-    sig = [f"{r['etfid']}:{d['prev_date']}>{d['date']}" for r, d in days]
+    sig = [PROMPT_VER] + [f"{r['etfid']}:{d['prev_date']}>{d['date']}" for r, d in days]
 
     path = out_path(date)
     if os.path.exists(path):
