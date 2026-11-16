@@ -424,15 +424,6 @@
         "clear": false
       },
       {
-        "code": "6488",
-        "name": "環球晶",
-        "lots": 6,
-        "money": 0.04,
-        "chg": -8.41,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "6672",
         "name": "騰輝電子-KY",
         "lots": 9,
@@ -442,11 +433,11 @@
         "clear": false
       },
       {
-        "code": "2301",
-        "name": "光寶科",
-        "lots": 15,
-        "money": 0.03,
-        "chg": -7.99,
+        "code": "6488",
+        "name": "環球晶",
+        "lots": 6,
+        "money": 0.04,
+        "chg": -8.41,
         "new": false,
         "clear": false
       },
@@ -460,47 +451,11 @@
         "clear": false
       },
       {
-        "code": "2376",
-        "name": "技嘉",
-        "lots": 8,
-        "money": 0.02,
-        "chg": -2.29,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "3265",
-        "name": "台星科",
+        "code": "2301",
+        "name": "光寶科",
         "lots": 15,
-        "money": 0.02,
-        "chg": -9.82,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2395",
-        "name": "研華",
-        "lots": 4,
-        "money": 0.02,
-        "chg": -4.61,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "5483",
-        "name": "中美晶",
-        "lots": 14,
-        "money": 0.02,
-        "chg": -7.69,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2303",
-        "name": "聯電",
-        "lots": 22,
-        "money": 0.02,
-        "chg": -6.21,
+        "money": 0.03,
+        "chg": -7.99,
         "new": false,
         "clear": false
       },
@@ -514,11 +469,47 @@
         "clear": false
       },
       {
-        "code": "5425",
-        "name": "台半",
-        "lots": 13,
-        "money": 0.01,
-        "chg": -9.27,
+        "code": "2376",
+        "name": "技嘉",
+        "lots": 8,
+        "money": 0.02,
+        "chg": -2.29,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2303",
+        "name": "聯電",
+        "lots": 22,
+        "money": 0.02,
+        "chg": -6.21,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2395",
+        "name": "研華",
+        "lots": 4,
+        "money": 0.02,
+        "chg": -4.61,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3265",
+        "name": "台星科",
+        "lots": 15,
+        "money": 0.02,
+        "chg": -9.82,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5483",
+        "name": "中美晶",
+        "lots": 14,
+        "money": 0.02,
+        "chg": -7.69,
         "new": false,
         "clear": false
       },
@@ -537,6 +528,15 @@
         "lots": 4,
         "money": 0.01,
         "chg": -3.99,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5425",
+        "name": "台半",
+        "lots": 13,
+        "money": 0.01,
+        "chg": -9.27,
         "new": false,
         "clear": false
       }

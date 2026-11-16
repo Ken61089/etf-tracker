@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16 20:30",
+  "generated_at": "2026-11-17 03:55",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -270,30 +270,6 @@
         "sell_count": 1
       },
       {
-        "ticker": "2301",
-        "name": "光寶科",
-        "buyers": [
-          {
-            "etfid": "00982A",
-            "fund_name": "主動群益台灣強棒",
-            "delta": 15000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00403A",
-            "fund_name": "主動統一升級50",
-            "delta": -50000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 1,
-        "sell_count": 1
-      },
-      {
         "ticker": "2376",
         "name": "技嘉",
         "buyers": [
@@ -316,6 +292,30 @@
         ],
         "buy_count": 1,
         "sell_count": 1
+      },
+      {
+        "ticker": "2301",
+        "name": "光寶科",
+        "buyers": [
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": 15000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00403A",
+            "fund_name": "主動統一升級50",
+            "delta": -50000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "buy_count": 1,
+        "sell_count": 1
       }
     ]
   },
@@ -328,7 +328,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -13601,7 +13601,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 63,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -30597,7 +30597,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -43833,7 +43833,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -57057,7 +57057,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 57,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -71975,7 +71975,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 44,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -86182,7 +86182,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -99441,7 +99441,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -115720,7 +115720,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 34,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -119535,7 +119535,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -141434,7 +141434,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -155035,7 +155035,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 58,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -170037,7 +170037,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 57,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -184430,7 +184430,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 32,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -194602,7 +194602,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 25,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -201716,7 +201716,7 @@
       "prev_date": "2026-11-13",
       "holdings_count": 40,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
