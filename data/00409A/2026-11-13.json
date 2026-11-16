@@ -91,20 +91,20 @@
         "clear": false
       },
       {
-        "code": "2454",
-        "name": "聯發科",
-        "lots": 10,
-        "money": 0.42,
-        "chg": -7.89,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3037",
         "name": "欣興",
         "lots": 52,
         "money": 0.42,
         "chg": -9.94,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2454",
+        "name": "聯發科",
+        "lots": 10,
+        "money": 0.42,
+        "chg": -7.89,
         "new": false,
         "clear": false
       }
