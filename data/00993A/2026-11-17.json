@@ -409,15 +409,6 @@
         "clear": false
       },
       {
-        "code": "2383",
-        "name": "台光電",
-        "lots": 7,
-        "money": 0.25,
-        "chg": -6.72,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2883",
         "name": "凱基金",
         "lots": 732,
@@ -427,11 +418,29 @@
         "clear": false
       },
       {
+        "code": "2383",
+        "name": "台光電",
+        "lots": 7,
+        "money": 0.25,
+        "chg": -6.72,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "2395",
         "name": "研華",
         "lots": 41,
         "money": 0.23,
         "chg": -2.76,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3008",
+        "name": "大立光",
+        "lots": 4,
+        "money": 0.18,
+        "chg": -5.54,
         "new": false,
         "clear": false
       },
@@ -451,15 +460,6 @@
         "money": 0.18,
         "chg": -0.99,
         "new": true,
-        "clear": false
-      },
-      {
-        "code": "3008",
-        "name": "大立光",
-        "lots": 4,
-        "money": 0.18,
-        "chg": -5.54,
-        "new": false,
         "clear": false
       },
       {
@@ -573,20 +573,20 @@
         "clear": false
       },
       {
-        "code": "5274",
-        "name": "信驊",
-        "lots": -9,
-        "money": -0.89,
-        "chg": -8.56,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "1303",
         "name": "南亞",
         "lots": -332,
         "money": -0.89,
         "chg": -4.56,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5274",
+        "name": "信驊",
+        "lots": -9,
+        "money": -0.89,
+        "chg": -8.56,
         "new": false,
         "clear": false
       },
@@ -645,15 +645,6 @@
         "clear": true
       },
       {
-        "code": "2027",
-        "name": "大成鋼",
-        "lots": -857,
-        "money": -0.39,
-        "chg": 0.78,
-        "new": false,
-        "clear": true
-      },
-      {
         "code": "6805",
         "name": "富世達",
         "lots": -23,
@@ -661,6 +652,15 @@
         "chg": -8.03,
         "new": false,
         "clear": false
+      },
+      {
+        "code": "2027",
+        "name": "大成鋼",
+        "lots": -857,
+        "money": -0.39,
+        "chg": 0.78,
+        "new": false,
+        "clear": true
       },
       {
         "code": "6196",
