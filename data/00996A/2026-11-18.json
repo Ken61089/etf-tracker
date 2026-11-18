@@ -324,20 +324,20 @@
     ],
     "sell": [
       {
-        "code": "2467",
-        "name": "志聖",
-        "lots": -25,
-        "money": -0.06,
-        "chg": 1.93,
-        "new": false,
-        "clear": true
-      },
-      {
         "code": "2449",
         "name": "京元電子",
         "lots": -32,
         "money": -0.06,
         "chg": 9.92,
+        "new": false,
+        "clear": true
+      },
+      {
+        "code": "2467",
+        "name": "志聖",
+        "lots": -25,
+        "money": -0.06,
+        "chg": 1.93,
         "new": false,
         "clear": true
       }
