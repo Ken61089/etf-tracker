@@ -1,0 +1,87 @@
+{
+  "etfid": "00990A",
+  "fund_name": "主動元大AI新經濟",
+  "data_date": "2026-11-17",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "2330": {
+      "name": "台積電",
+      "pct": 4.04,
+      "shares": 518000,
+      "price": 2170.0
+    },
+    "3037": {
+      "name": "欣興",
+      "pct": 1.02,
+      "shares": 444000,
+      "price": 637.0
+    },
+    "2368": {
+      "name": "金像電",
+      "pct": 1.33,
+      "shares": 442000,
+      "price": 835.0
+    },
+    "2308": {
+      "name": "台達電",
+      "pct": 0.91,
+      "shares": 240000,
+      "price": 1055.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 2.66,
+      "shares": 193000,
+      "price": 3840.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 1.69,
+      "shares": 190000,
+      "price": 2470.0
+    },
+    "8046": {
+      "name": "南電",
+      "pct": 0.48,
+      "shares": 170000,
+      "price": 792.0
+    },
+    "3443": {
+      "name": "創意",
+      "pct": 2.73,
+      "shares": 109000,
+      "price": 6975.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 1.06,
+      "shares": 83000,
+      "price": 3540.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-16",
+    "buy": [],
+    "sell": [
+      {
+        "code": "2383",
+        "name": "台光電",
+        "lots": -42,
+        "money": -1.48,
+        "chg": -2.12,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3037",
+        "name": "欣興",
+        "lots": -223,
+        "money": -1.44,
+        "chg": 3.92,
+        "new": false,
+        "clear": false
+      }
+    ]
+  }
+}

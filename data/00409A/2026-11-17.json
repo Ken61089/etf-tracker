@@ -1,0 +1,126 @@
+{
+  "etfid": "00409A",
+  "fund_name": "主動復華全球50",
+  "data_date": "2026-11-17",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "2885": {
+      "name": "元大金",
+      "pct": 1.44,
+      "shares": 2127000,
+      "price": 68.0
+    },
+    "1303": {
+      "name": "南亞",
+      "pct": 1.89,
+      "shares": 728000,
+      "price": 261.5
+    },
+    "3711": {
+      "name": "日月光投控",
+      "pct": 2.08,
+      "shares": 402000,
+      "price": 520.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 2.9,
+      "shares": 118000,
+      "price": 2470.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 2.74,
+      "shares": 78000,
+      "price": 3540.0
+    },
+    "3653": {
+      "name": "健策",
+      "pct": 1.59,
+      "shares": 37000,
+      "price": 4335.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 0.95,
+      "shares": 25000,
+      "price": 3840.0
+    },
+    "3443": {
+      "name": "創意",
+      "pct": 1.39,
+      "shares": 20000,
+      "price": 6975.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-16",
+    "buy": [],
+    "sell": [
+      {
+        "code": "8046",
+        "name": "南電",
+        "lots": -289,
+        "money": -2.32,
+        "chg": -2.15,
+        "new": false,
+        "clear": true
+      },
+      {
+        "code": "8996",
+        "name": "高力",
+        "lots": -163,
+        "money": -1.92,
+        "chg": -2.99,
+        "new": false,
+        "clear": true
+      },
+      {
+        "code": "3017",
+        "name": "奇鋐",
+        "lots": -66,
+        "money": -1.67,
+        "chg": 9.92,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2383",
+        "name": "台光電",
+        "lots": -45,
+        "money": -1.59,
+        "chg": -2.12,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3037",
+        "name": "欣興",
+        "lots": -196,
+        "money": -1.27,
+        "chg": 3.92,
+        "new": false,
+        "clear": true
+      },
+      {
+        "code": "3167",
+        "name": "大量",
+        "lots": -58,
+        "money": -0.39,
+        "chg": -6.14,
+        "new": false,
+        "clear": true
+      },
+      {
+        "code": "3653",
+        "name": "健策",
+        "lots": -8,
+        "money": -0.35,
+        "chg": 5.42,
+        "new": false,
+        "clear": false
+      }
+    ]
+  }
+}
