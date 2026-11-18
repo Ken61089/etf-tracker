@@ -454,15 +454,6 @@
         "clear": false
       },
       {
-        "code": "3661",
-        "name": "世芯-KY",
-        "lots": 2,
-        "money": 0.07,
-        "chg": 9.87,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3443",
         "name": "創意",
         "lots": 1,
@@ -472,20 +463,11 @@
         "clear": false
       },
       {
-        "code": "3702",
-        "name": "大聯大",
-        "lots": 52,
-        "money": 0.04,
-        "chg": 0.37,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2301",
-        "name": "光寶科",
-        "lots": 17,
-        "money": 0.04,
-        "chg": 0.48,
+        "code": "3661",
+        "name": "世芯-KY",
+        "lots": 2,
+        "money": 0.07,
+        "chg": 9.87,
         "new": false,
         "clear": false
       },
@@ -499,11 +481,29 @@
         "clear": false
       },
       {
+        "code": "3702",
+        "name": "大聯大",
+        "lots": 52,
+        "money": 0.04,
+        "chg": 0.37,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "3711",
         "name": "日月光投控",
         "lots": 7,
         "money": 0.04,
         "chg": 5.38,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2301",
+        "name": "光寶科",
+        "lots": 17,
+        "money": 0.04,
+        "chg": 0.48,
         "new": false,
         "clear": false
       },
@@ -582,20 +582,20 @@
         "clear": false
       },
       {
-        "code": "2368",
-        "name": "金像電",
-        "lots": -6,
-        "money": -0.05,
-        "chg": 5.03,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "6805",
         "name": "富世達",
         "lots": -3,
         "money": -0.05,
         "chg": 6.02,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2368",
+        "name": "金像電",
+        "lots": -6,
+        "money": -0.05,
+        "chg": 5.03,
         "new": false,
         "clear": false
       },

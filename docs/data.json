@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18 20:30",
+  "generated_at": "2026-11-19 02:30",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -1025,44 +1025,6 @@
         "sell_count": 2
       },
       {
-        "ticker": "2368",
-        "name": "金像電",
-        "buyers": [
-          {
-            "etfid": "00982A",
-            "fund_name": "主動群益台灣強棒",
-            "delta": 430000,
-            "is_new": true,
-            "is_removed": false
-          },
-          {
-            "etfid": "00406A",
-            "fund_name": "主動中信台灣收益",
-            "delta": 310000,
-            "is_new": false,
-            "is_removed": false
-          },
-          {
-            "etfid": "00991A",
-            "fund_name": "主動復華未來50",
-            "delta": 30000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00993A",
-            "fund_name": "主動安聯台灣",
-            "delta": -6000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 3,
-        "sell_count": 1
-      },
-      {
         "ticker": "8996",
         "name": "高力",
         "buyers": [
@@ -1095,6 +1057,44 @@
             "delta": -163000,
             "is_new": false,
             "is_removed": true
+          }
+        ],
+        "buy_count": 3,
+        "sell_count": 1
+      },
+      {
+        "ticker": "2368",
+        "name": "金像電",
+        "buyers": [
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": 430000,
+            "is_new": true,
+            "is_removed": false
+          },
+          {
+            "etfid": "00406A",
+            "fund_name": "主動中信台灣收益",
+            "delta": 310000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
+            "delta": 30000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00993A",
+            "fund_name": "主動安聯台灣",
+            "delta": -6000,
+            "is_new": false,
+            "is_removed": false
           }
         ],
         "buy_count": 3,
@@ -1139,37 +1139,6 @@
         "sell_count": 3
       },
       {
-        "ticker": "3653",
-        "name": "健策",
-        "buyers": [
-          {
-            "etfid": "00993A",
-            "fund_name": "主動安聯台灣",
-            "delta": 11000,
-            "is_new": false,
-            "is_removed": false
-          },
-          {
-            "etfid": "00401A",
-            "fund_name": "主動摩根台灣鑫收",
-            "delta": 3000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00409A",
-            "fund_name": "主動復華全球50",
-            "delta": -8000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 2,
-        "sell_count": 1
-      },
-      {
         "ticker": "2303",
         "name": "聯電",
         "buyers": [
@@ -1193,6 +1162,37 @@
             "etfid": "00982A",
             "fund_name": "主動群益台灣強棒",
             "delta": -1673000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "buy_count": 2,
+        "sell_count": 1
+      },
+      {
+        "ticker": "3653",
+        "name": "健策",
+        "buyers": [
+          {
+            "etfid": "00993A",
+            "fund_name": "主動安聯台灣",
+            "delta": 11000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
+            "etfid": "00401A",
+            "fund_name": "主動摩根台灣鑫收",
+            "delta": 3000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00409A",
+            "fund_name": "主動復華全球50",
+            "delta": -8000,
             "is_new": false,
             "is_removed": false
           }
@@ -1232,13 +1232,13 @@
         "sell_count": 1
       },
       {
-        "ticker": "2885",
-        "name": "元大金",
+        "ticker": "3231",
+        "name": "緯創",
         "buyers": [
           {
-            "etfid": "00993A",
-            "fund_name": "主動安聯台灣",
-            "delta": 237000,
+            "etfid": "00406A",
+            "fund_name": "主動中信台灣收益",
+            "delta": 3000000,
             "is_new": false,
             "is_removed": false
           }
@@ -1247,7 +1247,7 @@
           {
             "etfid": "00982A",
             "fund_name": "主動群益台灣強棒",
-            "delta": -2000,
+            "delta": -15000,
             "is_new": false,
             "is_removed": false
           }
@@ -1280,13 +1280,13 @@
         "sell_count": 1
       },
       {
-        "ticker": "2395",
-        "name": "研華",
+        "ticker": "2885",
+        "name": "元大金",
         "buyers": [
           {
             "etfid": "00993A",
             "fund_name": "主動安聯台灣",
-            "delta": 17000,
+            "delta": 237000,
             "is_new": false,
             "is_removed": false
           }
@@ -1295,7 +1295,31 @@
           {
             "etfid": "00982A",
             "fund_name": "主動群益台灣強棒",
-            "delta": -23000,
+            "delta": -2000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "buy_count": 1,
+        "sell_count": 1
+      },
+      {
+        "ticker": "6213",
+        "name": "聯茂",
+        "buyers": [
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": 3000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00993A",
+            "fund_name": "主動安聯台灣",
+            "delta": -87000,
             "is_new": false,
             "is_removed": false
           }
@@ -1328,6 +1352,30 @@
         "sell_count": 1
       },
       {
+        "ticker": "2395",
+        "name": "研華",
+        "buyers": [
+          {
+            "etfid": "00993A",
+            "fund_name": "主動安聯台灣",
+            "delta": 17000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": -23000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "buy_count": 1,
+        "sell_count": 1
+      },
+      {
         "ticker": "2467",
         "name": "志聖",
         "buyers": [
@@ -1346,54 +1394,6 @@
             "delta": -25000,
             "is_new": false,
             "is_removed": true
-          }
-        ],
-        "buy_count": 1,
-        "sell_count": 1
-      },
-      {
-        "ticker": "3231",
-        "name": "緯創",
-        "buyers": [
-          {
-            "etfid": "00406A",
-            "fund_name": "主動中信台灣收益",
-            "delta": 3000000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00982A",
-            "fund_name": "主動群益台灣強棒",
-            "delta": -15000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 1,
-        "sell_count": 1
-      },
-      {
-        "ticker": "6213",
-        "name": "聯茂",
-        "buyers": [
-          {
-            "etfid": "00982A",
-            "fund_name": "主動群益台灣強棒",
-            "delta": 3000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00993A",
-            "fund_name": "主動安聯台灣",
-            "delta": -87000,
-            "is_new": false,
-            "is_removed": false
           }
         ],
         "buy_count": 1,
@@ -1434,7 +1434,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -14743,7 +14743,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 62,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -31744,7 +31744,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -45060,7 +45060,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -58378,7 +58378,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 74,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -73726,7 +73726,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 44,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -87895,7 +87895,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -101145,7 +101145,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -117525,7 +117525,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 33,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -122207,7 +122207,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -144262,7 +144262,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 49,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -144975,19 +144975,6 @@
               "nsell": 2
             },
             {
-              "ticker": "2449",
-              "name": "京元電子",
-              "act": "clear",
-              "shares": 0,
-              "pct": 0.0,
-              "mv": 0.0,
-              "delta": -32000,
-              "dmoney": -0.06,
-              "dpct": -0.12,
-              "nbuy": 0,
-              "nsell": 1
-            },
-            {
               "ticker": "2467",
               "name": "志聖",
               "act": "clear",
@@ -144998,6 +144985,19 @@
               "dmoney": -0.06,
               "dpct": -0.14,
               "nbuy": 1,
+              "nsell": 1
+            },
+            {
+              "ticker": "2449",
+              "name": "京元電子",
+              "act": "clear",
+              "shares": 0,
+              "pct": 0.0,
+              "mv": 0.0,
+              "delta": -32000,
+              "dmoney": -0.06,
+              "dpct": -0.12,
+              "nbuy": 0,
               "nsell": 1
             }
           ]
@@ -157859,7 +157859,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 58,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -172922,7 +172922,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 51,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -187452,7 +187452,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 31,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -197407,7 +197407,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 22,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -204435,7 +204435,7 @@
       "prev_date": "2026-11-17",
       "holdings_count": 36,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
