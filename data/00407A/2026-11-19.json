@@ -364,20 +364,20 @@
         "clear": false
       },
       {
-        "code": "3665",
-        "name": "貿聯-KY",
-        "lots": 22,
-        "money": 0.33,
-        "chg": -7.1,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3017",
         "name": "奇鋐",
         "lots": 13,
         "money": 0.33,
         "chg": -9.94,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3665",
+        "name": "貿聯-KY",
+        "lots": 22,
+        "money": 0.33,
+        "chg": -7.1,
         "new": false,
         "clear": false
       },

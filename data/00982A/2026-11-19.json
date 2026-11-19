@@ -556,15 +556,6 @@
         "clear": false
       },
       {
-        "code": "2451",
-        "name": "創見",
-        "lots": 185,
-        "money": 0.39,
-        "chg": -3.43,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "4749",
         "name": "新應材",
         "lots": 59,
@@ -574,11 +565,20 @@
         "clear": false
       },
       {
-        "code": "1785",
-        "name": "光洋科",
-        "lots": 488,
+        "code": "2451",
+        "name": "創見",
+        "lots": 185,
+        "money": 0.39,
+        "chg": -3.43,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6691",
+        "name": "洋基工程",
+        "lots": 77,
         "money": 0.38,
-        "chg": -8.54,
+        "chg": -6.77,
         "new": false,
         "clear": false
       },
@@ -592,11 +592,11 @@
         "clear": false
       },
       {
-        "code": "6691",
-        "name": "洋基工程",
-        "lots": 77,
+        "code": "1785",
+        "name": "光洋科",
+        "lots": 488,
         "money": 0.38,
-        "chg": -6.77,
+        "chg": -8.54,
         "new": false,
         "clear": false
       },
@@ -828,20 +828,20 @@
         "clear": false
       },
       {
-        "code": "2377",
-        "name": "微星",
-        "lots": -17,
-        "money": -0.02,
-        "chg": -5.32,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3231",
         "name": "緯創",
         "lots": -15,
         "money": -0.02,
         "chg": -3.7,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2377",
+        "name": "微星",
+        "lots": -17,
+        "money": -0.02,
+        "chg": -5.32,
         "new": false,
         "clear": false
       },
@@ -864,20 +864,20 @@
         "clear": false
       },
       {
-        "code": "2478",
-        "name": "大毅",
-        "lots": -4,
-        "money": -0.0,
-        "chg": -9.94,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "4441",
         "name": "振大環球",
         "lots": -1,
         "money": -0.0,
         "chg": 0.0,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2478",
+        "name": "大毅",
+        "lots": -4,
+        "money": -0.0,
+        "chg": -9.94,
         "new": false,
         "clear": false
       },

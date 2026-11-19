@@ -358,20 +358,20 @@
     "base": "2026-11-18",
     "buy": [
       {
-        "code": "1476",
-        "name": "儒鴻",
-        "lots": 38,
-        "money": 0.15,
-        "chg": 0.13,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "1477",
         "name": "聚陽",
         "lots": 65,
         "money": 0.15,
         "chg": 0.0,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "1476",
+        "name": "儒鴻",
+        "lots": 38,
+        "money": 0.15,
+        "chg": 0.13,
         "new": false,
         "clear": false
       },
