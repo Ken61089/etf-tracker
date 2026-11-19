@@ -1,0 +1,81 @@
+{
+  "etfid": "00990A",
+  "fund_name": "主動元大AI新經濟",
+  "data_date": "2026-11-18",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "2330": {
+      "name": "台積電",
+      "pct": 4.01,
+      "shares": 518000,
+      "price": 2175.0
+    },
+    "3037": {
+      "name": "欣興",
+      "pct": 1.05,
+      "shares": 444000,
+      "price": 662.0
+    },
+    "2368": {
+      "name": "金像電",
+      "pct": 1.04,
+      "shares": 332000,
+      "price": 877.0
+    },
+    "2308": {
+      "name": "台達電",
+      "pct": 0.91,
+      "shares": 240000,
+      "price": 1060.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 2.71,
+      "shares": 193000,
+      "price": 3940.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 1.84,
+      "shares": 190000,
+      "price": 2715.0
+    },
+    "3443": {
+      "name": "創意",
+      "pct": 2.59,
+      "shares": 109000,
+      "price": 6665.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 1.02,
+      "shares": 83000,
+      "price": 3465.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-17",
+    "buy": [],
+    "sell": [
+      {
+        "code": "8046",
+        "name": "南電",
+        "lots": -170,
+        "money": -1.32,
+        "chg": -9.94,
+        "new": false,
+        "clear": true
+      },
+      {
+        "code": "2368",
+        "name": "金像電",
+        "lots": -110,
+        "money": -0.94,
+        "chg": -9.92,
+        "new": false,
+        "clear": false
+      }
+    ]
+  }
+}

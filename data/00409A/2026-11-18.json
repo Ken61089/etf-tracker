@@ -2,42 +2,84 @@
   "etfid": "00409A",
   "fund_name": "主動復華全球50",
   "data_date": "2026-11-18",
+  "source": "xiaoyu",
+  "lot_precision": true,
   "holdings": {
-    "3017": {
-      "name": "奇鋐",
-      "pct": 3.14,
-      "shares": 118000
-    },
-    "3711": {
-      "name": "日月光投控",
-      "pct": 2.74,
-      "shares": 510000
-    },
-    "2383": {
-      "name": "台光電",
-      "pct": 2.65,
-      "shares": 78000
-    },
-    "2454": {
-      "name": "聯發科",
-      "pct": 1.89,
-      "shares": 49000
+    "2885": {
+      "name": "元大金",
+      "pct": 1.35,
+      "shares": 2127000,
+      "price": 64.9
     },
     "1303": {
       "name": "南亞",
       "pct": 1.81,
-      "shares": 728000
+      "shares": 728000,
+      "price": 253.5
     },
-    "2885": {
-      "name": "元大金",
-      "pct": 1.35,
-      "shares": 2127000
+    "3711": {
+      "name": "日月光投控",
+      "pct": 2.74,
+      "shares": 510000,
+      "price": 548.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 3.14,
+      "shares": 118000,
+      "price": 2715.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 2.65,
+      "shares": 78000,
+      "price": 3465.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 1.89,
+      "shares": 49000,
+      "price": 3940.0
     },
     "3443": {
       "name": "創意",
       "pct": 1.31,
-      "shares": 20000
+      "shares": 20000,
+      "price": 6665.0
     }
   },
-  "source": "moneydj"
+  "xy_d1": {
+    "base": "2026-11-17",
+    "buy": [
+      {
+        "code": "2454",
+        "name": "聯發科",
+        "lots": 24,
+        "money": 0.94,
+        "chg": -5.58,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3711",
+        "name": "日月光投控",
+        "lots": 108,
+        "money": 0.59,
+        "chg": -8.03,
+        "new": false,
+        "clear": false
+      }
+    ],
+    "sell": [
+      {
+        "code": "3653",
+        "name": "健策",
+        "lots": -37,
+        "money": -1.64,
+        "chg": -9.96,
+        "new": false,
+        "clear": true
+      }
+    ]
+  }
 }
