@@ -310,20 +310,20 @@
     "base": "2026-11-19",
     "buy": [
       {
-        "code": "3105",
-        "name": "穩懋",
-        "lots": 87,
-        "money": 0.33,
-        "chg": -9.93,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "7750",
         "name": "新代",
         "lots": 30,
         "money": 0.33,
         "chg": -9.92,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3105",
+        "name": "穩懋",
+        "lots": 87,
+        "money": 0.33,
+        "chg": -9.93,
         "new": false,
         "clear": false
       },
@@ -429,20 +429,20 @@
         "clear": false
       },
       {
-        "code": "2603",
-        "name": "長榮",
-        "lots": -76,
-        "money": -0.18,
-        "chg": -5.67,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "1101",
         "name": "台泥",
         "lots": -738,
         "money": -0.18,
         "chg": -5.07,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2603",
+        "name": "長榮",
+        "lots": -76,
+        "money": -0.18,
+        "chg": -5.67,
         "new": false,
         "clear": false
       },
