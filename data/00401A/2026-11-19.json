@@ -358,20 +358,20 @@
     "base": "2026-11-18",
     "buy": [
       {
-        "code": "1477",
-        "name": "聚陽",
-        "lots": 65,
-        "money": 0.15,
-        "chg": 0.0,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "1476",
         "name": "儒鴻",
         "lots": 38,
         "money": 0.15,
-        "chg": 0.13,
+        "chg": -5.33,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "1477",
+        "name": "聚陽",
+        "lots": 65,
+        "money": 0.15,
+        "chg": -1.79,
         "new": false,
         "clear": false
       },
@@ -380,7 +380,7 @@
         "name": "聯發科",
         "lots": 4,
         "money": 0.14,
-        "chg": -5.58,
+        "chg": -9.95,
         "new": false,
         "clear": false
       },
@@ -389,7 +389,7 @@
         "name": "旺矽",
         "lots": 3,
         "money": 0.13,
-        "chg": -9.91,
+        "chg": -9.99,
         "new": false,
         "clear": false
       }
