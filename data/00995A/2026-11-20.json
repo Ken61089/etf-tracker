@@ -316,20 +316,20 @@
     "base": "2026-11-19",
     "buy": [
       {
-        "code": "1560",
-        "name": "中砂",
-        "lots": 7,
-        "money": 0.04,
-        "chg": -9.98,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2303",
         "name": "聯電",
         "lots": 54,
         "money": 0.04,
         "chg": -8.96,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "1560",
+        "name": "中砂",
+        "lots": 7,
+        "money": 0.04,
+        "chg": -9.98,
         "new": false,
         "clear": false
       },

@@ -699,15 +699,6 @@
         "clear": true
       },
       {
-        "code": "5425",
-        "name": "台半",
-        "lots": -1467,
-        "money": -0.87,
-        "chg": -9.98,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3617",
         "name": "碩天",
         "lots": -381,
@@ -715,6 +706,15 @@
         "chg": -9.11,
         "new": false,
         "clear": true
+      },
+      {
+        "code": "5425",
+        "name": "台半",
+        "lots": -1467,
+        "money": -0.87,
+        "chg": -9.98,
+        "new": false,
+        "clear": false
       },
       {
         "code": "2476",

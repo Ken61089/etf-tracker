@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21 02:06",
+  "generated_at": "2026-11-22 01:00",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -602,30 +602,6 @@
         "sell_count": 1
       },
       {
-        "ticker": "3702",
-        "name": "大聯大",
-        "buyers": [
-          {
-            "etfid": "00995A",
-            "fund_name": "主動中信台灣卓越",
-            "delta": 41000,
-            "is_new": true,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00982A",
-            "fund_name": "主動群益台灣強棒",
-            "delta": -396000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 1,
-        "sell_count": 1
-      },
-      {
         "ticker": "2344",
         "name": "華邦電",
         "buyers": [
@@ -644,6 +620,30 @@
             "delta": -1000,
             "is_new": false,
             "is_removed": true
+          }
+        ],
+        "buy_count": 1,
+        "sell_count": 1
+      },
+      {
+        "ticker": "3702",
+        "name": "大聯大",
+        "buyers": [
+          {
+            "etfid": "00995A",
+            "fund_name": "主動中信台灣卓越",
+            "delta": 41000,
+            "is_new": true,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": -396000,
+            "is_new": false,
+            "is_removed": false
           }
         ],
         "buy_count": 1,
