@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22 01:00",
+  "generated_at": "2026-11-23 01:28",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -509,37 +509,6 @@
         "sell_count": 1
       },
       {
-        "ticker": "3711",
-        "name": "日月光投控",
-        "buyers": [
-          {
-            "etfid": "00996A",
-            "fund_name": "主動兆豐台灣豐收",
-            "delta": 5000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00418A",
-            "fund_name": "主動復華台灣新星",
-            "delta": -117000,
-            "is_new": false,
-            "is_removed": false
-          },
-          {
-            "etfid": "00982A",
-            "fund_name": "主動群益台灣強棒",
-            "delta": -38000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 1,
-        "sell_count": 2
-      },
-      {
         "ticker": "2059",
         "name": "川湖",
         "buyers": [
@@ -569,6 +538,37 @@
         ],
         "buy_count": 2,
         "sell_count": 1
+      },
+      {
+        "ticker": "3711",
+        "name": "日月光投控",
+        "buyers": [
+          {
+            "etfid": "00996A",
+            "fund_name": "主動兆豐台灣豐收",
+            "delta": 5000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00418A",
+            "fund_name": "主動復華台灣新星",
+            "delta": -117000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
+            "etfid": "00982A",
+            "fund_name": "主動群益台灣強棒",
+            "delta": -38000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "buy_count": 1,
+        "sell_count": 2
       },
       {
         "ticker": "2308",

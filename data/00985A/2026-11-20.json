@@ -337,20 +337,20 @@
         "clear": false
       },
       {
-        "code": "2308",
-        "name": "台達電",
-        "lots": 30,
-        "money": 0.27,
-        "chg": -10.0,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2344",
         "name": "華邦電",
         "lots": 300,
         "money": 0.27,
         "chg": -8.98,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2308",
+        "name": "台達電",
+        "lots": 30,
+        "money": 0.27,
+        "chg": -10.0,
         "new": false,
         "clear": false
       },
@@ -438,15 +438,6 @@
         "clear": false
       },
       {
-        "code": "2603",
-        "name": "長榮",
-        "lots": -76,
-        "money": -0.18,
-        "chg": -5.67,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "1402",
         "name": "遠東新",
         "lots": -707,
@@ -461,6 +452,15 @@
         "lots": -738,
         "money": -0.18,
         "chg": -5.07,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2603",
+        "name": "長榮",
+        "lots": -76,
+        "money": -0.18,
+        "chg": -5.67,
         "new": false,
         "clear": false
       }

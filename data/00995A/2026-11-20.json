@@ -316,11 +316,11 @@
     "base": "2026-11-19",
     "buy": [
       {
-        "code": "2303",
-        "name": "聯電",
-        "lots": 54,
+        "code": "6715",
+        "name": "嘉基",
+        "lots": 15,
         "money": 0.04,
-        "chg": -8.96,
+        "chg": -5.0,
         "new": false,
         "clear": false
       },
@@ -334,11 +334,11 @@
         "clear": false
       },
       {
-        "code": "6715",
-        "name": "嘉基",
-        "lots": 15,
+        "code": "2303",
+        "name": "聯電",
+        "lots": 54,
         "money": 0.04,
-        "chg": -5.0,
+        "chg": -8.96,
         "new": false,
         "clear": false
       },
