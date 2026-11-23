@@ -1,0 +1,232 @@
+{
+  "etfid": "00994A",
+  "fund_name": "主動第一金台股優",
+  "data_date": "2026-11-23",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "1303": {
+      "name": "南亞",
+      "pct": 3.78,
+      "shares": 417000,
+      "price": 226.5
+    },
+    "2891": {
+      "name": "中信金",
+      "pct": 0.77,
+      "shares": 302000,
+      "price": 63.8
+    },
+    "2330": {
+      "name": "台積電",
+      "pct": 20.21,
+      "shares": 249000,
+      "price": 2030.0
+    },
+    "2303": {
+      "name": "聯電",
+      "pct": 0.85,
+      "shares": 240000,
+      "price": 88.3
+    },
+    "3037": {
+      "name": "欣興",
+      "pct": 5.34,
+      "shares": 239000,
+      "price": 558.0
+    },
+    "3231": {
+      "name": "緯創",
+      "pct": 0.96,
+      "shares": 161000,
+      "price": 148.5
+    },
+    "4904": {
+      "name": "遠傳",
+      "pct": 0.51,
+      "shares": 123000,
+      "price": 103.0
+    },
+    "3189": {
+      "name": "景碩",
+      "pct": 2.25,
+      "shares": 120000,
+      "price": 467.5
+    },
+    "2368": {
+      "name": "金像電",
+      "pct": 3.51,
+      "shares": 112000,
+      "price": 782.0
+    },
+    "3711": {
+      "name": "日月光投控",
+      "pct": 2.06,
+      "shares": 107000,
+      "price": 482.0
+    },
+    "2301": {
+      "name": "光寶科",
+      "pct": 0.67,
+      "shares": 90000,
+      "price": 185.5
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 7.9,
+      "shares": 84000,
+      "price": 2365.0
+    },
+    "3044": {
+      "name": "健鼎",
+      "pct": 1.22,
+      "shares": 69000,
+      "price": 442.5
+    },
+    "8046": {
+      "name": "南電",
+      "pct": 1.64,
+      "shares": 61000,
+      "price": 670.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 8.57,
+      "shares": 58000,
+      "price": 3685.0
+    },
+    "6805": {
+      "name": "富世達",
+      "pct": 3.03,
+      "shares": 52000,
+      "price": 1455.0
+    },
+    "8996": {
+      "name": "高力",
+      "pct": 1.79,
+      "shares": 52000,
+      "price": 858.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 5.07,
+      "shares": 41000,
+      "price": 3090.0
+    },
+    "3653": {
+      "name": "健策",
+      "pct": 4.28,
+      "shares": 29000,
+      "price": 3685.0
+    },
+    "3105": {
+      "name": "穩懋",
+      "pct": 0.46,
+      "shares": 28000,
+      "price": 408.5
+    },
+    "6510": {
+      "name": "精測",
+      "pct": 2.53,
+      "shares": 28000,
+      "price": 2255.0
+    },
+    "6526": {
+      "name": "達發",
+      "pct": 0.63,
+      "shares": 26000,
+      "price": 607.0
+    },
+    "3443": {
+      "name": "創意",
+      "pct": 4.01,
+      "shares": 20000,
+      "price": 5120.0
+    },
+    "3661": {
+      "name": "世芯-KY",
+      "pct": 1.99,
+      "shares": 14000,
+      "price": 3560.0
+    },
+    "2345": {
+      "name": "智邦",
+      "pct": 0.43,
+      "shares": 8000,
+      "price": 1350.0
+    },
+    "3081": {
+      "name": "聯亞",
+      "pct": 0.33,
+      "shares": 6000,
+      "price": 1390.0
+    },
+    "6223": {
+      "name": "旺矽",
+      "pct": 0.76,
+      "shares": 5000,
+      "price": 3805.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-20",
+    "buy": [
+      {
+        "code": "2303",
+        "name": "聯電",
+        "lots": 240,
+        "money": 0.21,
+        "chg": 9.96,
+        "new": true,
+        "clear": false
+      },
+      {
+        "code": "2301",
+        "name": "光寶科",
+        "lots": 40,
+        "money": 0.07,
+        "chg": 5.7,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6526",
+        "name": "達發",
+        "lots": 10,
+        "money": 0.06,
+        "chg": 9.96,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3044",
+        "name": "健鼎",
+        "lots": 15,
+        "money": 0.06,
+        "chg": 9.94,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "4904",
+        "name": "遠傳",
+        "lots": 1,
+        "money": 0.0,
+        "chg": 0.0,
+        "new": false,
+        "clear": false
+      }
+    ],
+    "sell": [
+      {
+        "code": "3167",
+        "name": "大量",
+        "lots": -18,
+        "money": -0.09,
+        "chg": 9.82,
+        "new": false,
+        "clear": true
+      }
+    ]
+  }
+}

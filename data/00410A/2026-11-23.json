@@ -1,0 +1,160 @@
+{
+  "etfid": "00410A",
+  "fund_name": "主動永豐科技趨勢",
+  "data_date": "2026-11-23",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "1301": {
+      "name": "台塑",
+      "pct": 2.15,
+      "shares": 600000,
+      "price": 56.8
+    },
+    "1303": {
+      "name": "南亞",
+      "pct": 4.29,
+      "shares": 300000,
+      "price": 226.5
+    },
+    "2455": {
+      "name": "全新",
+      "pct": 3.82,
+      "shares": 223000,
+      "price": 271.5
+    },
+    "3711": {
+      "name": "日月光投控",
+      "pct": 3.04,
+      "shares": 100000,
+      "price": 482.0
+    },
+    "2330": {
+      "name": "台積電",
+      "pct": 10.26,
+      "shares": 80000,
+      "price": 2030.0
+    },
+    "8996": {
+      "name": "高力",
+      "pct": 3.79,
+      "shares": 70000,
+      "price": 858.0
+    },
+    "3491": {
+      "name": "昇達科",
+      "pct": 5.33,
+      "shares": 67000,
+      "price": 1260.0
+    },
+    "4749": {
+      "name": "新應材",
+      "pct": 2.14,
+      "shares": 60000,
+      "price": 565.0
+    },
+    "3081": {
+      "name": "聯亞",
+      "pct": 4.39,
+      "shares": 50000,
+      "price": 1390.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 7.8,
+      "shares": 40000,
+      "price": 3090.0
+    },
+    "3529": {
+      "name": "力旺",
+      "pct": 4.19,
+      "shares": 35000,
+      "price": 1895.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 4.63,
+      "shares": 31000,
+      "price": 2365.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 4.65,
+      "shares": 20000,
+      "price": 3685.0
+    },
+    "3661": {
+      "name": "世芯-KY",
+      "pct": 4.49,
+      "shares": 20000,
+      "price": 3560.0
+    },
+    "6223": {
+      "name": "旺矽",
+      "pct": 4.8,
+      "shares": 20000,
+      "price": 3805.0
+    },
+    "3653": {
+      "name": "健策",
+      "pct": 3.95,
+      "shares": 17000,
+      "price": 3685.0
+    },
+    "3008": {
+      "name": "大立光",
+      "pct": 3.43,
+      "shares": 15000,
+      "price": 3620.0
+    },
+    "2059": {
+      "name": "川湖",
+      "pct": 3.56,
+      "shares": 10000,
+      "price": 5640.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-20",
+    "buy": [
+      {
+        "code": "3081",
+        "name": "聯亞",
+        "lots": 22,
+        "money": 0.29,
+        "chg": 1.83,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2059",
+        "name": "川湖",
+        "lots": 4,
+        "money": 0.21,
+        "chg": 5.42,
+        "new": false,
+        "clear": false
+      }
+    ],
+    "sell": [
+      {
+        "code": "4958",
+        "name": "臻鼎-KY",
+        "lots": -120,
+        "money": -0.37,
+        "chg": 6.94,
+        "new": false,
+        "clear": true
+      },
+      {
+        "code": "1519",
+        "name": "華城",
+        "lots": -50,
+        "money": -0.21,
+        "chg": 0.83,
+        "new": false,
+        "clear": true
+      }
+    ]
+  }
+}
