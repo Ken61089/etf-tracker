@@ -340,20 +340,20 @@
         "clear": false
       },
       {
-        "code": "3231",
-        "name": "緯創",
-        "lots": 1,
-        "money": 0.0,
-        "chg": 1.02,
-        "new": true,
-        "clear": false
-      },
-      {
         "code": "1727",
         "name": "中華化",
         "lots": 1,
         "money": 0.0,
         "chg": 1.88,
+        "new": true,
+        "clear": false
+      },
+      {
+        "code": "3231",
+        "name": "緯創",
+        "lots": 1,
+        "money": 0.0,
+        "chg": 1.02,
         "new": true,
         "clear": false
       },
@@ -387,20 +387,20 @@
         "clear": true
       },
       {
-        "code": "8358",
-        "name": "金居",
-        "lots": -14,
-        "money": -0.03,
-        "chg": -1.42,
-        "new": false,
-        "clear": true
-      },
-      {
         "code": "6515",
         "name": "穎崴",
         "lots": -1,
         "money": -0.03,
         "chg": 1.56,
+        "new": false,
+        "clear": true
+      },
+      {
+        "code": "8358",
+        "name": "金居",
+        "lots": -14,
+        "money": -0.03,
+        "chg": -1.42,
         "new": false,
         "clear": true
       }

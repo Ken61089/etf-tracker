@@ -361,20 +361,20 @@
         "clear": false
       },
       {
-        "code": "2886",
-        "name": "兆豐金",
-        "lots": 192,
-        "money": 0.1,
-        "chg": -3.47,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "1477",
         "name": "聚陽",
         "lots": 45,
         "money": 0.1,
         "chg": 0.68,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2886",
+        "name": "兆豐金",
+        "lots": 192,
+        "money": 0.1,
+        "chg": -3.47,
         "new": false,
         "clear": false
       }

@@ -213,15 +213,6 @@
     ],
     "sell": [
       {
-        "code": "3167",
-        "name": "大量",
-        "lots": -11,
-        "money": -0.06,
-        "chg": 9.82,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2360",
         "name": "致茂",
         "lots": -7,
@@ -240,20 +231,11 @@
         "clear": false
       },
       {
-        "code": "3026",
-        "name": "禾伸堂",
-        "lots": -18,
+        "code": "3167",
+        "name": "大量",
+        "lots": -11,
         "money": -0.06,
-        "chg": 1.85,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "6187",
-        "name": "萬潤",
-        "lots": -9,
-        "money": -0.06,
-        "chg": 7.68,
+        "chg": 9.82,
         "new": false,
         "clear": false
       },
@@ -267,20 +249,20 @@
         "clear": false
       },
       {
-        "code": "1560",
-        "name": "中砂",
-        "lots": -11,
+        "code": "6187",
+        "name": "萬潤",
+        "lots": -9,
         "money": -0.06,
-        "chg": 5.74,
+        "chg": 7.68,
         "new": false,
         "clear": false
       },
       {
-        "code": "4958",
-        "name": "臻鼎-KY",
+        "code": "3026",
+        "name": "禾伸堂",
         "lots": -18,
         "money": -0.06,
-        "chg": 6.94,
+        "chg": 1.85,
         "new": false,
         "clear": false
       },
@@ -290,6 +272,15 @@
         "lots": -25,
         "money": -0.06,
         "chg": -1.42,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "4958",
+        "name": "臻鼎-KY",
+        "lots": -18,
+        "money": -0.06,
+        "chg": 6.94,
         "new": false,
         "clear": false
       },
@@ -308,6 +299,15 @@
         "lots": -7,
         "money": -0.06,
         "chg": -7.04,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "1560",
+        "name": "中砂",
+        "lots": -11,
+        "money": -0.06,
+        "chg": 5.74,
         "new": false,
         "clear": false
       },
