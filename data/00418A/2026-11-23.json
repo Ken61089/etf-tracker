@@ -213,6 +213,33 @@
     ],
     "sell": [
       {
+        "code": "3167",
+        "name": "大量",
+        "lots": -11,
+        "money": -0.06,
+        "chg": 9.82,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2360",
+        "name": "致茂",
+        "lots": -7,
+        "money": -0.06,
+        "chg": 0.0,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3711",
+        "name": "日月光投控",
+        "lots": -13,
+        "money": -0.06,
+        "chg": 5.47,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "3026",
         "name": "禾伸堂",
         "lots": -18,
@@ -231,11 +258,11 @@
         "clear": false
       },
       {
-        "code": "8358",
-        "name": "金居",
-        "lots": -25,
+        "code": "8046",
+        "name": "南電",
+        "lots": -9,
         "money": -0.06,
-        "chg": -1.42,
+        "chg": 6.52,
         "new": false,
         "clear": false
       },
@@ -249,11 +276,20 @@
         "clear": false
       },
       {
-        "code": "2360",
-        "name": "致茂",
-        "lots": -7,
+        "code": "4958",
+        "name": "臻鼎-KY",
+        "lots": -18,
         "money": -0.06,
-        "chg": 0.0,
+        "chg": 6.94,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "8358",
+        "name": "金居",
+        "lots": -25,
+        "money": -0.06,
+        "chg": -1.42,
         "new": false,
         "clear": false
       },
@@ -267,47 +303,11 @@
         "clear": false
       },
       {
-        "code": "3167",
-        "name": "大量",
-        "lots": -11,
-        "money": -0.06,
-        "chg": 9.82,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "8046",
-        "name": "南電",
-        "lots": -9,
-        "money": -0.06,
-        "chg": 6.52,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "3711",
-        "name": "日月光投控",
-        "lots": -13,
-        "money": -0.06,
-        "chg": 5.47,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "8996",
         "name": "高力",
         "lots": -7,
         "money": -0.06,
         "chg": -7.04,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "4958",
-        "name": "臻鼎-KY",
-        "lots": -18,
-        "money": -0.06,
-        "chg": 6.94,
         "new": false,
         "clear": false
       },

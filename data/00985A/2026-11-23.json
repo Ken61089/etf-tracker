@@ -391,20 +391,20 @@
         "clear": false
       },
       {
-        "code": "6442",
-        "name": "光聖",
-        "lots": 74,
-        "money": 0.62,
-        "chg": 3.01,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3017",
         "name": "奇鋐",
         "lots": 28,
         "money": 0.62,
         "chg": 7.26,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6442",
+        "name": "光聖",
+        "lots": 74,
+        "money": 0.62,
+        "chg": 3.01,
         "new": false,
         "clear": false
       },

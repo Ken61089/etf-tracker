@@ -349,6 +349,15 @@
         "clear": false
       },
       {
+        "code": "1727",
+        "name": "中華化",
+        "lots": 1,
+        "money": 0.0,
+        "chg": 1.88,
+        "new": true,
+        "clear": false
+      },
+      {
         "code": "2412",
         "name": "中華電",
         "lots": 1,
@@ -363,15 +372,6 @@
         "lots": 1,
         "money": 0.0,
         "chg": 1.98,
-        "new": true,
-        "clear": false
-      },
-      {
-        "code": "1727",
-        "name": "中華化",
-        "lots": 1,
-        "money": 0.0,
-        "chg": 1.88,
         "new": true,
         "clear": false
       }
