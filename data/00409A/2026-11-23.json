@@ -1,0 +1,18 @@
+{
+  "etfid": "00409A",
+  "fund_name": "主動復華全球50",
+  "data_date": "2026-11-23",
+  "holdings": {
+    "2454": {
+      "name": "聯發科",
+      "pct": 3.78,
+      "shares": 98000
+    },
+    "3711": {
+      "name": "日月光投控",
+      "pct": 0.93,
+      "shares": 185000
+    }
+  },
+  "source": "moneydj"
+}
