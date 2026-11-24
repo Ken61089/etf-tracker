@@ -229,21 +229,21 @@
         "clear": false
       },
       {
-        "code": "2382",
-        "name": "廣達",
-        "lots": 50,
-        "money": 0.14,
-        "chg": 9.92,
-        "new": true,
-        "clear": false
-      },
-      {
         "code": "5434",
         "name": "崇越",
         "lots": 32,
         "money": 0.14,
         "chg": 9.23,
         "new": false,
+        "clear": false
+      },
+      {
+        "code": "2382",
+        "name": "廣達",
+        "lots": 50,
+        "money": 0.14,
+        "chg": 9.92,
+        "new": true,
         "clear": false
       },
       {

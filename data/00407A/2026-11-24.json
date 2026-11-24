@@ -373,20 +373,20 @@
         "clear": false
       },
       {
-        "code": "3260",
-        "name": "威剛",
-        "lots": 17,
-        "money": 0.05,
-        "chg": 8.62,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2379",
         "name": "瑞昱",
         "lots": 7,
         "money": 0.05,
         "chg": 4.2,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3260",
+        "name": "威剛",
+        "lots": 17,
+        "money": 0.05,
+        "chg": 8.62,
         "new": false,
         "clear": false
       },

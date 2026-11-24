@@ -379,20 +379,20 @@
         "clear": false
       },
       {
-        "code": "8464",
-        "name": "億豐",
-        "lots": 50,
-        "money": 0.18,
-        "chg": 4.14,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2891",
         "name": "中信金",
         "lots": 265,
         "money": 0.18,
         "chg": 9.56,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "8464",
+        "name": "億豐",
+        "lots": 50,
+        "money": 0.18,
+        "chg": 4.14,
         "new": false,
         "clear": false
       }
