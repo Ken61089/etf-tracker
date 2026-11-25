@@ -310,20 +310,20 @@
     "base": "2026-11-24",
     "buy": [
       {
-        "code": "2383",
-        "name": "台光電",
-        "lots": 60,
-        "money": 2.02,
-        "chg": -1.18,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2368",
         "name": "金像電",
         "lots": 230,
         "money": 2.02,
         "chg": 5.23,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2383",
+        "name": "台光電",
+        "lots": 60,
+        "money": 2.02,
+        "chg": -1.18,
         "new": false,
         "clear": false
       },

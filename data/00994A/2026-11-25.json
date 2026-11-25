@@ -202,20 +202,20 @@
     "base": "2026-11-24",
     "buy": [
       {
-        "code": "6274",
-        "name": "台燿",
-        "lots": 15,
-        "money": 0.11,
-        "chg": -1.86,
-        "new": true,
-        "clear": false
-      },
-      {
         "code": "3665",
         "name": "貿聯-KY",
         "lots": 7,
         "money": 0.11,
         "chg": 3.82,
+        "new": true,
+        "clear": false
+      },
+      {
+        "code": "6274",
+        "name": "台燿",
+        "lots": 15,
+        "money": 0.11,
+        "chg": -1.86,
         "new": true,
         "clear": false
       }

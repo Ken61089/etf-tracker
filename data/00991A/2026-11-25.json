@@ -355,20 +355,20 @@
         "clear": false
       },
       {
-        "code": "2891",
-        "name": "中信金",
-        "lots": 6391,
-        "money": 4.18,
-        "chg": -5.72,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2881",
         "name": "富邦金",
         "lots": 3141,
         "money": 4.18,
         "chg": -7.67,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2891",
+        "name": "中信金",
+        "lots": 6391,
+        "money": 4.18,
+        "chg": -5.72,
         "new": false,
         "clear": false
       },
@@ -499,11 +499,11 @@
         "clear": false
       },
       {
-        "code": "2382",
-        "name": "廣達",
-        "lots": 120,
+        "code": "3231",
+        "name": "緯創",
+        "lots": 200,
         "money": 0.31,
-        "chg": -7.61,
+        "chg": -6.75,
         "new": false,
         "clear": false
       },
@@ -517,20 +517,20 @@
         "clear": false
       },
       {
+        "code": "2382",
+        "name": "廣達",
+        "lots": 120,
+        "money": 0.31,
+        "chg": -7.61,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "3293",
         "name": "鈊象",
         "lots": 40,
         "money": 0.31,
         "chg": -1.4,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "3231",
-        "name": "緯創",
-        "lots": 200,
-        "money": 0.31,
-        "chg": -6.75,
         "new": false,
         "clear": false
       },

@@ -343,15 +343,6 @@
         "clear": false
       },
       {
-        "code": "3036",
-        "name": "文曄",
-        "lots": 58,
-        "money": 0.09,
-        "chg": -7.83,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2610",
         "name": "華航",
         "lots": 414,
@@ -361,11 +352,11 @@
         "clear": false
       },
       {
-        "code": "2886",
-        "name": "兆豐金",
-        "lots": 168,
-        "money": 0.08,
-        "chg": -9.64,
+        "code": "3036",
+        "name": "文曄",
+        "lots": 58,
+        "money": 0.09,
+        "chg": -7.83,
         "new": false,
         "clear": false
       },
@@ -379,12 +370,12 @@
         "clear": false
       },
       {
-        "code": "6691",
-        "name": "洋基工程",
-        "lots": 14,
-        "money": 0.07,
-        "chg": -7.65,
-        "new": true,
+        "code": "2886",
+        "name": "兆豐金",
+        "lots": 168,
+        "money": 0.08,
+        "chg": -9.64,
+        "new": false,
         "clear": false
       },
       {
@@ -397,12 +388,12 @@
         "clear": false
       },
       {
-        "code": "2368",
-        "name": "金像電",
-        "lots": 7,
-        "money": 0.06,
-        "chg": 5.23,
-        "new": false,
+        "code": "6691",
+        "name": "洋基工程",
+        "lots": 14,
+        "money": 0.07,
+        "chg": -7.65,
+        "new": true,
         "clear": false
       },
       {
@@ -415,11 +406,29 @@
         "clear": false
       },
       {
+        "code": "2368",
+        "name": "金像電",
+        "lots": 7,
+        "money": 0.06,
+        "chg": 5.23,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "8150",
         "name": "南茂",
         "lots": 79,
         "money": 0.05,
         "chg": -9.48,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2303",
+        "name": "聯電",
+        "lots": 44,
+        "money": 0.04,
+        "chg": -9.99,
         "new": false,
         "clear": false
       },
@@ -430,15 +439,6 @@
         "money": 0.04,
         "chg": 0.29,
         "new": true,
-        "clear": false
-      },
-      {
-        "code": "2303",
-        "name": "聯電",
-        "lots": 44,
-        "money": 0.04,
-        "chg": -9.99,
-        "new": false,
         "clear": false
       },
       {

@@ -1,0 +1,708 @@
+{
+  "etfid": "00401A",
+  "fund_name": "主動摩根台灣鑫收",
+  "data_date": "2026-11-25",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "2884": {
+      "name": "玉山金",
+      "pct": 1.98,
+      "shares": 2057000,
+      "price": 38.95
+    },
+    "2886": {
+      "name": "兆豐金",
+      "pct": 2.34,
+      "shares": 1906000,
+      "price": 49.7
+    },
+    "2883": {
+      "name": "凱基金",
+      "pct": 1.33,
+      "shares": 1786000,
+      "price": 30.05
+    },
+    "2891": {
+      "name": "中信金",
+      "pct": 2.6,
+      "shares": 1597000,
+      "price": 65.9
+    },
+    "2890": {
+      "name": "永豐金",
+      "pct": 1.3,
+      "shares": 1443000,
+      "price": 36.35
+    },
+    "5904": {
+      "name": "寶雅*",
+      "pct": 1.86,
+      "shares": 1096000,
+      "price": 68.7
+    },
+    "2887": {
+      "name": "台新新光金",
+      "pct": 0.89,
+      "shares": 1059000,
+      "price": 34.0
+    },
+    "2303": {
+      "name": "聯電",
+      "pct": 2.17,
+      "shares": 1003000,
+      "price": 87.4
+    },
+    "2881": {
+      "name": "富邦金",
+      "pct": 1.7,
+      "shares": 519000,
+      "price": 132.5
+    },
+    "3231": {
+      "name": "緯創",
+      "pct": 1.79,
+      "shares": 475000,
+      "price": 152.0
+    },
+    "1477": {
+      "name": "聚陽",
+      "pct": 2.49,
+      "shares": 451000,
+      "price": 223.0
+    },
+    "2330": {
+      "name": "台積電",
+      "pct": 20.64,
+      "shares": 388000,
+      "price": 2150.0
+    },
+    "2882": {
+      "name": "國泰金",
+      "pct": 0.91,
+      "shares": 366000,
+      "price": 100.5
+    },
+    "2603": {
+      "name": "長榮",
+      "pct": 2.17,
+      "shares": 348000,
+      "price": 252.5
+    },
+    "5347": {
+      "name": "世界",
+      "pct": 0.92,
+      "shares": 318000,
+      "price": 116.5
+    },
+    "4904": {
+      "name": "遠傳",
+      "pct": 0.75,
+      "shares": 292000,
+      "price": 103.5
+    },
+    "3711": {
+      "name": "日月光投控",
+      "pct": 3.45,
+      "shares": 286000,
+      "price": 488.0
+    },
+    "2382": {
+      "name": "廣達",
+      "pct": 1.72,
+      "shares": 266000,
+      "price": 261.0
+    },
+    "6147": {
+      "name": "頎邦",
+      "pct": 0.81,
+      "shares": 265000,
+      "price": 124.0
+    },
+    "1476": {
+      "name": "儒鴻",
+      "pct": 2.41,
+      "shares": 264000,
+      "price": 368.5
+    },
+    "2313": {
+      "name": "華通",
+      "pct": 0.96,
+      "shares": 253000,
+      "price": 153.0
+    },
+    "6285": {
+      "name": "啟碁",
+      "pct": 1.02,
+      "shares": 234000,
+      "price": 175.5
+    },
+    "2412": {
+      "name": "中華電",
+      "pct": 0.94,
+      "shares": 232000,
+      "price": 163.5
+    },
+    "2455": {
+      "name": "全新",
+      "pct": 1.22,
+      "shares": 175000,
+      "price": 282.5
+    },
+    "8464": {
+      "name": "億豐",
+      "pct": 1.39,
+      "shares": 163000,
+      "price": 345.0
+    },
+    "1216": {
+      "name": "統一",
+      "pct": 0.29,
+      "shares": 148000,
+      "price": 78.7
+    },
+    "4938": {
+      "name": "和碩",
+      "pct": 0.27,
+      "shares": 136000,
+      "price": 79.6
+    },
+    "2379": {
+      "name": "瑞昱",
+      "pct": 1.94,
+      "shares": 112000,
+      "price": 699.0
+    },
+    "4958": {
+      "name": "臻鼎-KY",
+      "pct": 0.85,
+      "shares": 105000,
+      "price": 328.5
+    },
+    "1303": {
+      "name": "南亞",
+      "pct": 0.53,
+      "shares": 95000,
+      "price": 226.5
+    },
+    "2317": {
+      "name": "鴻海",
+      "pct": 0.48,
+      "shares": 94000,
+      "price": 206.5
+    },
+    "2357": {
+      "name": "華碩",
+      "pct": 1.5,
+      "shares": 79000,
+      "price": 769.0
+    },
+    "6531": {
+      "name": "愛普*",
+      "pct": 0.88,
+      "shares": 69000,
+      "price": 516.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 5.57,
+      "shares": 62000,
+      "price": 3645.0
+    },
+    "6187": {
+      "name": "萬潤",
+      "pct": 1.04,
+      "shares": 61000,
+      "price": 686.0
+    },
+    "2308": {
+      "name": "台達電",
+      "pct": 1.47,
+      "shares": 56000,
+      "price": 1055.0
+    },
+    "5871": {
+      "name": "中租-KY",
+      "pct": 0.13,
+      "shares": 50000,
+      "price": 102.0
+    },
+    "2360": {
+      "name": "致茂",
+      "pct": 1.19,
+      "shares": 48000,
+      "price": 1010.0
+    },
+    "2912": {
+      "name": "統一超",
+      "pct": 0.25,
+      "shares": 48000,
+      "price": 207.0
+    },
+    "2327": {
+      "name": "國巨*",
+      "pct": 0.35,
+      "shares": 46000,
+      "price": 309.0
+    },
+    "3491": {
+      "name": "昇達科",
+      "pct": 1.4,
+      "shares": 45000,
+      "price": 1255.0
+    },
+    "7828": {
+      "name": "創新服務",
+      "pct": 1.23,
+      "shares": 39000,
+      "price": 1275.0
+    },
+    "6669": {
+      "name": "緯穎",
+      "pct": 1.3,
+      "shares": 37000,
+      "price": 1430.0
+    },
+    "3037": {
+      "name": "欣興",
+      "pct": 0.4,
+      "shares": 28000,
+      "price": 585.0
+    },
+    "6223": {
+      "name": "旺矽",
+      "pct": 2.03,
+      "shares": 22000,
+      "price": 3770.0
+    },
+    "3034": {
+      "name": "聯詠",
+      "pct": 0.17,
+      "shares": 16000,
+      "price": 427.5
+    },
+    "3008": {
+      "name": "大立光",
+      "pct": 1.51,
+      "shares": 15000,
+      "price": 4025.0
+    },
+    "3443": {
+      "name": "創意",
+      "pct": 1.51,
+      "shares": 12000,
+      "price": 5070.0
+    },
+    "7856": {
+      "name": "漢測",
+      "pct": 0.45,
+      "shares": 12000,
+      "price": 1565.0
+    },
+    "2059": {
+      "name": "川湖",
+      "pct": 1.55,
+      "shares": 10000,
+      "price": 6505.0
+    },
+    "2885": {
+      "name": "元大金",
+      "pct": 0.02,
+      "shares": 10000,
+      "price": 61.5
+    },
+    "3653": {
+      "name": "健策",
+      "pct": 0.96,
+      "shares": 9000,
+      "price": 4170.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 0.69,
+      "shares": 8000,
+      "price": 3355.0
+    },
+    "6515": {
+      "name": "穎崴",
+      "pct": 0.57,
+      "shares": 8000,
+      "price": 3015.0
+    },
+    "7769": {
+      "name": "鴻勁",
+      "pct": 0.48,
+      "shares": 6000,
+      "price": 3065.0
+    },
+    "5274": {
+      "name": "信驊",
+      "pct": 0.94,
+      "shares": 4000,
+      "price": 8795.0
+    },
+    "2345": {
+      "name": "智邦",
+      "pct": 0.09,
+      "shares": 3000,
+      "price": 1475.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-24",
+    "buy": [
+      {
+        "code": "2330",
+        "name": "台積電",
+        "lots": 18,
+        "money": 0.38,
+        "chg": -3.59,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2454",
+        "name": "聯發科",
+        "lots": 3,
+        "money": 0.11,
+        "chg": -10.0,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3711",
+        "name": "日月光投控",
+        "lots": 13,
+        "money": 0.06,
+        "chg": -7.92,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "1477",
+        "name": "聚陽",
+        "lots": 21,
+        "money": 0.05,
+        "chg": -0.89,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2891",
+        "name": "中信金",
+        "lots": 75,
+        "money": 0.05,
+        "chg": -5.72,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2303",
+        "name": "聯電",
+        "lots": 47,
+        "money": 0.04,
+        "chg": -9.99,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6223",
+        "name": "旺矽",
+        "lots": 1,
+        "money": 0.04,
+        "chg": -9.92,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2886",
+        "name": "兆豐金",
+        "lots": 89,
+        "money": 0.04,
+        "chg": -9.64,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2603",
+        "name": "長榮",
+        "lots": 16,
+        "money": 0.04,
+        "chg": -1.75,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2884",
+        "name": "玉山金",
+        "lots": 96,
+        "money": 0.04,
+        "chg": -5.46,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "1476",
+        "name": "儒鴻",
+        "lots": 12,
+        "money": 0.04,
+        "chg": -0.54,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3231",
+        "name": "緯創",
+        "lots": 22,
+        "money": 0.03,
+        "chg": -6.75,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5904",
+        "name": "寶雅*",
+        "lots": 51,
+        "money": 0.03,
+        "chg": -3.65,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2308",
+        "name": "台達電",
+        "lots": 3,
+        "money": 0.03,
+        "chg": -2.76,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2357",
+        "name": "華碩",
+        "lots": 4,
+        "money": 0.03,
+        "chg": -6.33,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3008",
+        "name": "大立光",
+        "lots": 1,
+        "money": 0.03,
+        "chg": 1.13,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6669",
+        "name": "緯穎",
+        "lots": 2,
+        "money": 0.03,
+        "chg": -5.3,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "8464",
+        "name": "億豐",
+        "lots": 8,
+        "money": 0.03,
+        "chg": -1.99,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2382",
+        "name": "廣達",
+        "lots": 12,
+        "money": 0.03,
+        "chg": -7.61,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2379",
+        "name": "瑞昱",
+        "lots": 5,
+        "money": 0.03,
+        "chg": 0.72,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2883",
+        "name": "凱基金",
+        "lots": 83,
+        "money": 0.02,
+        "chg": -6.82,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "7828",
+        "name": "創新服務",
+        "lots": 2,
+        "money": 0.02,
+        "chg": -9.89,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2412",
+        "name": "中華電",
+        "lots": 11,
+        "money": 0.02,
+        "chg": -0.61,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2313",
+        "name": "華通",
+        "lots": 12,
+        "money": 0.02,
+        "chg": -9.73,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2360",
+        "name": "致茂",
+        "lots": 2,
+        "money": 0.02,
+        "chg": -0.49,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6147",
+        "name": "頎邦",
+        "lots": 12,
+        "money": 0.02,
+        "chg": -8.15,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2887",
+        "name": "台新新光金",
+        "lots": 50,
+        "money": 0.02,
+        "chg": -6.34,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2455",
+        "name": "全新",
+        "lots": 8,
+        "money": 0.02,
+        "chg": -5.36,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "5347",
+        "name": "世界",
+        "lots": 15,
+        "money": 0.02,
+        "chg": -3.72,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "4958",
+        "name": "臻鼎-KY",
+        "lots": 5,
+        "money": 0.02,
+        "chg": -9.88,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6285",
+        "name": "啟碁",
+        "lots": 11,
+        "money": 0.02,
+        "chg": -9.77,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2327",
+        "name": "國巨*",
+        "lots": 2,
+        "money": 0.01,
+        "chg": -9.38,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2317",
+        "name": "鴻海",
+        "lots": 4,
+        "money": 0.01,
+        "chg": -8.83,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "1216",
+        "name": "統一",
+        "lots": 7,
+        "money": 0.01,
+        "chg": 1.68,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "4904",
+        "name": "遠傳",
+        "lots": 14,
+        "money": 0.01,
+        "chg": -3.27,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3037",
+        "name": "欣興",
+        "lots": 1,
+        "money": 0.01,
+        "chg": -4.57,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "4938",
+        "name": "和碩",
+        "lots": 6,
+        "money": 0.0,
+        "chg": -6.13,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2912",
+        "name": "統一超",
+        "lots": 2,
+        "money": 0.0,
+        "chg": 0.0,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "3034",
+        "name": "聯詠",
+        "lots": 1,
+        "money": 0.0,
+        "chg": -1.84,
+        "new": false,
+        "clear": false
+      }
+    ],
+    "sell": []
+  }
+}
