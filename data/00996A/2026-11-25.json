@@ -411,20 +411,11 @@
         "clear": true
       },
       {
-        "code": "8358",
-        "name": "金居",
-        "lots": -94,
-        "money": -0.24,
-        "chg": -8.6,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2327",
-        "name": "國巨*",
+        "code": "6830",
+        "name": "汎銓",
         "lots": -74,
         "money": -0.24,
-        "chg": -9.38,
+        "chg": -6.5,
         "new": false,
         "clear": false
       },
@@ -438,11 +429,20 @@
         "clear": false
       },
       {
-        "code": "6830",
-        "name": "汎銓",
+        "code": "2327",
+        "name": "國巨*",
         "lots": -74,
         "money": -0.24,
-        "chg": -6.5,
+        "chg": -9.38,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "8358",
+        "name": "金居",
+        "lots": -94,
+        "money": -0.24,
+        "chg": -8.6,
         "new": false,
         "clear": false
       },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25 20:30",
+  "generated_at": "2026-11-26 03:39",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -848,28 +848,6 @@
         ]
       },
       {
-        "ticker": "2412",
-        "name": "中華電",
-        "count": 2,
-        "flag_count": 0,
-        "etfs": [
-          {
-            "etfid": "00995A",
-            "fund_name": "主動中信台灣卓越",
-            "delta": 20000,
-            "is_new": false,
-            "is_removed": false
-          },
-          {
-            "etfid": "00401A",
-            "fund_name": "主動摩根台灣鑫收",
-            "delta": 11000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ]
-      },
-      {
         "ticker": "2887",
         "name": "台新新光金",
         "count": 2,
@@ -908,6 +886,28 @@
             "etfid": "00401A",
             "fund_name": "主動摩根台灣鑫收",
             "delta": 5000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ]
+      },
+      {
+        "ticker": "2412",
+        "name": "中華電",
+        "count": 2,
+        "flag_count": 0,
+        "etfs": [
+          {
+            "etfid": "00995A",
+            "fund_name": "主動中信台灣卓越",
+            "delta": 20000,
+            "is_new": false,
+            "is_removed": false
+          },
+          {
+            "etfid": "00401A",
+            "fund_name": "主動摩根台灣鑫收",
+            "delta": 11000,
             "is_new": false,
             "is_removed": false
           }
@@ -1168,37 +1168,6 @@
         "sell_count": 1
       },
       {
-        "ticker": "2360",
-        "name": "致茂",
-        "buyers": [
-          {
-            "etfid": "00996A",
-            "fund_name": "主動兆豐台灣豐收",
-            "delta": 28000,
-            "is_new": true,
-            "is_removed": false
-          },
-          {
-            "etfid": "00401A",
-            "fund_name": "主動摩根台灣鑫收",
-            "delta": 2000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00992A",
-            "fund_name": "主動群益科技創新",
-            "delta": -138000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 2,
-        "sell_count": 1
-      },
-      {
         "ticker": "3037",
         "name": "欣興",
         "buyers": [
@@ -1222,6 +1191,37 @@
             "etfid": "00996A",
             "fund_name": "主動兆豐台灣豐收",
             "delta": -25000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "buy_count": 2,
+        "sell_count": 1
+      },
+      {
+        "ticker": "2360",
+        "name": "致茂",
+        "buyers": [
+          {
+            "etfid": "00996A",
+            "fund_name": "主動兆豐台灣豐收",
+            "delta": 28000,
+            "is_new": true,
+            "is_removed": false
+          },
+          {
+            "etfid": "00401A",
+            "fund_name": "主動摩根台灣鑫收",
+            "delta": 2000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00992A",
+            "fund_name": "主動群益科技創新",
+            "delta": -138000,
             "is_new": false,
             "is_removed": false
           }
@@ -1264,7 +1264,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 51,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -14570,7 +14570,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 57,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -31389,7 +31389,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 51,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -44690,7 +44690,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -57999,7 +57999,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 44,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -69728,7 +69728,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 54,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -87757,7 +87757,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -100916,7 +100916,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -114164,7 +114164,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 33,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -129307,7 +129307,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -142752,7 +142752,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 50,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -142880,21 +142880,21 @@
             "is_removed": true
           },
           {
-            "ticker": "2327",
-            "name": "國巨*",
-            "delta": -74000,
-            "old_shares": 600000,
-            "new_shares": 526000,
-            "pct": 3.82,
-            "money": -0.24
-          },
-          {
             "ticker": "6830",
             "name": "汎銓",
             "delta": -74000,
             "old_shares": 174000,
             "new_shares": 100000,
             "pct": 0.75,
+            "money": -0.24
+          },
+          {
+            "ticker": "2327",
+            "name": "國巨*",
+            "delta": -74000,
+            "old_shares": 600000,
+            "new_shares": 526000,
+            "pct": 3.82,
             "money": -0.24
           }
         ]
@@ -156258,7 +156258,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 57,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
@@ -171452,7 +171452,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 54,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -185799,7 +185799,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 32,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [
@@ -194959,21 +194959,12 @@
       "prev_date": "2026-11-24",
       "holdings_count": 18,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [],
         "removed": [],
         "buys": [
-          {
-            "ticker": "2454",
-            "name": "聯發科",
-            "delta": 10000,
-            "old_shares": 20000,
-            "new_shares": 30000,
-            "pct": 6.6,
-            "money": 0.37
-          },
           {
             "ticker": "3661",
             "name": "世芯-KY",
@@ -194981,6 +194972,15 @@
             "old_shares": 20000,
             "new_shares": 30000,
             "pct": 6.52,
+            "money": 0.37
+          },
+          {
+            "ticker": "2454",
+            "name": "聯發科",
+            "delta": 10000,
+            "old_shares": 20000,
+            "new_shares": 30000,
+            "pct": 6.6,
             "money": 0.37
           },
           {
@@ -201464,7 +201464,7 @@
       "prev_date": "2026-11-24",
       "holdings_count": 37,
       "is_baseline": false,
-      "is_current": true,
+      "is_current": false,
       "source": "xiaoyu",
       "diff": {
         "added": [

@@ -118,20 +118,20 @@
     "base": "2026-11-24",
     "buy": [
       {
-        "code": "2454",
-        "name": "聯發科",
-        "lots": 10,
-        "money": 0.37,
-        "chg": -10.0,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3661",
         "name": "世芯-KY",
         "lots": 10,
         "money": 0.37,
         "chg": -7.92,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2454",
+        "name": "聯發科",
+        "lots": 10,
+        "money": 0.37,
+        "chg": -10.0,
         "new": false,
         "clear": false
       },
