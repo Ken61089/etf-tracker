@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25 18:30",
+  "generated_at": "2026-11-25 19:30",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -886,30 +886,6 @@
         "sell_count": 1
       },
       {
-        "ticker": "3037",
-        "name": "欣興",
-        "buyers": [
-          {
-            "etfid": "00991A",
-            "fund_name": "主動復華未來50",
-            "delta": 300000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "sellers": [
-          {
-            "etfid": "00996A",
-            "fund_name": "主動兆豐台灣豐收",
-            "delta": -25000,
-            "is_new": false,
-            "is_removed": false
-          }
-        ],
-        "buy_count": 1,
-        "sell_count": 1
-      },
-      {
         "ticker": "2360",
         "name": "致茂",
         "buyers": [
@@ -926,6 +902,30 @@
             "etfid": "00992A",
             "fund_name": "主動群益科技創新",
             "delta": -138000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "buy_count": 1,
+        "sell_count": 1
+      },
+      {
+        "ticker": "3037",
+        "name": "欣興",
+        "buyers": [
+          {
+            "etfid": "00991A",
+            "fund_name": "主動復華未來50",
+            "delta": 300000,
+            "is_new": false,
+            "is_removed": false
+          }
+        ],
+        "sellers": [
+          {
+            "etfid": "00996A",
+            "fund_name": "主動兆豐台灣豐收",
+            "delta": -25000,
             "is_new": false,
             "is_removed": false
           }
@@ -216180,20 +216180,20 @@
           "etfs": []
         },
         {
-          "ticker": "009828",
-          "name": "中信台日韓PCB",
-          "lots": 260,
-          "close": 6.21,
-          "chg": "-1.84",
-          "rank": 49,
-          "etfs": []
-        },
-        {
           "ticker": "00646",
           "name": "元大S＆P500",
           "lots": 260,
           "close": 74.25,
           "chg": "-1.15",
+          "rank": 49,
+          "etfs": []
+        },
+        {
+          "ticker": "009828",
+          "name": "中信台日韓PCB",
+          "lots": 260,
+          "close": 6.21,
+          "chg": "-1.84",
           "rank": 50,
           "etfs": []
         }
@@ -216741,20 +216741,20 @@
           "etfs": []
         },
         {
-          "ticker": "6120",
-          "name": "達運",
-          "lots": -50,
-          "close": 9.45,
-          "chg": "-0.75",
-          "rank": 49,
-          "etfs": []
-        },
-        {
           "ticker": "0052",
           "name": "富邦科技",
           "lots": -50,
           "close": 52.15,
           "chg": "-3",
+          "rank": 49,
+          "etfs": []
+        },
+        {
+          "ticker": "6120",
+          "name": "達運",
+          "lots": -50,
+          "close": 9.45,
+          "chg": "-0.75",
           "rank": 50,
           "etfs": []
         }
