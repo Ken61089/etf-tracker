@@ -1,0 +1,42 @@
+{
+  "etfid": "00409A",
+  "fund_name": "主動復華全球50",
+  "data_date": "2026-11-24",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "3711": {
+      "name": "日月光投控",
+      "pct": 1.03,
+      "shares": 185000,
+      "price": 530.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 4.17,
+      "shares": 98000,
+      "price": 4050.0
+    },
+    "6223": {
+      "name": "旺矽",
+      "pct": 0.13,
+      "shares": 3000,
+      "price": 4185.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-23",
+    "buy": [
+      {
+        "code": "6223",
+        "name": "旺矽",
+        "lots": 3,
+        "money": 0.13,
+        "chg": -9.92,
+        "new": true,
+        "clear": false
+      }
+    ],
+    "sell": []
+  }
+}

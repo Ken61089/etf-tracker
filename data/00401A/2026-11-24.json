@@ -49,7 +49,7 @@
     },
     "2303": {
       "name": "聯電",
-      "pct": 2.17,
+      "pct": 2.18,
       "shares": 956000,
       "price": 97.1
     },
@@ -356,7 +356,7 @@
         "name": "寶雅*",
         "lots": 504,
         "money": 0.36,
-        "chg": 6.26,
+        "chg": -3.65,
         "new": false,
         "clear": false
       },
@@ -365,25 +365,7 @@
         "name": "瑞昱",
         "lots": 51,
         "money": 0.35,
-        "chg": 4.2,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2884",
-        "name": "玉山金",
-        "lots": 437,
-        "money": 0.18,
-        "chg": 6.46,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "2891",
-        "name": "中信金",
-        "lots": 265,
-        "money": 0.18,
-        "chg": 9.56,
+        "chg": 0.72,
         "new": false,
         "clear": false
       },
@@ -392,7 +374,25 @@
         "name": "億豐",
         "lots": 50,
         "money": 0.18,
-        "chg": 4.14,
+        "chg": -1.99,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2891",
+        "name": "中信金",
+        "lots": 265,
+        "money": 0.18,
+        "chg": -5.72,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "2884",
+        "name": "玉山金",
+        "lots": 437,
+        "money": 0.18,
+        "chg": -5.46,
         "new": false,
         "clear": false
       }
