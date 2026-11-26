@@ -307,6 +307,24 @@
         "clear": false
       },
       {
+        "code": "6213",
+        "name": "聯茂",
+        "lots": 99,
+        "money": 0.41,
+        "chg": 10.0,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6274",
+        "name": "台燿",
+        "lots": 52,
+        "money": 0.41,
+        "chg": 7.44,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "1303",
         "name": "南亞",
         "lots": 171,
@@ -325,24 +343,6 @@
         "clear": false
       },
       {
-        "code": "6274",
-        "name": "台燿",
-        "lots": 52,
-        "money": 0.41,
-        "chg": 7.44,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "6213",
-        "name": "聯茂",
-        "lots": 99,
-        "money": 0.41,
-        "chg": 10.0,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2059",
         "name": "川湖",
         "lots": 4,
@@ -354,20 +354,20 @@
     ],
     "sell": [
       {
-        "code": "6683",
-        "name": "雍智科技",
-        "lots": -48,
-        "money": -0.35,
-        "chg": 6.73,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "7751",
         "name": "竑騰",
         "lots": -40,
         "money": -0.35,
         "chg": 8.36,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6683",
+        "name": "雍智科技",
+        "lots": -48,
+        "money": -0.35,
+        "chg": 6.73,
         "new": false,
         "clear": false
       },

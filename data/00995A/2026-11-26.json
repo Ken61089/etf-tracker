@@ -385,15 +385,6 @@
         "clear": false
       },
       {
-        "code": "2412",
-        "name": "中華電",
-        "lots": 21,
-        "money": 0.04,
-        "chg": 1.83,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "1560",
         "name": "中砂",
         "lots": 6,
@@ -409,6 +400,15 @@
         "money": 0.04,
         "chg": 9.97,
         "new": true,
+        "clear": false
+      },
+      {
+        "code": "2412",
+        "name": "中華電",
+        "lots": 21,
+        "money": 0.04,
+        "chg": 1.83,
+        "new": false,
         "clear": false
       },
       {

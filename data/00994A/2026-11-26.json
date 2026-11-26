@@ -259,21 +259,21 @@
         "clear": false
       },
       {
-        "code": "3711",
-        "name": "日月光投控",
-        "lots": 30,
-        "money": 0.15,
-        "chg": 4.71,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "6669",
         "name": "緯穎",
         "lots": 10,
         "money": 0.15,
         "chg": 9.79,
         "new": true,
+        "clear": false
+      },
+      {
+        "code": "3711",
+        "name": "日月光投控",
+        "lots": 30,
+        "money": 0.15,
+        "chg": 4.71,
+        "new": false,
         "clear": false
       },
       {
