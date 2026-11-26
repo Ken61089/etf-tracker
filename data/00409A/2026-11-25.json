@@ -1,0 +1,63 @@
+{
+  "etfid": "00409A",
+  "fund_name": "主動復華全球50",
+  "data_date": "2026-11-25",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "3711": {
+      "name": "日月光投控",
+      "pct": 0.96,
+      "shares": 185000,
+      "price": 488.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 3.8,
+      "shares": 98000,
+      "price": 3645.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 1.35,
+      "shares": 50000,
+      "price": 2545.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 1.36,
+      "shares": 38000,
+      "price": 3355.0
+    },
+    "6223": {
+      "name": "旺矽",
+      "pct": 0.12,
+      "shares": 3000,
+      "price": 3770.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-24",
+    "buy": [
+      {
+        "code": "3017",
+        "name": "奇鋐",
+        "lots": 50,
+        "money": 1.28,
+        "chg": 9.82,
+        "new": true,
+        "clear": false
+      },
+      {
+        "code": "2383",
+        "name": "台光電",
+        "lots": 38,
+        "money": 1.28,
+        "chg": 9.09,
+        "new": true,
+        "clear": false
+      }
+    ],
+    "sell": []
+  }
+}

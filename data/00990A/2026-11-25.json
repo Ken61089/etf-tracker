@@ -1,0 +1,54 @@
+{
+  "etfid": "00990A",
+  "fund_name": "主動元大AI新經濟",
+  "data_date": "2026-11-25",
+  "source": "xiaoyu",
+  "lot_precision": true,
+  "holdings": {
+    "2330": {
+      "name": "台積電",
+      "pct": 4.25,
+      "shares": 518000,
+      "price": 2150.0
+    },
+    "2454": {
+      "name": "聯發科",
+      "pct": 2.68,
+      "shares": 193000,
+      "price": 3645.0
+    },
+    "3017": {
+      "name": "奇鋐",
+      "pct": 1.84,
+      "shares": 190000,
+      "price": 2545.0
+    },
+    "2383": {
+      "name": "台光電",
+      "pct": 1.06,
+      "shares": 83000,
+      "price": 3355.0
+    },
+    "3443": {
+      "name": "創意",
+      "pct": 1.1,
+      "shares": 57000,
+      "price": 5070.0
+    }
+  },
+  "xy_d1": {
+    "base": "2026-11-24",
+    "buy": [],
+    "sell": [
+      {
+        "code": "3037",
+        "name": "欣興",
+        "lots": -444,
+        "money": -2.63,
+        "chg": 9.91,
+        "new": false,
+        "clear": true
+      }
+    ]
+  }
+}
