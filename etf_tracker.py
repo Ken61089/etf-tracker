@@ -59,9 +59,18 @@ TOP_N = 5
 XY_URL = "https://xiaoyu-etf.pages.dev/data/etf/{etfid}.json"
 # 備援來源：MoneyDJ（單位為「股」，加減碼由本系統自行比對）
 BASE_URL = "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid={etfid}.TW"
-# 投信買賣超一日排行（富邦 DJ）：B=0 上市、B=1 上櫃
-TRUST_URL = "https://fubon-ebrokerdj.fbs.com.tw/z/zg/zgk.djhtm?A=DD&B={b}&C=1"
-TRUST_MARKETS = {"twse": ("上市", 0), "tpex": ("上櫃", 1)}
+# 法人買賣超一日排行（富邦 DJ）：A=DD 投信、A=D 外資；B=0 上市、B=1 上櫃；C=1 一日
+INST_URL = "https://fubon-ebrokerdj.fbs.com.tw/z/zg/zgk.djhtm?A={a}&B={b}&C=1"
+INSTS = {"trust": ("投信", "DD"), "foreign": ("外資", "D")}   # 存檔資料夾 data/<key>/
+INST_MARKETS = {"twse": ("上市", 0), "tpex": ("上櫃", 1)}
+# 外資投信共同買超用全市場三大法人資料（排行只有前 50，交集會漏掉大半）；抓不到才退回富邦排行交集
+T86_URL = "https://www.twse.com.tw/rwd/zh/fund/T86?date={ymd}&selectType=ALLBUT0999&response=json"
+TWSE_QUOTE_URL = ("https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX"
+                  "?date={ymd}&type=ALLBUT0999&response=json")
+TPEX_INST_URL = ("https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade"
+                 "?type=Daily&sect=EW&date={y}%2F{m}%2F{d}&response=json")
+TPEX_QUOTE_URL = ("https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes"
+                  "?date={y}%2F{m}%2F{d}&type=EW&response=json")
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(ROOT, "data")        # 每日快照
@@ -444,10 +453,10 @@ def build_consensus(results, threshold=2):
     }
 
 
-# ---- 投信買賣超（富邦 DJ）--------------------------------------------
+# ---- 法人買賣超（富邦 DJ：投信、外資）-------------------------------
 
-TRUST_DATE_RE = re.compile(r"日期：(\d{1,2})/(\d{1,2})")
-TRUST_ROW_RE = re.compile(
+INST_DATE_RE = re.compile(r"日期：(\d{1,2})/(\d{1,2})")
+INST_ROW_RE = re.compile(
     r"Link2Stk\('([^']+)'\)\">([^<]+)</a></td>\s*"
     r"<td class=\"t3n1\">([-\d,]+)</td>\s*"
     r"<td class=\"t3n1\">([\d.,]+)</td>\s*"
@@ -456,21 +465,22 @@ TRUST_ROW_RE = re.compile(
 )
 
 
-def fetch_trust_market(key):
-    """抓一個市場的投信買賣超一日排行，回傳 (資料日期, {buy, sell})。
-    網頁買超/賣超兩欄交錯排列，以超張數正負號分邊。"""
-    label, b = TRUST_MARKETS[key]
-    text = curl_bytes(TRUST_URL.format(b=b)).decode("cp950", errors="replace")
-    m = TRUST_DATE_RE.search(text)
+def fetch_inst_market(kind, key):
+    """抓一個法人、一個市場的買賣超一日排行，回傳 (資料日期, {buy, sell})。
+    網頁買超/賣超兩欄交錯排列，以超張數正負號分邊；投信、外資頁面格式相同。"""
+    who, a = INSTS[kind]
+    label, b = INST_MARKETS[key]
+    text = curl_bytes(INST_URL.format(a=a, b=b)).decode("cp950", errors="replace")
+    m = INST_DATE_RE.search(text)
     if not m:
-        raise RuntimeError(f"投信{label}：找不到資料日期")
+        raise RuntimeError(f"{who}{label}：找不到資料日期")
     # 網頁只給月/日，年份用台灣今天推（跨年時月份比今天大 → 去年）
     now = datetime.now(TPE)
     mon, day = int(m.group(1)), int(m.group(2))
     year = now.year - 1 if (mon, day) > (now.month, now.day) else now.year
     data_date = f"{year}-{mon:02d}-{day:02d}"
     buy, sell = [], []
-    for code, raw, lots, close, chg in TRUST_ROW_RE.findall(text):
+    for code, raw, lots, close, chg in INST_ROW_RE.findall(text):
         name = html.unescape(raw).strip()
         if name.startswith(code):
             name = name[len(code):]
@@ -480,30 +490,31 @@ def fetch_trust_market(key):
                "chg": chg.strip()}
         (buy if row["lots"] > 0 else sell).append(row)
     if not buy and not sell:
-        raise RuntimeError(f"投信{label}：解析不到任何排行（網頁結構可能改了）")
+        raise RuntimeError(f"{who}{label}：解析不到任何排行（網頁結構可能改了）")
     for lst in (buy, sell):
         for i, r in enumerate(lst, 1):
             r["rank"] = i
     return data_date, {"buy": buy, "sell": sell}
 
 
-def update_trust(fetch=True):
-    """抓上市+上櫃投信買賣超，依資料日期存 data/trust/<日期>.json；回傳最新一份。"""
-    folder = os.path.join(DATA_DIR, "trust")
+def update_inst(kind, fetch=True):
+    """抓上市+上櫃某法人買賣超，依資料日期存 data/<kind>/<日期>.json；回傳最新一份。"""
+    who, _ = INSTS[kind]
+    folder = os.path.join(DATA_DIR, kind)
     if fetch:
         snap = {}
-        for key, (label, _) in TRUST_MARKETS.items():
+        for key, (label, _) in INST_MARKETS.items():
             try:
-                d, data = fetch_trust_market(key)
+                d, data = fetch_inst_market(kind, key)
                 snap.setdefault("data_date", d)
                 if d != snap["data_date"]:
-                    raise RuntimeError(f"投信{label}日期 {d} 與另一市場 {snap['data_date']} 不一致")
+                    raise RuntimeError(f"{who}{label}日期 {d} 與另一市場 {snap['data_date']} 不一致")
                 snap[key] = data
-                print(f"  ✅ 投信{label} {d}：買超 {len(data['buy'])}、賣超 {len(data['sell'])}",
+                print(f"  ✅ {who}{label} {d}：買超 {len(data['buy'])}、賣超 {len(data['sell'])}",
                       flush=True)
             except Exception as e:
-                print(f"  ⚠️  投信{label} 失敗：{e}", file=sys.stderr)
-        if all(k in snap for k in TRUST_MARKETS):   # 兩市場都成功才存，避免存半份
+                print(f"  ⚠️  {who}{label} 失敗：{e}", file=sys.stderr)
+        if all(k in snap for k in INST_MARKETS):   # 兩市場都成功才存，避免存半份
             os.makedirs(folder, exist_ok=True)
             with open(os.path.join(folder, f"{snap['data_date']}.json"), "w",
                       encoding="utf-8") as f:
@@ -517,11 +528,9 @@ def update_trust(fetch=True):
         return json.load(f)
 
 
-def build_trust_cross(trust, results):
-    """投信買賣超 × 主動 ETF 加減碼交叉：只拿資料日期與投信同一天的 ETF 比。
-    在每筆投信排行上掛 etfs（哪幾檔 ETF 當天也有動作），並整理同向清單。"""
-    same_day = [r for r in results
-                if not r["is_baseline"] and r["data_date"] == trust["data_date"]]
+def etf_acts(results, date):
+    """資料日期 = date 的 ETF 當天加減碼，回傳 (同日 ETF 清單, {代號: [各 ETF 動作]})。"""
+    same_day = [r for r in results if not r["is_baseline"] and r["data_date"] == date]
     acts = defaultdict(list)
     for r in same_day:
         for c in r["diff"]["changes"]:
@@ -529,10 +538,19 @@ def build_trust_cross(trust, results):
                 "fund_name": r["fund_name"], "delta": c["delta"],
                 "is_new": c.get("is_new", False),
                 "is_removed": c.get("is_removed", False)})
+    for lst in acts.values():
+        lst.sort(key=lambda e: abs(e["delta"]), reverse=True)
+    return same_day, acts
+
+
+def build_inst_cross(snap, results):
+    """法人買賣超 × 主動 ETF 加減碼交叉：只拿資料日期與該法人排行同一天的 ETF 比。
+    在每筆排行上掛 etfs（哪幾檔 ETF 當天也有動作），並整理同向清單。"""
+    same_day, acts = etf_acts(results, snap["data_date"])
     cross = {"buy": [], "sell": []}
-    for key, (label, _) in TRUST_MARKETS.items():
+    for key, (label, _) in INST_MARKETS.items():
         for side in ("buy", "sell"):
-            for row in trust[key][side]:
+            for row in snap[key][side]:
                 lst = acts.get(row["ticker"], [])
                 row["etfs"] = sorted(lst, key=lambda e: abs(e["delta"]), reverse=True)
                 same = [e for e in lst if (e["delta"] > 0) == (side == "buy")]
@@ -540,11 +558,147 @@ def build_trust_cross(trust, results):
                     cross[side].append({**row, "market": label, "etfs": same})
     for side in cross:
         cross[side].sort(key=lambda x: (len(x["etfs"]), abs(x["lots"])), reverse=True)
-    trust["cross"] = cross
-    trust["etf_same_day"] = [r["etfid"] for r in same_day]
-    trust["etf_other_day"] = [f"{r['etfid']}({r['data_date']})" for r in results
-                              if r not in same_day]
-    return trust
+    snap["cross"] = cross
+    snap["etf_same_day"] = [r["etfid"] for r in same_day]
+    snap["etf_other_day"] = [f"{r['etfid']}({r['data_date']})" for r in results
+                             if r not in same_day]
+    return snap
+
+
+STOCK_RE = re.compile(r"[1-9]\d{3}")   # 4 位數普通股（排除 ETF／債券 ETF／特別股）
+
+
+def _num(x):
+    try:
+        return float(str(x).replace(",", "").strip())
+    except ValueError:
+        return None
+
+
+def fetch_full_inst(date):
+    """全市場外資（不含外資自營商）＋投信買賣超與收盤價、成交量（單位：股）。
+    上市＝證交所 T86＋MI_INDEX，上櫃＝櫃買 dailyTrade＋dailyQuotes；任一份失敗就整個 raise。"""
+    y, m, d = date.split("-")
+    ymd, roc = y + m + d, f"{int(y) - 1911}/{m}/{d}"
+    out = {}
+    j = json.loads(curl_bytes(T86_URL.format(ymd=ymd)))
+    if j.get("stat") != "OK" or j.get("date") != ymd:
+        raise RuntimeError(f"證交所 T86 {date}：{j.get('stat')}（資料日 {j.get('date')}）")
+    f = j["fields"]
+    fi, ti = f.index("外陸資買賣超股數(不含外資自營商)"), f.index("投信買賣超股數")
+    for r in j["data"]:
+        out[r[0].strip()] = {"name": r[1].strip(), "market": "上市",
+                             "f": int(_num(r[fi])), "t": int(_num(r[ti]))}
+    q = json.loads(curl_bytes(TWSE_QUOTE_URL.format(ymd=ymd)))
+    tbl = next((t for t in q.get("tables", []) if "收盤價" in t.get("fields", [])), None)
+    if not tbl:
+        raise RuntimeError(f"證交所收盤行情 {date}：找不到表格")
+    f = tbl["fields"]
+    ci, vi, si, di = (f.index("收盤價"), f.index("成交股數"),
+                      f.index("漲跌(+/-)"), f.index("漲跌價差"))
+    for r in tbl["data"]:
+        if r[0] in out:
+            sign = "-" if "-" in r[si] else ("+" if "+" in r[si] else "")
+            out[r[0]].update(close=_num(r[ci]), vol=_num(r[vi]), chg=sign + r[di].strip())
+    # 上櫃：欄位名稱重複，只能依位置取。4＝外資及陸資(不含外資自營商)、13＝投信、
+    # 7＝外資自營商、22＝自營商合計、23＝三大法人合計 → 用加總對得上當結構檢查
+    j = json.loads(curl_bytes(TPEX_INST_URL.format(y=y, m=m, d=d)))
+    t0 = (j.get("tables") or [{}])[0]
+    if t0.get("date") != roc or not t0.get("data"):
+        raise RuntimeError(f"櫃買三大法人 {date}：資料日 {t0.get('date')}")
+    for r in t0["data"]:
+        v = [_num(x) for x in r[2:24]]
+        if None in v or len(v) != 22 or v[2] + v[5] + v[11] + v[20] != v[21]:
+            raise RuntimeError(f"櫃買三大法人欄位對不上（網頁結構可能改了）：{r[:3]}")
+        out[r[0].strip()] = {"name": r[1].strip(), "market": "上櫃",
+                             "f": int(v[2]), "t": int(v[11])}
+    q = json.loads(curl_bytes(TPEX_QUOTE_URL.format(y=y, m=m, d=d)))
+    tbl = next((t for t in q.get("tables", []) if t.get("date") == roc), None)
+    if not tbl:
+        raise RuntimeError(f"櫃買收盤行情 {date}：找不到當日表格")
+    f = tbl["fields"]
+    ci, vi, di = f.index("收盤"), f.index("成交股數"), f.index("漲跌")
+    for r in tbl["data"]:
+        if r[0] in out and out[r[0]]["market"] == "上櫃":
+            out[r[0]].update(close=_num(r[ci]), vol=_num(r[vi]), chg=r[di].strip())
+    return out
+
+
+def co_from_full(full, date):
+    co = {"data_date": date, "source": "full", "buy": [], "sell": []}
+    for tk, x in full.items():
+        if not STOCK_RE.fullmatch(tk):
+            continue
+        fl, tl = round(x["f"] / 1000), round(x["t"] / 1000)
+        side = "buy" if fl > 0 and tl > 0 else "sell" if fl < 0 and tl < 0 else None
+        if not side:
+            continue
+        close, vol = x.get("close"), x.get("vol")
+        co[side].append({
+            "ticker": tk, "name": x["name"], "market": x["market"],
+            "close": close, "chg": x.get("chg", ""), "f_lots": fl, "t_lots": tl,
+            "amount": round((x["f"] + x["t"]) * close / 1e8, 2) if close else None,
+            "pct_vol": round((x["f"] + x["t"]) / vol * 100, 1) if vol else None})
+    return co
+
+
+def co_from_rank(foreign, trust):
+    """備援：富邦兩份排行（上市＋上櫃各前 50）同方向都上榜的個股。"""
+    co = {"data_date": trust["data_date"], "source": "rank", "buy": [], "sell": []}
+    for key, (label, _) in INST_MARKETS.items():
+        for side in ("buy", "sell"):
+            tmap = {r["ticker"]: r for r in trust[key][side]}
+            for f in foreign[key][side]:
+                t = tmap.get(f["ticker"])
+                if not t or not STOCK_RE.fullmatch(f["ticker"]):
+                    continue
+                co[side].append({
+                    "ticker": f["ticker"], "name": f["name"], "market": label,
+                    "close": f["close"], "chg": f["chg"],
+                    "f_lots": f["lots"], "f_rank": f["rank"],
+                    "t_lots": t["lots"], "t_rank": t["rank"],
+                    "amount": round((f["lots"] + t["lots"]) * f["close"] / 1e5, 2),
+                    "pct_vol": None})
+    return co
+
+
+def build_co(foreign, trust, results, fetch=True):
+    """外資 × 投信 共同買超／賣超（同一天、同方向），依資料日期存 data/co/<日期>.json。
+    主來源：證交所＋櫃買全市場三大法人；失敗才用富邦排行前 50 交集（名單會短很多）。
+    金額＝（外資＋投信股數）× 收盤價，只是估算；排除 ETF／債券 ETF／特別股，只留 4 位數普通股。"""
+    if not trust:
+        return None
+    date = trust["data_date"]
+    folder = os.path.join(DATA_DIR, "co")
+    path = os.path.join(folder, f"{date}.json")
+    co = None
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            co = json.load(f)
+    if fetch and (not co or co.get("source") != "full"):   # 已有全市場版就不重抓
+        try:
+            co = co_from_full(fetch_full_inst(date), date)
+            print(f"  ✅ 全市場共同買超 {date}：買 {len(co['buy'])}、賣 {len(co['sell'])}", flush=True)
+        except Exception as e:
+            print(f"  ⚠️  全市場三大法人失敗，改用富邦排行交集：{e}", file=sys.stderr)
+            if foreign and foreign["data_date"] == date:
+                co = co_from_rank(foreign, trust)
+        if co:
+            os.makedirs(folder, exist_ok=True)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(co, f, ensure_ascii=False, indent=2)
+    if not co:   # 沒存檔、也沒得抓（例如外資排行還停在前一天）
+        if not foreign or foreign["data_date"] != date:
+            return {"data_date": date, "foreign_date": (foreign or {}).get("data_date"),
+                    "same_day": False, "buy": [], "sell": []}
+        co = co_from_rank(foreign, trust)
+    co["same_day"] = True
+    _, acts = etf_acts(results, date)   # ETF 動作每次現算（ETF 可能比法人晚更新）
+    for side in ("buy", "sell"):
+        for r in co[side]:
+            r["etfs"] = [e for e in acts.get(r["ticker"], []) if (e["delta"] > 0) == (side == "buy")]
+        co[side].sort(key=lambda x: abs(x["amount"] or 0), reverse=True)
+    return co
 
 
 # ---- 主流程 -----------------------------------------------------------
@@ -726,14 +880,21 @@ def main():
         except Exception as e:  # 單檔失敗不影響其他檔
             print(f"  ⚠️  {etfid} 失敗：{e}", file=sys.stderr)
 
-    print(f"[{'抓取' if fetch else '讀取'}] 投信買賣超 ...", flush=True)
-    trust = None
+    inst = {}
+    for kind, (who, _) in INSTS.items():
+        print(f"[{'抓取' if fetch else '讀取'}] {who}買賣超 ...", flush=True)
+        try:
+            snap = update_inst(kind, fetch=fetch)
+            if snap:
+                inst[kind] = build_inst_cross(snap, results)
+        except Exception as e:  # 法人排行失敗不影響 ETF 部分
+            print(f"  ⚠️  {who}買賣超失敗：{e}", file=sys.stderr)
+    trust, foreign = inst.get("trust"), inst.get("foreign")
     try:
-        trust = update_trust(fetch=fetch)
-        if trust:
-            trust = build_trust_cross(trust, results)
-    except Exception as e:  # 投信失敗不影響 ETF 部分
-        print(f"  ⚠️  投信買賣超失敗：{e}", file=sys.stderr)
+        co = build_co(foreign, trust, results, fetch=fetch)
+    except Exception as e:
+        co = None
+        print(f"  ⚠️  共同買超失敗：{e}", file=sys.stderr)
 
     # 每列標「追蹤的 ETF 中，今天有幾檔加碼/減碼這檔」（小宇的 買N / 賣N）
     # （依資料日期分開算，切到舊日期時也正確）
@@ -765,7 +926,7 @@ def main():
     # 網頁依估算規模排序（大到小），沒估到的放最後
     results.sort(key=lambda r: -(r.get("aum") or 0))
     payload = {"generated_at": generated_at, "consensus": consensus, "etfs": results,
-               "trust": trust, "top": top, "analysis": analysis.load_recent(HIST_DAYS)}
+               "trust": trust, "foreign": foreign, "co": co, "top": top, "analysis": analysis.load_recent(HIST_DAYS)}
 
     # 存一份 JSON 方便除錯 / 之後做 API
     with open(os.path.join(SITE_DIR, "data.json"), "w", encoding="utf-8") as f:
