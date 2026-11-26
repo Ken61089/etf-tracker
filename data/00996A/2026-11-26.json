@@ -307,15 +307,6 @@
         "clear": false
       },
       {
-        "code": "6274",
-        "name": "台燿",
-        "lots": 52,
-        "money": 0.41,
-        "chg": 7.44,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "1303",
         "name": "南亞",
         "lots": 171,
@@ -325,20 +316,29 @@
         "clear": false
       },
       {
-        "code": "6213",
-        "name": "聯茂",
-        "lots": 99,
-        "money": 0.41,
-        "chg": 10.0,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "2360",
         "name": "致茂",
         "lots": 38,
         "money": 0.41,
         "chg": 8.42,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6274",
+        "name": "台燿",
+        "lots": 52,
+        "money": 0.41,
+        "chg": 7.44,
+        "new": false,
+        "clear": false
+      },
+      {
+        "code": "6213",
+        "name": "聯茂",
+        "lots": 99,
+        "money": 0.41,
+        "chg": 10.0,
         "new": false,
         "clear": false
       },
@@ -372,15 +372,6 @@
         "clear": false
       },
       {
-        "code": "8021",
-        "name": "尖點",
-        "lots": -135,
-        "money": -0.33,
-        "chg": 6.95,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "6830",
         "name": "汎銓",
         "lots": -100,
@@ -388,6 +379,15 @@
         "chg": 7.27,
         "new": false,
         "clear": true
+      },
+      {
+        "code": "8021",
+        "name": "尖點",
+        "lots": -135,
+        "money": -0.33,
+        "chg": 6.95,
+        "new": false,
+        "clear": false
       },
       {
         "code": "8358",
