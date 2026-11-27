@@ -1,0 +1,138 @@
+{
+  "data_date": "2026-11-27",
+  "source": "rank",
+  "buy": [
+    {
+      "ticker": "2317",
+      "name": "鴻海",
+      "market": "上市",
+      "close": 219.0,
+      "chg": "2.5",
+      "f_lots": 8216,
+      "f_rank": 12,
+      "t_lots": 275,
+      "t_rank": 49,
+      "amount": 18.6,
+      "pct_vol": null
+    },
+    {
+      "ticker": "2408",
+      "name": "南亞科",
+      "market": "上市",
+      "close": 308.0,
+      "chg": "2",
+      "f_lots": 4582,
+      "f_rank": 22,
+      "t_lots": 1253,
+      "t_rank": 30,
+      "amount": 17.97,
+      "pct_vol": null
+    },
+    {
+      "ticker": "2344",
+      "name": "華邦電",
+      "market": "上市",
+      "close": 104.0,
+      "chg": "0.5",
+      "f_lots": 3938,
+      "f_rank": 26,
+      "t_lots": 3015,
+      "t_rank": 16,
+      "amount": 7.23,
+      "pct_vol": null
+    },
+    {
+      "ticker": "2313",
+      "name": "華通",
+      "market": "上市",
+      "close": 184.5,
+      "chg": "16.5",
+      "f_lots": 3505,
+      "f_rank": 28,
+      "t_lots": 2423,
+      "t_rank": 19,
+      "amount": 10.94,
+      "pct_vol": null
+    },
+    {
+      "ticker": "3105",
+      "name": "穩懋",
+      "market": "上櫃",
+      "close": 444.5,
+      "chg": "0",
+      "f_lots": 450,
+      "f_rank": 32,
+      "t_lots": 1144,
+      "t_rank": 3,
+      "amount": 7.09,
+      "pct_vol": null
+    }
+  ],
+  "sell": [
+    {
+      "ticker": "2327",
+      "name": "國巨*",
+      "market": "上市",
+      "close": 344.0,
+      "chg": "4.5",
+      "f_lots": -3561,
+      "f_rank": 22,
+      "t_lots": -750,
+      "t_rank": 22,
+      "amount": -14.83,
+      "pct_vol": null
+    },
+    {
+      "ticker": "8358",
+      "name": "金居",
+      "market": "上櫃",
+      "close": 261.0,
+      "chg": "-7.5",
+      "f_lots": -915,
+      "f_rank": 8,
+      "t_lots": -22,
+      "t_rank": 23,
+      "amount": -2.45,
+      "pct_vol": null
+    },
+    {
+      "ticker": "5904",
+      "name": "寶雅*",
+      "market": "上櫃",
+      "close": 68.7,
+      "chg": "-0.9",
+      "f_lots": -339,
+      "f_rank": 20,
+      "t_lots": -23,
+      "t_rank": 22,
+      "amount": -0.25,
+      "pct_vol": null
+    },
+    {
+      "ticker": "3324",
+      "name": "雙鴻",
+      "market": "上櫃",
+      "close": 801.0,
+      "chg": "-57",
+      "f_lots": -338,
+      "f_rank": 21,
+      "t_lots": -311,
+      "t_rank": 8,
+      "amount": -5.2,
+      "pct_vol": null
+    },
+    {
+      "ticker": "8069",
+      "name": "元太",
+      "market": "上櫃",
+      "close": 124.5,
+      "chg": "-2.5",
+      "f_lots": -197,
+      "f_rank": 40,
+      "t_lots": -2,
+      "t_rank": 27,
+      "amount": -0.25,
+      "pct_vol": null
+    }
+  ]
+}
