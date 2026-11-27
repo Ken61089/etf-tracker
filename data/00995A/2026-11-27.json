@@ -373,6 +373,15 @@
         "clear": false
       },
       {
+        "code": "3105",
+        "name": "穩懋",
+        "lots": 8,
+        "money": 0.04,
+        "chg": 0.0,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "6691",
         "name": "洋基工程",
         "lots": 7,
@@ -388,15 +397,6 @@
         "money": 0.04,
         "chg": -3.47,
         "new": true,
-        "clear": false
-      },
-      {
-        "code": "3105",
-        "name": "穩懋",
-        "lots": 8,
-        "money": 0.04,
-        "chg": 0.0,
-        "new": false,
         "clear": false
       },
       {
