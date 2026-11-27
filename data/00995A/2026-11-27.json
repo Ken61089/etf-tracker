@@ -373,6 +373,15 @@
         "clear": false
       },
       {
+        "code": "6691",
+        "name": "洋基工程",
+        "lots": 7,
+        "money": 0.04,
+        "chg": 0.97,
+        "new": false,
+        "clear": false
+      },
+      {
         "code": "6442",
         "name": "光聖",
         "lots": 4,
@@ -387,15 +396,6 @@
         "lots": 8,
         "money": 0.04,
         "chg": 0.0,
-        "new": false,
-        "clear": false
-      },
-      {
-        "code": "6691",
-        "name": "洋基工程",
-        "lots": 7,
-        "money": 0.04,
-        "chg": 0.97,
         "new": false,
         "clear": false
       },

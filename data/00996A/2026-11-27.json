@@ -319,15 +319,6 @@
         "clear": false
       },
       {
-        "code": "1560",
-        "name": "中砂",
-        "lots": 13,
-        "money": 0.09,
-        "chg": 2.5,
-        "new": true,
-        "clear": false
-      },
-      {
         "code": "2360",
         "name": "致茂",
         "lots": 8,
@@ -346,12 +337,12 @@
         "clear": false
       },
       {
-        "code": "6274",
-        "name": "台燿",
-        "lots": 10,
-        "money": 0.08,
-        "chg": -4.41,
-        "new": false,
+        "code": "1560",
+        "name": "中砂",
+        "lots": 13,
+        "money": 0.09,
+        "chg": 2.5,
+        "new": true,
         "clear": false
       },
       {
@@ -361,6 +352,15 @@
         "money": 0.08,
         "chg": 0.41,
         "new": true,
+        "clear": false
+      },
+      {
+        "code": "6274",
+        "name": "台燿",
+        "lots": 10,
+        "money": 0.08,
+        "chg": -4.41,
+        "new": false,
         "clear": false
       }
     ],
