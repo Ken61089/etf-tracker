@@ -319,15 +319,6 @@
         "clear": false
       },
       {
-        "code": "2360",
-        "name": "致茂",
-        "lots": 8,
-        "money": 0.09,
-        "chg": -2.28,
-        "new": false,
-        "clear": false
-      },
-      {
         "code": "3008",
         "name": "大立光",
         "lots": 2,
@@ -346,12 +337,12 @@
         "clear": false
       },
       {
-        "code": "1590",
-        "name": "亞德客-KY",
+        "code": "2360",
+        "name": "致茂",
         "lots": 8,
-        "money": 0.08,
-        "chg": 0.41,
-        "new": true,
+        "money": 0.09,
+        "chg": -2.28,
+        "new": false,
         "clear": false
       },
       {
@@ -361,6 +352,15 @@
         "money": 0.08,
         "chg": -4.41,
         "new": false,
+        "clear": false
+      },
+      {
+        "code": "1590",
+        "name": "亞德客-KY",
+        "lots": 8,
+        "money": 0.08,
+        "chg": 0.41,
+        "new": true,
         "clear": false
       }
     ],

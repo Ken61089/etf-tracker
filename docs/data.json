@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28 03:14",
+  "generated_at": "2026-11-29 01:52",
   "consensus": {
     "has_data": true,
     "threshold": 2,
@@ -184,24 +184,24 @@
     ],
     "diverge": [
       {
-        "ticker": "3037",
-        "name": "欣興",
+        "ticker": "6515",
+        "name": "穎崴",
         "buyers": [
           {
-            "etfid": "00407A",
-            "fund_name": "主動凱基台灣",
-            "delta": 60000,
+            "etfid": "00403A",
+            "fund_name": "主動統一升級50",
+            "delta": 40000,
             "is_new": false,
             "is_removed": false
           }
         ],
         "sellers": [
           {
-            "etfid": "00406A",
-            "fund_name": "主動中信台灣收益",
-            "delta": -20000,
+            "etfid": "00992A",
+            "fund_name": "主動群益科技創新",
+            "delta": -19000,
             "is_new": false,
-            "is_removed": false
+            "is_removed": true
           }
         ],
         "buy_count": 1,
@@ -232,24 +232,24 @@
         "sell_count": 1
       },
       {
-        "ticker": "6515",
-        "name": "穎崴",
+        "ticker": "3037",
+        "name": "欣興",
         "buyers": [
           {
-            "etfid": "00403A",
-            "fund_name": "主動統一升級50",
-            "delta": 40000,
+            "etfid": "00407A",
+            "fund_name": "主動凱基台灣",
+            "delta": 60000,
             "is_new": false,
             "is_removed": false
           }
         ],
         "sellers": [
           {
-            "etfid": "00992A",
-            "fund_name": "主動群益科技創新",
-            "delta": -19000,
+            "etfid": "00406A",
+            "fund_name": "主動中信台灣收益",
+            "delta": -20000,
             "is_new": false,
-            "is_removed": true
+            "is_removed": false
           }
         ],
         "buy_count": 1,
@@ -57596,19 +57596,6 @@
               "nsell": 1
             },
             {
-              "ticker": "6515",
-              "name": "穎崴",
-              "act": "clear",
-              "shares": 0,
-              "pct": 0.0,
-              "mv": 0.0,
-              "delta": -19000,
-              "dmoney": -0.64,
-              "dpct": -0.16,
-              "nbuy": 1,
-              "nsell": 1
-            },
-            {
               "ticker": "6187",
               "name": "萬潤",
               "act": "clear",
@@ -57619,6 +57606,19 @@
               "dmoney": -0.64,
               "dpct": -0.17,
               "nbuy": 0,
+              "nsell": 1
+            },
+            {
+              "ticker": "6515",
+              "name": "穎崴",
+              "act": "clear",
+              "shares": 0,
+              "pct": 0.0,
+              "mv": 0.0,
+              "delta": -19000,
+              "dmoney": -0.64,
+              "dpct": -0.16,
+              "nbuy": 1,
               "nsell": 1
             }
           ]
